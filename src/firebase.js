@@ -4,14 +4,13 @@ import "firebase/firestore";
 import "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAr1PpEmRQOE4i5rv5XBAYAhH9-hhvJLOg",
-  authDomain: "amzn-ish.firebaseapp.com",
-  databaseURL: "https://amzn-ish.firebaseio.com",
-  projectId: "amzn-ish",
-  storageBucket: "amzn-ish.appspot.com",
-  messagingSenderId: "1094671473025",
-  appId: "1:1094671473025:web:7fc2bd27ecf03240c03080",
-  measurementId: "G-XRBSCHV4P2"
+  apiKey: "AIzaSyC5SvOQLOnOj1bPeoNii3dFBdXUGOevI6k",
+  authDomain: "safemoon-marketplace.firebaseapp.com",
+  projectId: "safemoon-marketplace",
+  storageBucket: "safemoon-marketplace.appspot.com",
+  messagingSenderId: "676933090961",
+  appId: "1:676933090961:web:b2be224a0f6c29072f8930",
+  measurementId: "G-3KXTBP65BL"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
