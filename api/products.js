@@ -1,5 +1,4 @@
 const admin = require("firebase-admin");
-console.log(process.env.GCLOUD_CREDENTIALS);
 const firebase = !admin.apps.length
   ? admin.initializeApp({
       credential: admin.credential.cert(
