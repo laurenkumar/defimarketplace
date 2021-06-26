@@ -6,7 +6,7 @@ import "firebase/auth";
 const firebaseConfig = {
   apiKey: "AIzaSyC5SvOQLOnOj1bPeoNii3dFBdXUGOevI6k",
   authDomain: "safemoon-marketplace.firebaseapp.com",
-  databaseURL: "https://safemoon-marketplace.europe-west1.firebasedatabase.app",
+  databaseURL: "https://safemoon-marketplace-default-rtdb.europe-west1.firebasedatabase.app/",
   projectId: "safemoon-marketplace",
   storageBucket: "safemoon-marketplace.appspot.com",
   messagingSenderId: "676933090961",
