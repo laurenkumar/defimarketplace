@@ -24,7 +24,7 @@ import { shuffleArray } from "./util";
 import Fuse from "fuse.js";
 import axios from "axios";
 
-console.log("toto", process.env.toto);
+console.log("toto", process.env);
 
 const promise = loadStripe(
   "pk_test_51HdsPRE4K4vYNE8J6n2SZ7Q68Z8mqdHJROiHxnm7U5yeTk8oBed7LF3IqSZGSlr1vso40SYgMc3NWeYCvuhKfv6H00pu5ZkJi3"
