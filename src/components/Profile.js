@@ -59,6 +59,7 @@ function Profile() {
 
   const styleButton = {
     padding: '1rem 1.5rem',
+    paddingTop: '1rem',
     height: "1.5rem"
   }
 
