@@ -58,7 +58,7 @@ function Profile() {
   };
 
   const styleButton = {
-    padding: '1rem 1.5rem !important',
+    padding: '1rem 1.5rem',
     height: "1.5rem"
   }
 
