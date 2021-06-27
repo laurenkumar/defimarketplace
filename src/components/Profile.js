@@ -72,12 +72,12 @@ function Profile() {
           <button
             className="buttonPrimary"
             onClick={editProfile}
-            style={{ padding: "1rem 1.5rem" }}
+            style={{ padding: "1rem 1.5rem !important", height: "1.5rem" }}
           >
             Edit Profile
           </button>
         </div>
-        <div className="buttons" style={{ marginLeft: "auto" }}>
+        <div className="buttons">
           <button
             className="buttonRed"
             onClick={signOut}
