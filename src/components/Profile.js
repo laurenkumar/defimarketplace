@@ -57,6 +57,11 @@ function Profile() {
     });
   };
 
+  const styleButton = {
+    padding: "1rem 1.5rem !important",
+    height: "1.5rem"
+  }
+
   return (
     <div className="profile">
       <div className="profile__header">
@@ -72,7 +77,7 @@ function Profile() {
           <button
             className="buttonPrimary"
             onClick={editProfile}
-            style={{ padding: "1rem 1.5rem !important", height: "1.5rem" }}
+            style={ styleButton }
           >
             Edit Profile
           </button>
