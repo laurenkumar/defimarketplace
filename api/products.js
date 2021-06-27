@@ -4,7 +4,7 @@ const firebase = !admin.apps.length
   ? admin.initializeApp({
       credential: admin.credential.cert(
         JSON.parse(
-          new Buffer(process.env.GCLOUD_CREDENTIALS, "base64").toString("utf-8")
+          new Buffer(process.env.REACT_APP_GCLOUD_CREDENTIALS, "base64").toString("utf-8")
         )
       ),
     })
