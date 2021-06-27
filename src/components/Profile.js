@@ -58,9 +58,7 @@ function Profile() {
   };
 
   const styleButton = {
-    padding: '1rem 1.5rem',
-    paddingTop: '1em',
-    height: "1.5rem"
+    height: "2rem"
   }
 
   return (
