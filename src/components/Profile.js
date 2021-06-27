@@ -102,6 +102,12 @@ function Profile() {
             <span>Zip Code</span>
             <span>{userDetails.postal_code}</span>
           </p>
+          <p>
+            <span>Wallet Address</span>
+            <span
+              style={{ marginBottom: "1rem" }}
+            >{`${userDetails.walletAddress}`}</span>
+          </p>
         </div>
       )}
     </div>

@@ -16,6 +16,7 @@ function Welcome() {
   const [country, setCountry] = useState("");
   const [zipcode, setZipcode] = useState("");
   const [phone, setPhone] = useState("");
+  const [walletAddress, setWalletAddress] = useState("");
   const [dob, setDob] = useState("");
   const [checked, setChecked] = useState(false);
   const [status, setStatus] = useState(false);
@@ -34,6 +35,7 @@ function Welcome() {
       .set(
         {
           name: user.displayName,
+          walletAddress: walletAddress,
           email: user.email,
           phone: phone,
           dob: dob,
@@ -167,6 +169,16 @@ function Welcome() {
                 type="tel"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
+              />
+              <label for="phone">Mobile Number</label>
+            </div>
+            <div className="form__element">
+              <input
+                className={walletAddress ? "active " : ""}
+                id="walletAddress"
+                type="text"
+                value={walletAddress}
+                onChange={(e) => setWalletAddress(e.target.value)}
               />
               <label for="phone">Mobile Number</label>
             </div>
