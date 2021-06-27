@@ -38,7 +38,7 @@ function Profile() {
     });
   }, []);
 
-  const signOut = () => {
+  const editProfile = () => {
     loadingBar.current.continuousStart();
     setTimeout(() => {
         loadingBar.current.complete();
@@ -46,7 +46,7 @@ function Profile() {
     }, 1000);
   };
 
-  const editProfile = () => {
+  const signOut = () => {
     loadingBar.current.continuousStart();
     auth.signOut().then(() => {
       setUserDetails(null);
@@ -70,7 +70,7 @@ function Profile() {
         </span>
         <div className="buttons" style={{ marginLeft: "auto" }}>
           <button
-            className="buttonGreen"
+            className="buttonPrimary"
             onClick={editProfile}
             style={{ padding: "1rem 1.5rem" }}
           >
