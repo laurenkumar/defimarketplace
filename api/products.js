@@ -1,7 +1,5 @@
 const admin = require("firebase-admin");
-console.log(JSON.parse(
-          new Buffer(process.env.REACT_APP_GCLOUD_CREDENTIALS, "base64").toString("utf-8")
-        ))
+
 const firebase = !admin.apps.length
   ? admin.initializeApp({
       credential: admin.credential.cert(
