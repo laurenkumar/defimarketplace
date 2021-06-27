@@ -88,7 +88,7 @@ function Welcome() {
               </>
             ) : (
               <>
-                Your Amazon Account is created and we would like to know a
+                We would like to know a
                 little bit more about yourself. You may still want to confirm
                 your email address to login next time.
               </>
@@ -180,7 +180,7 @@ function Welcome() {
                 value={walletAddress}
                 onChange={(e) => setWalletAddress(e.target.value)}
               />
-              <label for="phone">Mobile Number</label>
+              <label for="walletAddress">Wallet Address</label>
             </div>
             <div className="form__element">
               <input

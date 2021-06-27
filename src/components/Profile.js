@@ -40,6 +40,14 @@ function Profile() {
 
   const signOut = () => {
     loadingBar.current.continuousStart();
+    setTimeout(() => {
+        loadingBar.current.complete();
+        history.replace("/welcome?next=profile", { update: true });
+    }, 1000);
+  };
+
+  const editProfile = () => {
+    loadingBar.current.continuousStart();
     auth.signOut().then(() => {
       setUserDetails(null);
       setTimeout(() => {
@@ -60,6 +68,15 @@ function Profile() {
             profile details. Double check your details before check out.
           </p>
         </span>
+        <div className="buttons" style={{ marginLeft: "auto" }}>
+          <button
+            className="buttonGreen"
+            onClick={editProfile}
+            style={{ padding: "1rem 1.5rem" }}
+          >
+            Edit Profile
+          </button>
+        </div>
         <div className="buttons" style={{ marginLeft: "auto" }}>
           <button
             className="buttonRed"
