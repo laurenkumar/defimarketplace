@@ -32,19 +32,6 @@ function Cart() {
           </div>
           <div className="cart__checkout">
             <h5>Checkout</h5>
-            {getCartTotal(cart) > 25 && (
-              <motion.p
-                initial="initial"
-                animate="in"
-                exit="out"
-                variants={errorAnim}
-                className="cart__deliveryMessage"
-              >
-                <DoneAllRoundedIcon
-                  style={{ marginRight: "0.5rem", fontSize: 16 }}
-                />
-              </motion.p>
-            )}
             <p className="cart__total">Sub-Total: ${getCartTotal(cart)}</p>
             <p>Number of items: {getTotalItems(cart)}</p>
             <p style={{ opacity: 0.5 }}>
