@@ -117,14 +117,14 @@ function Profile() {
           </p>
         </span>
         <div className="buttons" style={{ marginLeft: "auto" }}>
-          <button className="buttonSecondary" id="walletButton" onClick={connectWalletPressed} style={ styleButton }>
+          <button className="buttonPrimary" id="walletButton" onClick={connectWalletPressed} style={ styleButton }>
             {walletAddress.length > 0 ? (
               "Connected: " +
               String(walletAddress).substring(0, 6) +
               "..." +
               String(walletAddress).substring(38)
             ) : (
-              Connect Wallet
+              "Connect Wallet"
             )}
           </button>
         </div>
