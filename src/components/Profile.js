@@ -124,7 +124,7 @@ function Profile() {
               "..." +
               String(walletAddress).substring(38)
             ) : (
-              <span>Connect Wallet</span>
+              Connect Wallet
             )}
           </button>
         </div>
