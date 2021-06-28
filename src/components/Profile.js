@@ -128,7 +128,7 @@ function Profile() {
             )}
           </button>
         </div>
-        <div className="buttons">
+        <div className="buttons" style={{ marginLeft: "1rem" }}>
           <button
             className="buttonPrimary"
             onClick={editProfile}
