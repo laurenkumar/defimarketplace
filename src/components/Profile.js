@@ -116,16 +116,18 @@ function Profile() {
             profile details. Double check your details before check out.
           </p>
         </span>
-        <button id="walletButton" onClick={connectWalletPressed}>
-          {walletAddress.length > 0 ? (
-            "Connected: " +
-            String(walletAddress).substring(0, 6) +
-            "..." +
-            String(walletAddress).substring(38)
-          ) : (
-            <span>Connect Wallet</span>
-          )}
-        </button>
+        <div className="buttons" style={{ marginLeft: "auto" }}>
+          <button className="buttonPrimary" id="walletButton" onClick={connectWalletPressed} style={ styleButton }>
+            {walletAddress.length > 0 ? (
+              "Connected: " +
+              String(walletAddress).substring(0, 6) +
+              "..." +
+              String(walletAddress).substring(38)
+            ) : (
+              <span>Connect Wallet</span>
+            )}
+          </button>
+        </div>
         <div className="buttons" style={{ marginLeft: "auto" }}>
           <button
             className="buttonPrimary"
