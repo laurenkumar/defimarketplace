@@ -43,7 +43,6 @@ function Cart() {
                 <DoneAllRoundedIcon
                   style={{ marginRight: "0.5rem", fontSize: 16 }}
                 />
-                Your order is eligible for Free Delivery
               </motion.p>
             )}
             <p className="cart__total">Sub-Total: ${getCartTotal(cart)}</p>
