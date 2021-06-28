@@ -57,7 +57,7 @@ function Profile() {
     });
   };
 
-  export const connectWallet = async () => {
+  const connectWallet = async () => {
     if (window.ethereum) { //check if Metamask is installed
           try {
               const address = await window.ethereum.enable(); //connect Metamask
