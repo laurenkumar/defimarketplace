@@ -100,7 +100,7 @@ function Profile() {
         </span>
         <span>
           <p style={{ maxWidth: "480px", marginBottom: "2rem", opacity: 0.5 }}>
-            Your metamask wallet is not connected
+            {{connectWallet.status}}
           </p>
         </span>
         <div className="buttons" style={{ marginLeft: "auto" }}>
