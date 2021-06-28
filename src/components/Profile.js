@@ -8,6 +8,8 @@ function Profile() {
   const history = useHistory();
   const [{ user, loadingBar }] = useStateValue();
   const [userDetails, setUserDetails] = useState(null);
+  const [walletAddress, setWallet] = useState("");
+  const [status, setStatus] = useState("");
 
   useEffect(() => {
     if (loadingBar) {
@@ -57,30 +59,46 @@ function Profile() {
     });
   };
 
+  const connectWalletPressed = async () => {
+    const walletResponse = await connectWallet();
+    setStatus(walletResponse.status);
+    setWallet(walletResponse.address);
+  };
+
   const connectWallet = async () => {
-    if (window.ethereum) { //check if Metamask is installed
-          try {
-              const address = await window.ethereum.enable(); //connect Metamask
-              const obj = {
-                      connectedStatus: true,
-                      status: "",
-                      address: address
-                  }
-                  return obj;
-               
-          } catch (error) {
-              return {
-                  connectedStatus: false,
-                  status: "🦊 Connect to Metamask using the button on the top right."
-              }
-          }
-          
+    if (window.ethereum) {
+      try {
+        const addressArray = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        const obj = {
+          status: "👆🏽 Write a message in the text-field above.",
+          address: addressArray[0],
+        };
+        return obj;
+      } catch (err) {
+        return {
+          address: "",
+          status: "😥 " + err.message,
+        };
+      }
     } else {
-          return {
-              connectedStatus: false,
-              status: "🦊 You must install Metamask into your browser: https://metamask.io/download.html"
-          }
-        } 
+      return {
+        address: "",
+        status: (
+          <span>
+            <p>
+              {" "}
+              🦊{" "}
+              <a target="_blank" href={`https://metamask.io/download.html`}>
+                You must install Metamask, a virtual Ethereum wallet, in your
+                browser.
+              </a>
+            </p>
+          </span>
+        ),
+      };
+    }
   };
 
   const styleButton = {
@@ -98,20 +116,16 @@ function Profile() {
             profile details. Double check your details before check out.
           </p>
         </span>
-        <span>
-          <p style={{ maxWidth: "480px", marginBottom: "2rem", opacity: 0.5 }}>
-            {{connectWallet.status}}
-          </p>
-        </span>
-        <div className="buttons" style={{ marginLeft: "auto" }}>
-          <button
-            className="buttonPrimary"
-            onClick={connectWallet}
-            style={ styleButton }
-          >
-            Connect Metamask
-          </button>
-        </div>
+        <button id="walletButton" onClick={connectWalletPressed}>
+          {walletAddress.length > 0 ? (
+            "Connected: " +
+            String(walletAddress).substring(0, 6) +
+            "..." +
+            String(walletAddress).substring(38)
+          ) : (
+            <span>Connect Wallet</span>
+          )}
+        </button>
         <div className="buttons" style={{ marginLeft: "auto" }}>
           <button
             className="buttonPrimary"
