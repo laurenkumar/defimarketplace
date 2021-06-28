@@ -39,8 +39,8 @@ module.exports = async (req, res) => {
       line_items: transformedCart,
       mode: "payment",
       success_url:
-        "https://amazon-ish.vercel.app/payment?success={CHECKOUT_SESSION_ID}",
-      cancel_url: "https://amazon-ish.vercel.app/payment",
+        "https://safemoon-marketplace.vercel.app/payment?success={CHECKOUT_SESSION_ID}",
+      cancel_url: "https://safemoon-marketplace.vercel.app//payment",
       customer_email: userDetails.email,
       metadata: {
         uid: uid,

@@ -95,7 +95,7 @@ function Payment() {
   useEffect(() => {
     const calculateTotal = async () => {
       const totalAmount = await parseFloat(getCartTotal(cart));
-      const withTax = totalAmount + totalAmount * 0.05;
+      const withTax = totalAmount + totalAmount * 0.10;
       const totalAmountWithTax = parseFloat(withTax.toFixed(2));
       if (totalAmount < 25 && totalAmount > 0) {
         setCartTotalWithTax(totalAmountWithTax + 10.5);

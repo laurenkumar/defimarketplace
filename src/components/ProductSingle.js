@@ -130,7 +130,6 @@ function ProductSingle() {
                     fontSize: 20,
                   }}
                 />
-                Free Delivery Available - Salem, India 636006
               </p>
             )}
             <div className="buttons">

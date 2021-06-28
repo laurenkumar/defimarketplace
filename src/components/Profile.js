@@ -57,6 +57,10 @@ function Profile() {
     });
   };
 
+  const metamask = () => {
+    ethereum.request({ method: 'eth_requestAccounts' });
+  };
+
   const styleButton = {
     height: "2rem"
   }
@@ -72,6 +76,20 @@ function Profile() {
             profile details. Double check your details before check out.
           </p>
         </span>
+        <span>
+          <p style={{ maxWidth: "480px", marginBottom: "2rem", opacity: 0.5 }}>
+            Your metamask wallet is not connected
+          </p>
+        </span>
+        <div className="buttons" style={{ marginLeft: "auto" }}>
+          <button
+            className="buttonPrimary"
+            onClick={metamask}
+            style={ styleButton }
+          >
+            Connect Metamask
+          </button>
+        </div>
         <div className="buttons" style={{ marginLeft: "auto" }}>
           <button
             className="buttonPrimary"

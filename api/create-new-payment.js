@@ -9,7 +9,7 @@ export default async (req, res) => {
   const paymentIntent = await stripe.paymentIntents.create({
     amount: total,
     currency: "inr",
-    description: `Amazon-ish Order for ${(total / 100).toFixed(
+    description: `Safemoon Order for ${(total / 100).toFixed(
       2
     )} INR: ${desc}`,
   });
