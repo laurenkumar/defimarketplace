@@ -14,7 +14,6 @@ function Home() {
       variants={pageSlide}
       transition={pageTransition}
     >
-      <CarouselContainer />
       <Categories />
       <Main />
     </motion.div>
