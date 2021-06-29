@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Header.css";
 import amazonLogo from "../assets/logo.svg";
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
@@ -27,6 +27,73 @@ function Header() {
       setResultsOpen(false);
     }
   };
+
+  const getCurrentWalletConnected = async () => {
+    if (window.ethereum) {
+      try {
+        const addressArray = await window.ethereum.request({
+          method: "eth_accounts",
+        });
+        if (addressArray.length > 0) {
+          return {
+            address: addressArray[0],
+            status: "👆🏽 Write a message in the text-field above.",
+          };
+        } else {
+          return {
+            address: "",
+            status: "🦊 Connect to Metamask using the top right button.",
+          };
+        }
+      } catch (err) {
+        return {
+          address: "",
+          status: "😥 " + err.message,
+        };
+      }
+    } else {
+      return {
+        address: "",
+        status: (
+          <span>
+            <p>
+              {" "}
+              🦊{" "}
+              <a target="_blank" href={`https://metamask.io/download.html`}>
+                You must install Metamask, a virtual Ethereum wallet, in your
+                browser.
+              </a>
+            </p>
+          </span>
+        ),
+      };
+    }
+  };
+
+  function addWalletListener() {
+    if (window.ethereum) {
+      window.ethereum.on("accountsChanged", (accounts) => {
+        if (accounts.length > 0) {
+          setWallet(accounts[0]);
+          setStatus("👆🏽 Write a message in the text-field above.");
+        } else {
+          setWallet("");
+          setStatus("🦊 Connect to Metamask using the top right button.");
+        }
+      });
+    } else {
+      setStatus(
+        <p>
+          {" "}
+          🦊{" "}
+          <a target="_blank" href={`https://metamask.io/download.html`}>
+            You must install Metamask, a virtual Ethereum wallet, in your
+            browser.
+          </a>
+        </p>
+      );
+    }
+  }
 
   const connectWalletPressed = async () => {
     const walletResponse = await connectWallet();
@@ -73,6 +140,14 @@ function Header() {
   const styleButton = {
     height: "2rem"
   }
+
+  useEffect(async () => {
+    const {address, status} = await getCurrentWalletConnected();
+    setWallet(address)
+    setStatus(status);
+    
+    addWalletListener(); 
+  }, []);
 
   return (
     <div className="header">
