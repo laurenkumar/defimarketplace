@@ -5,11 +5,11 @@ import { useStateValue } from "../StateProvider";
 const categories = [
   "electronics",
   "jewellery",
+  "wood & epoxy",
   "men's clothing",
   "women's clothing",
   "appliances",
   "toys",
-  "prime video",
   "movies & TV",
   "music",
   "software",

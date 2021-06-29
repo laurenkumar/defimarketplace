@@ -26,6 +26,48 @@ function Header() {
     }
   };
 
+  const connectWalletPressed = async () => {
+    const walletResponse = await connectWallet();
+    setStatus(walletResponse.status);
+    setWallet(walletResponse.address);
+  };
+
+  const connectWallet = async () => {
+    if (window.ethereum) {
+      try {
+        const addressArray = await window.ethereum.request({
+          method: "eth_requestAccounts",
+        });
+        const obj = {
+          status: "👆🏽 Write a message in the text-field above.",
+          address: addressArray[0],
+        };
+        return obj;
+      } catch (err) {
+        return {
+          address: "",
+          status: "😥 " + err.message,
+        };
+      }
+    } else {
+      return {
+        address: "",
+        status: (
+          <span>
+            <p>
+              {" "}
+              🦊{" "}
+              <a target="_blank" href={`https://metamask.io/download.html`}>
+                You must install Metamask, a virtual Ethereum wallet, in your
+                browser.
+              </a>
+            </p>
+          </span>
+        ),
+      };
+    }
+  };
+
   return (
     <div className="header">
       <div className="header__nav">
@@ -74,6 +116,18 @@ function Header() {
             ))}
           </motion.div>
         )}
+        <div className="buttons" style={{ marginLeft: "auto" }}>
+          <button className="buttonSecondary" id="walletButton" onClick={connectWalletPressed} style={ styleButton }>
+            {walletAddress.length > 0 ? (
+              "Connected: " +
+              String(walletAddress).substring(0, 6) +
+              "..." +
+              String(walletAddress).substring(38)
+            ) : (
+              "Connect Wallet"
+            )}
+          </button>
+        </div>
         <img src={amazonLogo} className="header__logo" />
       </div>
     </div>
