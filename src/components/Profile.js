@@ -8,8 +8,6 @@ function Profile() {
   const history = useHistory();
   const [{ user, loadingBar }] = useStateValue();
   const [userDetails, setUserDetails] = useState(null);
-  const [walletAddress, setWallet] = useState("");
-  const [status, setStatus] = useState("");
 
   useEffect(() => {
     if (loadingBar) {

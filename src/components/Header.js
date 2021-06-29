@@ -15,6 +15,8 @@ function Header() {
   const [results, setResults] = useState(null);
   const [resultsOpen, setResultsOpen] = useState(false);
   const [{ fuse }] = useStateValue();
+  const [walletAddress, setWallet] = useState("");
+  const [status, setStatus] = useState("");
 
   const handleChange = (e) => {
     if (queryRef.current.value.length > 0) {
