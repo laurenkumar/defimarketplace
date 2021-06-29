@@ -120,18 +120,7 @@ function ProductSingle() {
                 </small>
               )}
             </p>
-            {(productDetails?.price > 25) && (
-              <p className="productSingle__deliveryMessage">
-                <LabelImportantRoundedIcon
-                  style={{
-                    fill: "transparent",
-                    stroke: "currentColor",
-                    strokeWidth: 1,
-                    fontSize: 20,
-                  }}
-                />
-              </p>
-            )}
+            {(productDetails?.price > 25)}
             <div className="buttons">
               {isAdded ? (
                 <button className="buttonPrimary">
