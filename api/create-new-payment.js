@@ -8,10 +8,10 @@ export default async (req, res) => {
   const desc = req.query.desc;
   const paymentIntent = await stripe.paymentIntents.create({
     amount: total,
-    currency: "inr",
+    currency: "dollar",
     description: `Safemoon Order for ${(total / 100).toFixed(
       2
-    )} INR: ${desc}`,
+    )} dollar: ${desc}`,
   });
   console.log(paymentIntent);
   return res.status(201).json({
