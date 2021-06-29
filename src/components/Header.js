@@ -70,6 +70,10 @@ function Header() {
     }
   };
 
+  const styleButton = {
+    height: "2rem"
+  }
+
   return (
     <div className="header">
       <div className="header__nav">
