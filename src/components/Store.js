@@ -1,10 +1,6 @@
 import React, { useState, useRef } from "react";
 import "./Cart.css";
 import "./Store.css";
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
-import Paper from '@material-ui/core/Paper';
-import { makeStyles } from '@material-ui/core/styles';
 import CartItem from "./CartItem";
 import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
@@ -17,12 +13,6 @@ function Store() {
   const [loading, setLoading] = useState(false);
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(productForm.current);
@@ -57,19 +47,20 @@ function Store() {
         Orders, Deliveries, and much more.
       </p>
       <div className="cart__inner">
-        <Paper>
-          <Tabs
-            value={value}
-            onChange={handleChange}
-            indicatorColor="primary"
-            textColor="primary"
-            centered
-          >
-            <Tab label="Item One" />
-            <Tab label="Item Two" />
-            <Tab label="Item Three" />
-          </Tabs>
-          <div className="cart__items">
+        <Tabs>
+    <TabList>
+      <Tab>Title 1</Tab>
+      <Tab>Title 2</Tab>
+    </TabList>
+
+    <TabPanel>
+      <h2>Any content 1</h2>
+    </TabPanel>
+    <TabPanel>
+      <h2>Any content 2</h2>
+    </TabPanel>
+  </Tabs>
+        <div className="cart__items">
           <h5>Recent Orders</h5>
           {cart.map((item) => (
             <CartItem item={item} />
@@ -157,7 +148,6 @@ function Store() {
             </button>
           </div>
         </form>
-        </Paper>
       </div>
     </div>
   );
