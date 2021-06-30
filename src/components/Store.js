@@ -17,14 +17,7 @@ function Store() {
   const [loading, setLoading] = useState(false);
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
-  const classes = useStyles();
   const [value, setValue] = React.useState(0);
-
-  const useStyles = makeStyles({
-    root: {
-      flexGrow: 1,
-    },
-  });
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -64,7 +57,7 @@ function Store() {
         Orders, Deliveries, and much more.
       </p>
       <div className="cart__inner">
-        <Paper className={classes.root}>
+        <Paper>
   <Tabs
     value={value}
     onChange={handleChange}
