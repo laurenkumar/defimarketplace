@@ -2,6 +2,7 @@ import React from "react";
 import Login from "../components/Login";
 import Signup from "../components/Signup";
 import Welcome from "../components/Welcome";
+import Store from "../components/Store";
 import PasswordReset from "../components/PasswordReset";
 import Profile from "../components/Profile";
 import { motion } from "framer-motion";
@@ -21,6 +22,7 @@ function UserPage({ type }) {
       {type === "welcome" && <Welcome />}
       {type === "passwordReset" && <PasswordReset />}
       {type === "profile" && <Profile />}
+      {type === "store" && <Store />}
     </motion.div>
   );
 }
