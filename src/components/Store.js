@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./Cart.css";
 import "./Store.css";
+import { Tabs } from '@material-ui/core';
 import CartItem from "./CartItem";
 import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
