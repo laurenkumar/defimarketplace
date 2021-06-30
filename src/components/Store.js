@@ -47,6 +47,19 @@ function Store() {
         Orders, Deliveries, and much more.
       </p>
       <div className="cart__inner">
+        <Paper className={classes.root}>
+  <Tabs
+    value={value}
+    onChange={handleChange}
+    indicatorColor="primary"
+    textColor="primary"
+    centered
+  >
+    <Tab label="Item One" />
+    <Tab label="Item Two" />
+    <Tab label="Item Three" />
+  </Tabs>
+</Paper>
         <div className="cart__items">
           <h5>Recent Orders</h5>
           {cart.map((item) => (
