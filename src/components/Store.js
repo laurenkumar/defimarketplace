@@ -3,7 +3,6 @@ import "./Cart.css";
 import "./Store.css";
 import CartItem from "./CartItem";
 import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
-import 'react-tabs/style/react-tabs.css';
 import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
 import { errorAnim } from "../util";
