@@ -10,6 +10,8 @@ import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
 import { errorAnim } from "../util";
 import db from "../firebase";
+import Typography from '@material-ui/core/Typography';
+import Box from '@material-ui/core/Box';
 
 function Store() {
   const [checked, setChecked] = useState(false);
@@ -49,6 +51,39 @@ function Store() {
       });
   };
 
+  function TabPanel(props) {
+    const { children, value, index, ...other } = props;
+
+    return (
+      <div
+        role="tabpanel"
+        hidden={value !== index}
+        id={`scrollable-force-tabpanel-${index}`}
+        aria-labelledby={`scrollable-force-tab-${index}`}
+        {...other}
+      >
+        {value === index && (
+          <Box p={3}>
+            <Typography>{children}</Typography>
+          </Box>
+        )}
+      </div>
+    );
+  }
+
+  TabPanel.propTypes = {
+    children: PropTypes.node,
+    index: PropTypes.any.isRequired,
+    value: PropTypes.any.isRequired,
+  };
+
+  function a11yProps(index) {
+    return {
+      id: `scrollable-force-tab-${index}`,
+      'aria-controls': `scrollable-force-tabpanel-${index}`,
+    };
+  }
+
   return (
     <div className="store cart">
       <h4>Hey, {user?.displayName}</h4>
@@ -58,18 +93,27 @@ function Store() {
       </p>
       <div className="cart__inner">
         <Paper>
-  <Tabs
-    value={value}
-    onChange={handleChange}
-    indicatorColor="primary"
-    textColor="primary"
-    centered
-  >
-    <Tab label="Item One" />
-    <Tab label="Item Two" />
-    <Tab label="Item Three" />
-  </Tabs>
-</Paper>
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+            centered
+          >
+            <Tab label="Item One" icon={<PhoneIcon />} {...a11yProps(0)} />
+            <Tab label="Item Two" icon={<PhoneIcon />} {...a11yProps(1)} />
+            <Tab label="Item Three" icon={<PhoneIcon />} {...a11yProps(2)} />
+          </Tabs>
+        </Paper>
+        <TabPanel value={value} index={0}>
+        Item One
+      </TabPanel>
+      <TabPanel value={value} index={1}>
+        Item Two
+      </TabPanel>
+      <TabPanel value={value} index={2}>
+        Item Three
+      </TabPanel>
         <div className="cart__items">
           <h5>Recent Orders</h5>
           {cart.map((item) => (
