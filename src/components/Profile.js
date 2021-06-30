@@ -46,6 +46,14 @@ function Profile() {
     }, 1000);
   };
 
+  const seeStore = () => {
+    loadingBar.current.continuousStart();
+    setTimeout(() => {
+        loadingBar.current.complete();
+        history.replace("/store", { update: true });
+    }, 1000);
+  };
+
   const signOut = () => {
     loadingBar.current.continuousStart();
     auth.signOut().then(() => {
@@ -79,6 +87,15 @@ function Profile() {
             style={ styleButton }
           >
             Edit Profile
+          </button>
+        </div>
+        <div className="buttons" style={{ marginLeft: "1rem" }}>
+          <button
+            className="buttonPrimary"
+            onClick={seeStore}
+            style={ styleButton }
+          >
+            Add a product
           </button>
         </div>
         <div className="buttons">
