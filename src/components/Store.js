@@ -2,7 +2,9 @@ import React, { useState, useRef } from "react";
 import "./Cart.css";
 import "./Store.css";
 import Tabs from '@material-ui/core/Tabs';
+import Tab from '@material-ui/core/Tab';
 import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
 import CartItem from "./CartItem";
 import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
@@ -15,6 +17,19 @@ function Store() {
   const [loading, setLoading] = useState(false);
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
+  const classes = useStyles();
+  const [value, setValue] = React.useState(0);
+
+  const useStyles = makeStyles({
+    root: {
+      flexGrow: 1,
+    },
+  });
+
+  const handleChange = (event, newValue) => {
+    setValue(newValue);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(productForm.current);
