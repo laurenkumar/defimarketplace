@@ -40,7 +40,7 @@ function Store() {
 
   return (
     <div className="store cart">
-      <h4>Hi, Admin</h4>
+      <h4>Hey, {user?.displayName}</h4>
       <p style={{ maxWidth: "480px", marginBottom: "2rem", opacity: 0.5 }}>
         This is your Dashboard. Add, Edit and Manage your products. Monitor
         Orders, Deliveries, and much more.
