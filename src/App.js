@@ -126,6 +126,9 @@ function App() {
               <Route path="/welcome">
                 <UserPage type="welcome" />
               </Route>
+              <Route path="/store">
+                <UserPage type="store" />
+              </Route>
               <Route path="/password-reset">
                 <UserPage type="passwordReset" />
               </Route>
