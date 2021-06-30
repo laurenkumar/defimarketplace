@@ -43,7 +43,7 @@ function Store() {
 
   return (
     <div className="store cart">
-      <h4>Hey, {user?.displayName}</h4>
+      <h2>Hey, welcome to your store</h2>
       <p style={{ maxWidth: "480px", marginBottom: "2rem", opacity: 0.5 }}>
         This is your Dashboard. Add, Edit and Manage your products. Monitor
         Orders, Deliveries, and much more.
@@ -51,13 +51,15 @@ function Store() {
       <div className="cart__inner">
         <Tabs>
           <TabList>
-            <Tab>Title 1</Tab>
-            <Tab>Title 2</Tab>
+            <Tab>Recent Orders</Tab>
+            <Tab>Products</Tab>
+            <Tab>Deliveries</Tab>
+            <Tab>Store Information</Tab>
           </TabList>
 
           <TabPanel>
             <div className="cart__items">
-                <h5>Recent Orders</h5>
+                <h3 style={{ marginBottom: "1rem" }}>Your Orders</h3>
                 {cart.map((item) => (
                   <CartItem item={item} />
                 ))}
@@ -65,7 +67,7 @@ function Store() {
           </TabPanel>
           <TabPanel>
             <form className="form cart__checkout" ref={productForm}>
-                <h5 style={{ marginBottom: "1rem" }}>Add New Product</h5>
+                <h3 style={{ marginBottom: "1rem" }}>Add New Product</h3>
                 <div className="form__element">
                   <input id="name" name="name" type="text" required />
                   <label for="name">Product Name</label>
@@ -146,6 +148,12 @@ function Store() {
                   </button>
                 </div>
               </form>
+          </TabPanel>
+          <TabPanel>
+            <h3 style={{ marginBottom: "1rem" }}>Your Deliveries</h3>
+          </TabPanel>
+          <TabPanel>
+            <h3 style={{ marginBottom: "1rem" }}>General informations about your store</h3>   
           </TabPanel>
         </Tabs>
       </div>
