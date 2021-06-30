@@ -139,4 +139,4 @@ function Store() {
   );
 }
 
-export default Admin;
+export default Store;
