@@ -37,7 +37,7 @@ module.exports = async (request, response) => {
   
   else {
     try {
-      const products = await db.collection("users").doc().collection("products").get();
+      const products = await db.collection("users").collection("products").get();
       console.log(products)
       const productsObj = products.docs.map((doc) => ({
         id: doc.id,
