@@ -41,3 +41,8 @@
     align-self: flex-start;
     padding: 2rem;
 }
+.store .cart__checkout {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
