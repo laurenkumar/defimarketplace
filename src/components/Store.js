@@ -24,7 +24,9 @@ function Store() {
     formData.get("feat2") && featureArray.push(formData.get("feat2"));
     formData.get("feat3") && featureArray.push(formData.get("feat3"));
     formData.get("feat4") && featureArray.push(formData.get("feat4"));
-    db.collection("products")
+    db.collection("users")
+      .doc(user.uid)
+      .collection("products")
       .add({
         name: formData.get("name"),
         price: parseFloat(formData.get("price")),
