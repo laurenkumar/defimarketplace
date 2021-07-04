@@ -64,43 +64,6 @@ function Cart() {
 		        </svg>
 		        Illustrator
 		       </div>
-
-		       <span class="status">
-		        <span class="status-circle"></span>
-		        Update Available</span>
-		       <div class="button-wrapper">
-		        <button class="content-button status-button">Update this app</button>
-		        <div class="pop-up">
-		         <div class="pop-up__title">Update This App
-		          <svg class="close" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-x-circle">
-		           <circle cx="12" cy="12" r="10" />
-		           <path d="M15 9l-6 6M9 9l6 6" />
-		          </svg>
-		         </div>
-		         <div class="pop-up__subtitle">Adjust your selections for advanced options as desired before continuing. <a href="#">Learn more</a></div>
-		         <div class="checkbox-wrapper">
-		          <input type="checkbox" id="check1" class="checkbox">
-		          <label for="check1">Import previous settings and preferences</label>
-		         </div>
-		         <div class="checkbox-wrapper">
-		          <input type="checkbox" id="check2" class="checkbox">
-		          <label for="check2">Remove old versions</label>
-		         </div>
-		         <div class="content-button-wrapper">
-		          <button class="content-button status-button open close">Cancel</button>
-		          <button class="content-button status-button">Continue</button>
-		         </div>
-		        </div>
-		        <div class="menu">
-		         <button class="dropdown">
-		          <ul>
-		           <li><a href="#">Go to Discover</a></li>
-		           <li><a href="#">Learn more</a></li>
-		           <li><a href="#">Uninstall</a></li>
-		          </ul>
-		         </button>
-		        </div>
-		       </div>
 		      </li>
 		      <li class="adobe-product">
 		       <div class="products">
