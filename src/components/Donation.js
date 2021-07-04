@@ -23,7 +23,7 @@ function Cart() {
 		      <div class="content-text">Grab yourself 10 free images from Adobe Stock in a 30-day free trial plan and find perfect image, that will help you with your new project.</div>
 		      <button class="content-button">Start free trial</button>
 		     </div>
-		     <img class="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png">
+		     <img class="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png" alt="crypto decorative image"/>
 		    </div>
 		    <div class="content-section">
 		     <div class="content-section-title">Installed</div>
