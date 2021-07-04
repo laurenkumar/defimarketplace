@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 import { errorAnim } from "../util";
 import emptyCart from "../assets/emptyCart.svg";
 
-function Cart() {
+function Donation() {
   const [{ user }] = useStateValue();
 
   return (
