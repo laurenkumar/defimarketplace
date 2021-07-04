@@ -12,24 +12,24 @@ function Cart() {
 
   return (
     <div className="donation">
-       <div class="wrapper">
-		  <div class="main-container">
-		   <div class="content-wrapper">
-		    <div class="content-wrapper-header">
-		     <div class="content-wrapper-context">
-		      <h2 class="img-content">
+       <div className="wrapper">
+		  <div className="main-container">
+		   <div className="content-wrapper">
+		    <div className="content-wrapper-header">
+		     <div className="content-wrapper-context">
+		      <h2 className="img-content">
 		       Donation Page
 		      </h2>
-		      <div class="content-text">Grab yourself 10 free images from Adobe Stock in a 30-day free trial plan and find perfect image, that will help you with your new project.</div>
-		      <button class="content-button">Start free trial</button>
+		      <div className="content-text">Grab yourself 10 free images from Adobe Stock in a 30-day free trial plan and find perfect image, that will help you with your new project.</div>
+		      <button className="content-button">Start free trial</button>
 		     </div>
-		     <img class="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png" alt="crypto decorative image"/>
+		     <img className="content-wrapper-img" src="https://assets.codepen.io/3364143/glass.png" alt="crypto decorative image"/>
 		    </div>
-		    <div class="content-section">
-		     <div class="content-section-title">Installed</div>
+		    <div className="content-section">
+		     <div className="content-section-title">Installed</div>
 		     <ul>
-		      <li class="adobe-product">
-		       <div class="products">
+		      <li className="adobe-product">
+		       <div className="products">
 		        <svg viewBox="0 0 52 52" style="border:1px solid #3291b8">
 		         <g xmlns="http://www.w3.org/2000/svg">
 		          <path d="M40.824 52H11.176C5.003 52 0 46.997 0 40.824V11.176C0 5.003 5.003 0 11.176 0h29.649C46.997 0 52 5.003 52 11.176v29.649C52 46.997 46.997 52 40.824 52z" fill="#061e26" data-original="#393687" />
@@ -38,13 +38,13 @@ function Cart() {
 		        </svg>
 		        Photoshop
 		       </div>
-		       <span class="status">
-		        <span class="status-circle green"></span>
+		       <span className="status">
+		        <span className="status-circle green"></span>
 		        Updated</span>
-		       <div class="button-wrapper">
-		        <button class="content-button status-button open">Open</button>
-		        <div class="menu">
-		         <button class="dropdown">
+		       <div className="button-wrapper">
+		        <button className="content-button status-button open">Open</button>
+		        <div className="menu">
+		         <button className="dropdown">
 		          <ul>
 		           <li><a href="#">Go to Discover</a></li>
 		           <li><a href="#">Learn more</a></li>
@@ -54,8 +54,8 @@ function Cart() {
 		        </div>
 		       </div>
 		      </li>
-		      <li class="adobe-product">
-		       <div class="products">
+		      <li className="adobe-product">
+		       <div className="products">
 		        <svg viewBox="0 0 52 52" style="border:1px solid #b65a0b">
 		         <g xmlns="http://www.w3.org/2000/svg">
 		          <path d="M40.824 52H11.176C5.003 52 0 46.997 0 40.824V11.176C0 5.003 5.003 0 11.176 0h29.649C46.997 0 52 5.003 52 11.176v29.649C52 46.997 46.997 52 40.824 52z" fill="#261400" data-original="#6d4c13" />
@@ -65,8 +65,8 @@ function Cart() {
 		        Illustrator
 		       </div>
 		      </li>
-		      <li class="adobe-product">
-		       <div class="products">
+		      <li className="adobe-product">
+		       <div className="products">
 		        <svg viewBox="0 0 52 52" style="border: 1px solid #C75DEB">
 		         <g xmlns="http://www.w3.org/2000/svg">
 		          <path d="M40.824 52H11.176C5.003 52 0 46.997 0 40.824V11.176C0 5.003 5.003 0 11.176 0h29.649C46.997 0 52 5.003 52 11.176v29.649C52 46.997 46.997 52 40.824 52z" fill="#3a3375" data-original="#3a3375" />
@@ -75,13 +75,13 @@ function Cart() {
 		        </svg>
 		        After Effects
 		       </div>
-		       <span class="status">
-		        <span class="status-circle green"></span>
+		       <span className="status">
+		        <span className="status-circle green"></span>
 		        Updated</span>
-		       <div class="button-wrapper">
-		        <button class="content-button status-button open">Open</button>
-		        <div class="menu">
-		         <button class="dropdown">
+		       <div className="button-wrapper">
+		        <button className="content-button status-button open">Open</button>
+		        <div className="menu">
+		         <button className="dropdown">
 		          <ul>
 		           <li><a href="#">Go to Discover</a></li>
 		           <li><a href="#">Learn more</a></li>
@@ -93,10 +93,10 @@ function Cart() {
 		      </li>
 		     </ul>
 		    </div>
-		    <div class="content-section">
-		     <div class="content-section-title">Apps in your plan</div>
-		     <div class="apps-card">
-		      <div class="app-card">
+		    <div className="content-section">
+		     <div className="content-section-title">Apps in your plan</div>
+		     <div className="apps-card">
+		      <div className="app-card">
 		       <span>
 		        <svg viewBox="0 0 512 512" style="border: 1px solid #a059a9">
 		         <path xmlns="http://www.w3.org/2000/svg" d="M480 0H32C14.368 0 0 14.368 0 32v448c0 17.664 14.368 32 32 32h448c17.664 0 32-14.336 32-32V32c0-17.632-14.336-32-32-32z" fill="#210027" data-original="#7b1fa2" />
@@ -106,13 +106,13 @@ function Cart() {
 		        </svg>
 		        Premiere Pro
 		       </span>
-		       <div class="app-card__subtext">Edit, master and create fully proffesional videos</div>
-		       <div class="app-card-buttons">
-		        <button class="content-button status-button">Update</button>
-		        <div class="menu"></div>
+		       <div className="app-card__subtext">Edit, master and create fully proffesional videos</div>
+		       <div className="app-card-buttons">
+		        <button className="content-button status-button">Update</button>
+		        <div className="menu"></div>
 		       </div>
 		      </div>
-		      <div class="app-card">
+		      <div className="app-card">
 		       <span>
 		        <svg viewBox="0 0 52 52" style="border: 1px solid #c1316d">
 		         <g xmlns="http://www.w3.org/2000/svg">
@@ -122,13 +122,13 @@ function Cart() {
 		        </svg>
 		        InDesign
 		       </span>
-		       <div class="app-card__subtext">Design and publish great projects & mockups</div>
-		       <div class="app-card-buttons">
-		        <button class="content-button status-button">Update</button>
-		        <div class="menu"></div>
+		       <div className="app-card__subtext">Design and publish great projects & mockups</div>
+		       <div className="app-card-buttons">
+		        <button className="content-button status-button">Update</button>
+		        <div className="menu"></div>
 		       </div>
 		      </div>
-		      <div class="app-card">
+		      <div className="app-card">
 		       <span>
 		        <svg viewBox="0 0 52 52" style="border: 1px solid #C75DEB">
 		         <g xmlns="http://www.w3.org/2000/svg">
@@ -138,10 +138,10 @@ function Cart() {
 		        </svg>
 		        After Effects
 		       </span>
-		       <div class="app-card__subtext">Industry Standart motion graphics & visual effects</div>
-		       <div class="app-card-buttons">
-		        <button class="content-button status-button">Update</button>
-		        <div class="menu"></div>
+		       <div className="app-card__subtext">Industry Standart motion graphics & visual effects</div>
+		       <div className="app-card-buttons">
+		        <button className="content-button status-button">Update</button>
+		        <div className="menu"></div>
 		       </div>
 		      </div>
 		     </div>
@@ -149,7 +149,7 @@ function Cart() {
 		   </div>
 		  </div>
 		 </div>
-		 <div class="overlay-app"></div>
+		 <div className="overlay-app"></div>
 		</div>
     </div>
   );
