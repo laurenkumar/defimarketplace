@@ -26,7 +26,7 @@ function ProductSingle() {
   const [isAdded, setIsAdded] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const [{ cart, bookmarks, products, loadingBar }, dispatch] = useStateValue();
-  const setOwner = useState(false);
+  const setOwner;
 
   useEffect(() => {
   	if(location.state && location.state.product) {
