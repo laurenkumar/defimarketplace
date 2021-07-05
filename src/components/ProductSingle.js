@@ -38,7 +38,6 @@ function ProductSingle() {
     axios.get(`/api/products?id=${id}`)
       .then((snapshot) => {
         setProductDetails(snapshot.data);
-        console.log(setProductDetails(snapshot.data))
       })
       .then(() => {
         if (loadingBar) {
@@ -46,6 +45,7 @@ function ProductSingle() {
         }
       });
   }, [id]);
+        console.log(productDetails)
 
   const addToCart = (item) => {
     dispatch({
