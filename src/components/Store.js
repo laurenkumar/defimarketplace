@@ -14,6 +14,7 @@ function Store() {
   const [{ user, loadingBar }] = useStateValue();
    if (user) {
     console.log(user.uid);
+    console.log(user.walletAddress);
   } 
   const [loading, setLoading] = useState(false);
   const [{ cart }] = useStateValue();
