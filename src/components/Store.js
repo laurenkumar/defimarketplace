@@ -6,6 +6,7 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
+import { Link, useHistory } from "react-router-dom";
 import { errorAnim } from "../util";
 import db, { auth } from "../firebase";
 
@@ -13,6 +14,7 @@ function Store() {
   const [checked, setChecked] = useState(false);
   const [{ user, loadingBar }] = useStateValue();
   const [loading, setLoading] = useState(false);
+  const history = useHistory();
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
   useEffect(() => {
@@ -46,7 +48,7 @@ function Store() {
               productForm.current.reset();
             });
         };
-    unsubscribe();
+        unsubscribe();
         } else {
           history.replace("/login?next=orders");
           if (loadingBar) {
