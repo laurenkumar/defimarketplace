@@ -14,7 +14,6 @@ function Store() {
   const [{ user, loadingBar }] = useStateValue();
    if (user) {
     console.log(user.uid);
-    console.log(user.walletAddress);
   } 
   const [loading, setLoading] = useState(false);
   const [{ cart }] = useStateValue();
@@ -33,7 +32,7 @@ function Store() {
       .collection("products")
       .add({
         name: formData.get("name"),
-        owner: user.name,
+        owner: user.uid,
         price: parseFloat(formData.get("price")),
         rating: parseFloat(formData.get("rating")),
         category: formData.get("category"),
