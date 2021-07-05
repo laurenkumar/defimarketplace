@@ -44,10 +44,7 @@ function Store() {
       });
   };
 
-  const productOwned = db.collection("users").doc(user.uid)
-          .collection("products")
-          .orderBy("created", "desc")
-          .get();
+  const productOwned = db.collection("users").get();
       console.log(productOwned);
 
   return (
