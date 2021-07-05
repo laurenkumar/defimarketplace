@@ -12,9 +12,10 @@ import db, {auth} from "../firebase";
 function Store() {
   const [checked, setChecked] = useState(false);
   const [{ user, loadingBar }] = useStateValue();
-   if (user) {
-    console.log(user.uid);
-  } 
+  if (user) {
+  } else {
+    
+  }
   const [loading, setLoading] = useState(false);
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
