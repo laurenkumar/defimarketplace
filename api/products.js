@@ -22,7 +22,6 @@ module.exports = async (request, response) => {
         .doc(request.query.id)
         .get();
       if (singleProduct.exists) {
-        console.log(singleProduct);
         return response
           .status(200)
           .json({ id: request.query.id, ...singleProduct.data() });

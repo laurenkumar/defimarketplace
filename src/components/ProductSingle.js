@@ -29,15 +29,16 @@ function ProductSingle() {
 
   useEffect(() => {
   	if(location.state && location.state.product) {
-	setProductDetails(location.state.product)
-	return;
-}
+    	setProductDetails(location.state.product)
+    	return;
+    }
     if (loadingBar) {
       loadingBar.current.continuousStart();
     }
     axios.get(`/api/products?id=${id}`)
       .then((snapshot) => {
         setProductDetails(snapshot.data);
+        console.log(setProductDetails(snapshot.data))
       })
       .then(() => {
         if (loadingBar) {
