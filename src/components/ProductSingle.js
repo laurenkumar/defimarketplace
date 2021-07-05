@@ -45,10 +45,11 @@ function ProductSingle() {
           loadingBar.current.complete();
         }
       });
-      console.log(productDetails);
+  }, [id]);
+
+console.log(productDetails);
   //const owner = db.collection("users").doc(productDetails.owner).get()
   //console.log(owner)
-  }, [id]);
 
   const addToCart = (item) => {
     dispatch({
