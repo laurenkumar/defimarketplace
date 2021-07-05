@@ -26,7 +26,7 @@ function ProductSingle() {
   const [isAdded, setIsAdded] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const [{ cart, bookmarks, products, loadingBar }, dispatch] = useStateValue();
-  const [setOwner] = useState(null);
+  const setOwner = useState(false);
 
   useEffect(() => {
   	if(location.state && location.state.product) {
@@ -48,19 +48,14 @@ function ProductSingle() {
       });
   }, [id]);
 
-//Sconsole.log(productDetails);
-  //const owner = db.collection("users").doc(productDetails.owner).get()
   if (productDetails) {
-    console.log(productDetails.owner);
     const owner = db.collection("users").doc(productDetails.owner).get().then((response) => {
             if (response.exists) {
-              console.log(response.data());
               setOwner(response.data());
             } else {
               console.log("who is this?")  
             }
     });
-    console.log(setOwner)
   }
 
   const addToCart = (item) => {
