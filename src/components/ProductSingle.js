@@ -26,7 +26,6 @@ function ProductSingle() {
   const [isAdded, setIsAdded] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const [{ cart, bookmarks, products, loadingBar }, dispatch] = useStateValue();
-  const setOwner;
 
   useEffect(() => {
   	if(location.state && location.state.product) {
@@ -51,12 +50,14 @@ function ProductSingle() {
   if (productDetails) {
     const owner = db.collection("users").doc(productDetails.owner).get().then((response) => {
             if (response.exists) {
-              setOwner = response.data();
+              const setOwner = response.data();
             } else {
               console.log("who is this?")  
             }
     });
   }
+
+  console.log(setOwner);
 
   const addToCart = (item) => {
     dispatch({
