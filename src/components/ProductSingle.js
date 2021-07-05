@@ -49,10 +49,11 @@ function ProductSingle() {
 
 //Sconsole.log(productDetails);
   //const owner = db.collection("users").doc(productDetails.owner).get()
+  if (productDetails) {
+    const owner = db.collection("users").doc(productDetails.owner).get()
 
-  const owner = db.collection("users").doc(productDetails.owner).get()
-
-  console.log(owner)
+    console.log(owner)
+  }
 
   const addToCart = (item) => {
     dispatch({
