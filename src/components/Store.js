@@ -12,6 +12,7 @@ import db, {auth} from "../firebase";
 function Store() {
   const [checked, setChecked] = useState(false);
   const [{ user, loadingBar }] = useStateValue();
+  console.log(user);
   const [loading, setLoading] = useState(false);
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
@@ -29,7 +30,7 @@ function Store() {
       .collection("products")
       .add({
         name: formData.get("name"),
-        owner: user.uid,
+        owner: user.name,
         price: parseFloat(formData.get("price")),
         rating: parseFloat(formData.get("rating")),
         category: formData.get("category"),
