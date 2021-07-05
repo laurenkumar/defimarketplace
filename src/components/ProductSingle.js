@@ -50,6 +50,7 @@ function ProductSingle() {
 //Sconsole.log(productDetails);
   //const owner = db.collection("users").doc(productDetails.owner).get()
   if (productDetails) {
+    console.log(productDetails.owner);
     const owner = db.collection("users").doc(productDetails.owner).get()
 
     console.log(owner)
