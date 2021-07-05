@@ -35,6 +35,9 @@ function ProductSingle() {
     if (loadingBar) {
       loadingBar.current.continuousStart();
     }
+    console.log(productDetails);
+  //const owner = db.collection("users").doc(productDetails.owner).get()
+  //console.log(owner)
     axios.get(`/api/products?id=${id}`)
       .then((snapshot) => {
         setProductDetails(snapshot.data);
@@ -45,9 +48,6 @@ function ProductSingle() {
         }
       });
   }, [id]);
-  console.log(productDetails);
-  //const owner = db.collection("users").doc(productDetails.owner).get()
-  //console.log(owner)
 
   const addToCart = (item) => {
     dispatch({
