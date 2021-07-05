@@ -58,7 +58,7 @@ function ProductSingle() {
             } else {
               console.log("who is this?")  
             }
-
+    });
     console.log(setOwner)
   }
 
