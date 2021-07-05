@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Cart.css";
 import "./Store.css";
 import CartItem from "./CartItem";
@@ -7,7 +7,7 @@ import 'react-tabs/style/react-tabs.css';
 import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
 import { errorAnim } from "../util";
-import db from "../firebase";
+import db, { auth } from "../firebase";
 
 function Store() {
   const [checked, setChecked] = useState(false);
@@ -15,34 +15,46 @@ function Store() {
   const [loading, setLoading] = useState(false);
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const formData = new FormData(productForm.current);
-    setLoading(true);
-    const featureArray = [];
-    formData.get("feat1") && featureArray.push(formData.get("feat1"));
-    formData.get("feat2") && featureArray.push(formData.get("feat2"));
-    formData.get("feat3") && featureArray.push(formData.get("feat3"));
-    formData.get("feat4") && featureArray.push(formData.get("feat4"));
-    db.collection("users")
-      .doc(user.uid)
-      .collection("products")
-      .add({
-        name: formData.get("name"),
-        owner: user.uid,
-        price: parseFloat(formData.get("price")),
-        rating: parseFloat(formData.get("rating")),
-        category: formData.get("category"),
-        discount: formData.get("offer") === "true",
-        originalPrice: parseFloat(formData.get("originalPrice")),
-        imgUrl: formData.get("url"),
-        feature: featureArray,
-      })
-      .then(() => {
-        setLoading(false);
-        productForm.current.reset();
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        const handleSubmit = (e) => {
+          e.preventDefault();
+          const formData = new FormData(productForm.current);
+          setLoading(true);
+          const featureArray = [];
+          formData.get("feat1") && featureArray.push(formData.get("feat1"));
+          formData.get("feat2") && featureArray.push(formData.get("feat2"));
+          formData.get("feat3") && featureArray.push(formData.get("feat3"));
+          formData.get("feat4") && featureArray.push(formData.get("feat4"));
+          db.collection("users")
+            .doc(user.uid)
+            .collection("products")
+            .add({
+              name: formData.get("name"),
+              owner: user.uid,
+              price: parseFloat(formData.get("price")),
+              rating: parseFloat(formData.get("rating")),
+              category: formData.get("category"),
+              discount: formData.get("offer") === "true",
+              originalPrice: parseFloat(formData.get("originalPrice")),
+              imgUrl: formData.get("url"),
+              feature: featureArray,
+            })
+            .then(() => {
+              setLoading(false);
+              productForm.current.reset();
+            });
+        };
+    unsubscribe();
+        } else {
+          history.replace("/login?next=orders");
+          if (loadingBar) {
+            loadingBar.current.complete();
+          }
+        }
       });
-  };
+    }, []);
 
   const productOwned = db.collection("users").doc(user.uid)
           .collection("products")
