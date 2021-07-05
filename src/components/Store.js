@@ -44,7 +44,7 @@ function Store() {
       });
   };
 
-  const productOwned = db.collection("users").get();
+  const productOwned = db.collectionGroup("products").get();
       console.log(productOwned);
 
   return (
