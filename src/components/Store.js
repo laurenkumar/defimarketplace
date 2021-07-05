@@ -44,6 +44,11 @@ function Store() {
       });
   };
 
+  const productOwned = db.collection("users")
+      .doc(user.uid)
+      .collection("products").get();
+      console.log(productOwned);
+
   return (
     <div className="store cart">
       <h2>Hey, welcome to your store</h2>
