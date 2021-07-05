@@ -44,7 +44,7 @@ function Store() {
       });
   };
 
-  const productOwned = await db.collectionGroup("products").get();
+  const productOwned = db.collectionGroup("products").get();
 
       console.log(productOwned);
 
