@@ -46,8 +46,8 @@ function ProductSingle() {
       });
   }, [id]);
   console.log(productDetails);
-  const owner = db.collection("users").doc(productDetails.owner).get()
-  console.log(owner)
+  //const owner = db.collection("users").doc(productDetails.owner).get()
+  //console.log(owner)
 
   const addToCart = (item) => {
     dispatch({
