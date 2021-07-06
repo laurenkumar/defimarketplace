@@ -71,6 +71,8 @@ function ProductSingle() {
     });
   };
 
+  const sendMessage = "";
+
   useEffect(() => {
   	if (products) {
         setSuggestions(shuffleArray(products));
