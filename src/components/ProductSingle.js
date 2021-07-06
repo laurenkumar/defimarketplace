@@ -49,7 +49,7 @@ function ProductSingle() {
 
   if (productDetails) {
     const owner = db.collection("users").doc(productDetails.owner).get().then((doc) => {
-            if (response.exists) {
+            if (doc.exists) {
               console.log("Document data:", doc.data());
             } else {
               console.log("who is this?")  
