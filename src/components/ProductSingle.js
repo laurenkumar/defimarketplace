@@ -45,16 +45,12 @@ function ProductSingle() {
           loadingBar.current.complete();
         }
       });
-  }, [id]);
 
-  useEffect(() => {
-    if (productDetails) {
       const user = db.collection("users").doc(productDetails.owner).get();
       console.log(user)
-    }
-  }, [user]);
+  }, [id]);
 
-  console.log(user.yt.displayName)
+  console.log(user)
   const addToCart = (item) => {
     dispatch({
       type: "ADD_TO_CART",
