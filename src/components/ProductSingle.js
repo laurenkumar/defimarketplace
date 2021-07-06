@@ -56,7 +56,7 @@ function ProductSingle() {
               console.log("who is this?")  
             }
     });
-    console.log(owner);
+    console.log(owner.promiseResult);
   }
 
   const addToCart = (item) => {
