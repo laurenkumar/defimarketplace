@@ -51,11 +51,14 @@ function ProductSingle() {
     const owner = db.collection("users").doc(productDetails.owner).get().then((doc) => {
             if (doc.exists) {
               console.log("Document data:", doc.data().name);
+              return(doc.data());
             } else {
               console.log("who is this?")  
             }
     });
   }
+
+  console.log(owner.name)
 
   const addToCart = (item) => {
     dispatch({
