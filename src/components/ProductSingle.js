@@ -167,7 +167,7 @@ function ProductSingle() {
                     fontSize: 20,
                     color: "green",
                   }}> {productDetails?.owner} </strong>
-              <div>
+              <div className="buttons" style={{ marginLeft: "auto" }}>
                 <button className="buttonSecondary" onClick={sendMessage}>
                   Send a message
                 </button>
