@@ -46,10 +46,10 @@ function ProductSingle() {
         }
       });
 
-      const user = db.collection("users").doc(productDetails.owner).get();
+      const user = db.collection("users").doc(productDetails.ownerId).get();
   }, [id]);
 
-  console.log(user.yl)
+  console.log(user)
   const addToCart = (item) => {
     dispatch({
       type: "ADD_TO_CART",
