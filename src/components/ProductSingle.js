@@ -47,10 +47,9 @@ function ProductSingle() {
       });
 
       const user = db.collection("users").doc(productDetails.owner).get();
-      console.log(user.yL)
   }, [id]);
 
-  console.log(user)
+  console.log(user.yl)
   const addToCart = (item) => {
     dispatch({
       type: "ADD_TO_CART",
