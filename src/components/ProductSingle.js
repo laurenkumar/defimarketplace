@@ -158,6 +158,8 @@ function ProductSingle() {
                 effect="solid"
               />
             </div>
+            <div>
+              From: {productDetails?.owner}
           </span>
         </div>
       </div>
