@@ -54,7 +54,7 @@ function ProductSingle() {
     }
   }, [user]);
 
-  console.log(user)
+  console.log(user.displayName)
   const addToCart = (item) => {
     dispatch({
       type: "ADD_TO_CART",
