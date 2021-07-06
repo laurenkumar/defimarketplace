@@ -50,12 +50,14 @@ function ProductSingle() {
   if (productDetails) {
     const owner = db.collection("users").doc(productDetails.owner).get().then((response) => {
             if (response.exists) {
-              return(response.data());
+              response.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        console.log(doc.id, " => ", doc.data());
+    });
             } else {
               console.log("who is this?")  
             }
     });
-    console.log(owner.toString());
   }
 
   const addToCart = (item) => {
