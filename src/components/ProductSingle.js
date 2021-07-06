@@ -56,7 +56,7 @@ function ProductSingle() {
               console.log("who is this?")  
             }
     });
-    console.log(owner.address);
+    console.log(owner);
   }
 
   const addToCart = (item) => {
