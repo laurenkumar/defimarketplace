@@ -25,7 +25,7 @@ function ProductSingle() {
   const [isBookmarked, setIsBookmarked] = useState(false);
   const [isAdded, setIsAdded] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
-  const [{ cart, bookmarks, products, loadingBar }, dispatch] = useStateValue();
+  const [{ cart, bookmarks, products, loadingBar, user }, dispatch] = useStateValue();
 
   useEffect(() => {
   	if(location.state && location.state.product) {
@@ -47,17 +47,19 @@ function ProductSingle() {
       });
   }, [id]);
 
-  if (productDetails) {
-    const owner = db.collection("users").doc(productDetails.owner).get().then((doc) => {
-            if (doc.exists) {
-              console.log("Document data:", doc.data().name);
-              const name = doc.data().name;
-            } else {
-              console.log("who is this?")  
-            }
-    });
-    console.log(name)
-  }
+  useEffect(() => {
+    if (productDetails) {
+      const user = db.collection("users").doc(productDetails.owner).get().then((doc) => {
+              if (doc.exists) {
+                console.log("Document data:", doc.data().name);
+                return(user);
+              } else {
+                console.log("who is this?")  
+              }
+      });
+    }
+  }, [user]);
+
 
   const addToCart = (item) => {
     dispatch({
