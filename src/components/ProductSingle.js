@@ -49,14 +49,8 @@ function ProductSingle() {
 
   useEffect(() => {
     if (productDetails) {
-      const user = db.collection("users").doc(productDetails.owner).get().then((doc) => {
-              if (doc.exists) {
-                console.log("Document data:", doc.data().name);
-                return(user);
-              } else {
-                console.log("who is this?")  
-              }
-      });
+      const user = db.collection("users").doc(productDetails.owner).get();
+      console.log(user)
     }
   }, [user]);
 
