@@ -48,12 +48,9 @@ function ProductSingle() {
   }, [id]);
 
   if (productDetails) {
-    const owner = db.collection("users").doc(productDetails.owner).get().then((response) => {
+    const owner = db.collection("users").doc(productDetails.owner).get().then((doc) => {
             if (response.exists) {
-              response.forEach((doc) => {
-        // doc.data() is never undefined for query doc snapshots
-        console.log(doc.id, " => ", doc.data());
-    });
+              console.log("Document data:", doc.data());
             } else {
               console.log("who is this?")  
             }
