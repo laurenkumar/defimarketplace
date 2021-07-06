@@ -56,9 +56,8 @@ function ProductSingle() {
               console.log("who is this?")  
             }
     });
+    console.log(owner.name)
   }
-
-  console.log(owner.name)
 
   const addToCart = (item) => {
     dispatch({
