@@ -50,12 +50,12 @@ function ProductSingle() {
   if (productDetails) {
     const owner = db.collection("users").doc(productDetails.owner).get().then((response) => {
             if (response.exists) {
-              return(JSON.parse(response.data()));
+              return(response.data());
             } else {
               console.log("who is this?")  
             }
     });
-    console.log(owner);
+    console.log(owner.toString());
   }
 
   const addToCart = (item) => {
