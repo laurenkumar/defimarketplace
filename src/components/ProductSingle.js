@@ -159,7 +159,17 @@ function ProductSingle() {
               />
             </div>
             <div>
-              From: {productDetails?.owner}
+              From: <strong style={{
+                    stroke: "#fff",
+                    strokeWidth: 2,
+                    fontSize: 20,
+                    color: "green",
+                  }}> {productDetails?.owner} </strong>
+              <div>
+                <button className="buttonSecondary" onClick={sendMessage}>
+                  Send a message
+                </button>
+              </div>
             </div>
           </span>
         </div>
