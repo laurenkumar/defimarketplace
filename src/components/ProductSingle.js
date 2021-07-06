@@ -50,7 +50,7 @@ function ProductSingle() {
   if (productDetails) {
     const owner = db.collection("users").doc(productDetails.owner).get().then((response) => {
             if (response.exists) {
-              return(response.data());
+              return(response.json());
             } else {
               console.log("who is this?")  
             }
