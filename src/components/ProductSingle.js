@@ -160,6 +160,7 @@ function ProductSingle() {
             </div>
             <div>
               From: {productDetails?.owner}
+            </div>
           </span>
         </div>
       </div>
