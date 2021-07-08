@@ -30,12 +30,6 @@ function Donation() {
 				      		</h1>
 				      		<div className="content-text">
 				      			<h2 style={{color: "white"}}>Any donations provided will go toward the following:</h2>
-								<ul>
-									<li>Keep the platform and running without ads</li>
-									<li>Adding of more features</li>
-									<li>Pay the hosting cost and any fees in relation to the platform</li>
-									<li>Expand the team to improve the platform and add features faster</li>
-								</ul>
 							</div>
 				     	</div>
 				     	<div className="content-text">
