@@ -53,7 +53,11 @@
 }
 
 .donation img {
-  max-width: 100%;
+  max-width: 20%;
+}
+
+.donation img.safemoon {
+  max-width: 17%;
 }
 
 .dark-light {
@@ -298,9 +302,14 @@
   margin-right: 0;
 }
 
+.donation .content-text {
+  color: white;
+}
+
 .donation .wrapper {
   display: flex;
   flex-grow: 1;
+  width: 80%;
 }
 
 .donation .left-side {
@@ -490,7 +499,6 @@
   width: 186px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-top: -25px;
   -o-object-position: center;
      object-position: center;
 }
@@ -555,7 +563,8 @@
 .donation .products {
   display: flex;
   align-items: center;
-  width: 150px;
+  width: 100%;
+  justify-content: space-around;
 }
 @media screen and (max-width: 480px) {
   .donation .products {
