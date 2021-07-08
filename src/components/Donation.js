@@ -24,7 +24,7 @@ function Donation() {
 			    <div className="content-wrapper">
 				    <div className="content-wrapper-header">
 				     	<div className="content-wrapper-context">
-				      		<h1 className="img-content" style={{color: white}}>
+				      		<h1 className="img-content" style={{color: "white"}}>
 				       			Donation Page
 				      		</h1>
 				      		<div className="content-text">
