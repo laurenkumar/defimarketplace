@@ -34,7 +34,7 @@ function Donation() {
 				     	</div>
 				     	<div className="content-text">
 								<ul>
-									<li>Keep the platform and running without ads</li>
+									<li>Keep the platform up and running without ads</li>
 									<li>Adding of more features</li>
 									<li>Pay the hosting cost and any fees in relation to the platform</li>
 									<li>Expand the team to improve the platform and add features faster</li>
