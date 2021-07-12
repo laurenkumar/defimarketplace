@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "react-router-dom";
 import "./Footer.css";
 import amazonLogo from "../assets/logo.svg";
 import DropDown from "./DropDown";
@@ -6,38 +7,7 @@ import DropDown from "./DropDown";
 const footerLinks = [
   {
     title: "Get to Know Us",
-    list: ["About Amazon", "Connect with Us", "Amazon Cares", "Gift a Smile"],
-  },
-  {
-    title: "Make Money with Us",
-    list: [
-      "Sell products on Amazon",
-      "Sell apps on Amazon",
-      "Become an Affiliate",
-      "Advertise Your Products",
-      "Self-Publish with Us",
-      "Host an Amazon Hub",
-      "› See More",
-    ],
-  },
-  {
-    title: "Amazon Payment",
-    list: [
-      "Amazon Business Card",
-      "Shop with Points",
-      "Reload Your Balance",
-      "Amazon Currency Converter",
-    ],
-  },
-  {
-    title: "Let Us Help You",
-    list: [
-      "Amazon and COVID-19",
-      "Shipping Rates & Policies",
-      "Returns & Replacements",
-      "Manage Your Devices",
-      "Amazon Assistant",
-    ],
+    list: ["Donation"],
   },
 ];
 
@@ -55,7 +25,11 @@ function Footer() {
               <h6>{link.title}</h6>
               <ul>
                 {link.list.map((item) => (
-                  <li>{item}</li>
+                  <li>
+                    <Link to="/{item}">
+                      <strong>{item}</strong>
+                    </Link>
+                  </li>
                 ))}
               </ul>
             </div>

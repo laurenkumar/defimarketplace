@@ -7,6 +7,7 @@ import "./SearchResults.css";
 import { useHistory, useLocation } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
+import Modal from 'react-modal';
 import {
   Web3ReactProvider,
   useWeb3React,
@@ -40,9 +41,34 @@ function Header() {
   const [{ fuse }] = useStateValue();
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const customStyles = {
+    content: {
+      top: '50%',
+      left: '50%',
+      right: 'auto',
+      bottom: 'auto',
+      marginRight: '-50%',
+      transform: 'translate(-50%, -50%)',
+    },
+  };
+
+  function openModal() {
+    setIsOpen(true);
+  }
+
+  function afterOpenModal() {
+    // references are now sync'd and can be accessed.
+    subtitle.style.color = '#f00';
+  }
+
+  function closeModal() {
+    setIsOpen(false);
+  }
 
   const connectorsByName = {
-    Injected: injected,
+    Injected: Metamask,
     WalletConnect: walletconnect,
     WalletLink: walletlink
   };
@@ -64,7 +90,6 @@ function Header() {
   }
 
   function getLibrary(provider) {
-    console.log("toto")
     const library = new Web3Provider(provider);
     library.pollingInterval = 8000;
     return library;
@@ -400,9 +425,20 @@ function Header() {
 
   return (
     <div className="header">
-      <Web3ReactProvider getLibrary={getLibrary}>
-        <MyComponent />
-      </Web3ReactProvider>
+      <div className="buttons">
+        <button className="buttonSecondary" onClick={openModal}>Connect</button>
+      </div>
+      <Modal
+        isOpen={modalIsOpen}
+        onAfterOpen={afterOpenModal}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <Web3ReactProvider getLibrary={getLibrary}>
+          <MyComponent />
+        </Web3ReactProvider>
+      </Modal>
       <div className="header__nav">
         {location.pathname !== "/" && (
           <button onClick={() => history.goBack()} className="header__back">
