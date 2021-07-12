@@ -409,8 +409,8 @@ function Header() {
   }
 
   return (
-    <Web3ReactProvider getLibrary={getLibrary}>
     <div className="header">
+      <Web3ReactProvider getLibrary={getLibrary}>
       <div className="header__nav">
         {location.pathname !== "/" && (
           <button onClick={() => history.goBack()} className="header__back">
@@ -460,8 +460,8 @@ function Header() {
         
         <img src={amazonLogo} className="header__logo" />
       </div>
+      </Web3ReactProvider>
     </div>
-    </Web3ReactProvider>
   );
 }
 export default Header;
