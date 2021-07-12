@@ -80,7 +80,7 @@ function getLibrary(provider) {
   return library;
 }
 
-function App() {
+function Index() {
   return (
     <React.StrictMode>
           <Router>
