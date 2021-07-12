@@ -15,7 +15,7 @@ ReactDOM.render(
           <Router>
             <ScrollToTop />
             <StateProvider initialState={initialState} reducer={reducer}>
-              <Web3ReactProvider getLibrary={getLibrary}>
+              <Web3ReactProvider>
                 <App />
               </Web3ReactProvider>
             </StateProvider>
