@@ -466,15 +466,14 @@ function App() {
   }, [dispatch]);
 
   return (
+    <Web3ReactProvider getLibrary={getLibrary}>
     <div className="app">
       <LoadingBar height={3} color="#78cac8" ref={loadingBar} shadow={true} />
       <Sidebar />
       <div className="app__inner">
         <AnimatePresence exitBeforeEnter>
           <AnimateSharedLayout>
-            <Web3ReactProvider getLibrary={getLibrary}>
               <Header />
-            </Web3ReactProvider>
             <Switch location={location} key={location.pathname}>
               <Route path="/product/:id">
                 <ProductPage />
@@ -533,6 +532,7 @@ function App() {
       ></div>
       <Footer />
     </div>
+    </Web3ReactProvider>
   );
 }
 
