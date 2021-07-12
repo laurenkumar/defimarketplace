@@ -1,14 +1,8 @@
 {
-  "name": "amazon-ish",
+  "name": "Safemoon Marketplace",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@binance-chain/bsc-connector": "^1.0.0",
-    "@reduxjs/toolkit": "^1.5.0",
-    "@types/react": "^17.0.5",
-    "@types/react-dom": "^17.0.4",
-    "@types/react-router-dom": "^5.1.5",
-    "@types/styled-components": "^5.1.7",
     "@ethersproject/providers": "^5.1.2",
     "@ethersproject/units": "^5.1.0",
     "@web3-react/abstract-connector": "latest",
