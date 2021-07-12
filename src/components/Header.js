@@ -41,16 +41,6 @@ function Header() {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
 
-  const web3 = useWeb3React();
-
-  const handleConnect = () => {
-    try {
-      web3.activate(injected, undefined, true);
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   const connectorsByName = {
     Injected: injected,
     WalletConnect: walletconnect,
@@ -411,6 +401,8 @@ function Header() {
   return (
     <div className="header">
       <Web3ReactProvider getLibrary={getLibrary}>
+        <MyComponent />
+      </Web3ReactProvider>
       <div className="header__nav">
         {location.pathname !== "/" && (
           <button onClick={() => history.goBack()} className="header__back">
@@ -460,7 +452,6 @@ function Header() {
         
         <img src={amazonLogo} className="header__logo" />
       </div>
-      </Web3ReactProvider>
     </div>
   );
 }
