@@ -13,6 +13,7 @@ import {
   useWeb3React,
   UnsupportedChainIdError
 } from "@web3-react/core";
+import { BscConnector } from '@binance-chain/bsc-connector';
 import {
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected
@@ -66,10 +67,13 @@ function Header() {
     setIsOpen(false);
   }
 
+  const bscConnector = new BscConnector({ supportedChainIds: [56, 97] });
+
   const connectorsByName = {
     Injected: injected,
     WalletConnect: walletconnect,
-    WalletLink: walletlink
+    WalletLink: walletlink,
+    BSC: bscConnector
   };
 
   function getErrorMessage(error) {
