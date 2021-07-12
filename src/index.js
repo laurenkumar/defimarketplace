@@ -8,9 +8,6 @@ import * as serviceWorker from "./serviceWorker";
 import { StateProvider } from "./StateProvider";
 import reducer, { initialState } from "./reducer";
 import ScrollToTop from "./scrollToTop";
-import { Web3ReactProvider } from '@web3-react/core';
-import * as React from "react";
-import * as ReactDOM from "react-dom";
 import {
   Web3ReactProvider,
   useWeb3React,
