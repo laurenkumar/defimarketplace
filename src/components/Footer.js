@@ -1,5 +1,5 @@
 import React from "react";
-import Link from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Footer.css";
 import amazonLogo from "../assets/logo.svg";
 import DropDown from "./DropDown";
