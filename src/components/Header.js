@@ -225,7 +225,7 @@ function Header() {
                 )}`}
           </span>
         </h3>
-        <hr style={{ margin: "2rem" }} />
+
         <div
           style={{
             display: "grid",
@@ -321,8 +321,6 @@ function Header() {
             </h4>
           )}
         </div>
-
-        <hr style={{ margin: "2rem" }} />
 
         <div
           style={{
