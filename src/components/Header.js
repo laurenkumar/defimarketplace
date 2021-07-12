@@ -198,9 +198,7 @@ function Header() {
 
     return (
       <div style={{ padding: "1rem" }}>
-        <h1 style={{ margin: "0", textAlign: "right" }}>
-          {active ? "🟢" : error ? "🔴" : "🟠"}
-        </h1>
+        
         <h3
           style={{
             display: "grid",
@@ -395,6 +393,9 @@ function Header() {
       <div className="buttons">
         <button className="buttonSecondary" onClick={openModal}>Connect</button>
       </div>
+      <h1 style={{ margin: "0", textAlign: "right" }}>
+          {active ? "🟢" : error ? "🔴" : "🟠"}
+        </h1>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
