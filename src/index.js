@@ -45,8 +45,7 @@ function getErrorMessage(error) {
     return "You're connected to an unsupported network.";
   } else if (
     error instanceof UserRejectedRequestErrorInjected ||
-    error instanceof UserRejectedRequestErrorWalletConnect ||
-    error instanceof UserRejectedRequestErrorFrame
+    error instanceof UserRejectedRequestErrorWalletConnect
   ) {
     return "Please authorize this website to access your Ethereum account.";
   } else {
@@ -370,20 +369,6 @@ function MyComponent() {
             Sign Message
           </button>
         )}
-        {!!(connector === network && chainId) && (
-          <button
-            style={{
-              height: "3rem",
-              borderRadius: "1rem",
-              cursor: "pointer"
-            }}
-            onClick={() => {
-              connector.changeChainId(chainId === 1 ? 4 : 1);
-            }}
-          >
-            Switch Networks
-          </button>
-        )}
         {connector === walletconnect && (
           <button
             style={{
@@ -398,64 +383,7 @@ function MyComponent() {
             Kill WalletConnect Session
           </button>
         )}
-        {connector === fortmatic && (
-          <button
-            style={{
-              height: "3rem",
-              borderRadius: "1rem",
-              cursor: "pointer"
-            }}
-            onClick={() => {
-              connector.close();
-            }}
-          >
-            Kill Fortmatic Session
-          </button>
-        )}
-        {connector === portis && (
-          <>
-            {chainId !== undefined && (
-              <button
-                style={{
-                  height: "3rem",
-                  borderRadius: "1rem",
-                  cursor: "pointer"
-                }}
-                onClick={() => {
-                  connector.changeNetwork(chainId === 1 ? 100 : 1);
-                }}
-              >
-                Switch Networks
-              </button>
-            )}
-            <button
-              style={{
-                height: "3rem",
-                borderRadius: "1rem",
-                cursor: "pointer"
-              }}
-              onClick={() => {
-                connector.close();
-              }}
-            >
-              Kill Portis Session
-            </button>
-          </>
-        )}
-        {connector === torus && (
-          <button
-            style={{
-              height: "3rem",
-              borderRadius: "1rem",
-              cursor: "pointer"
-            }}
-            onClick={() => {
-              connector.close();
-            }}
-          >
-            Kill Torus Session
-          </button>
-        )}
+        
       </div>
     </div>
   );
