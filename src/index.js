@@ -21,23 +21,13 @@ import {
   URI_AVAILABLE,
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect
 } from "@web3-react/walletconnect-connector";
-import { UserRejectedRequestError as UserRejectedRequestErrorFrame } from "@web3-react/frame-connector";
 import { Web3Provider } from "@ethersproject/providers";
 import { formatEther } from "@ethersproject/units";
 
 import {
   injected,
-  network,
   walletconnect,
-  walletlink,
-  ledger,
-  trezor,
-  frame,
-  fortmatic,
-  portis,
-  squarelink,
-  torus,
-  authereum
+  walletlink
 } from "./connectors";
 import { useEagerConnect, useInactiveListener } from "./hooks";
 import { Spinner } from "./Spinner";
