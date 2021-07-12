@@ -9,7 +9,6 @@ import { StateProvider } from "./StateProvider";
 import reducer, { initialState } from "./reducer";
 import ScrollToTop from "./scrollToTop";
 import { Web3ReactProvider } from '@web3-react/core';
-import { getLibrary } from './utils/web3React';
 
 ReactDOM.render(
         <React.StrictMode>
