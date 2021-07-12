@@ -26,7 +26,7 @@ function Footer() {
               <ul>
                 {link.list.map((item) => (
                   <li>
-                    <Link to="/${item}">
+                    <Link to={`/${item}`}>
                       <strong>{item}</strong>
                     </Link>
                   </li>
