@@ -211,24 +211,6 @@ function Header() {
             margin: "auto"
           }}
         >
-          <span>Chain Id</span>
-          <span role="img" aria-label="chain">
-            ⛓
-          </span>
-          <span>{chainId === undefined ? "..." : chainId}</span>
-
-          <span>Block Number</span>
-          <span role="img" aria-label="numbers">
-            🔢
-          </span>
-          <span>
-            {blockNumber === undefined
-              ? "..."
-              : blockNumber === null
-              ? "Error"
-              : blockNumber.toLocaleString()}
-          </span>
-
           <span>Account</span>
           <span role="img" aria-label="robot">
             🤖
@@ -241,18 +223,6 @@ function Header() {
               : `${account.substring(0, 6)}...${account.substring(
                   account.length - 4
                 )}`}
-          </span>
-
-          <span>Balance</span>
-          <span role="img" aria-label="gold">
-            💰
-          </span>
-          <span>
-            {ethBalance === undefined
-              ? "..."
-              : ethBalance === null
-              ? "Error"
-              : `Ξ${parseFloat(formatEther(ethBalance)).toPrecision(4)}`}
           </span>
         </h3>
         <hr style={{ margin: "2rem" }} />
