@@ -34,17 +34,8 @@ import { Spinner } from "./Spinner";
 
 const connectorsByName = {
   Injected: injected,
-  Network: network,
   WalletConnect: walletconnect,
-  WalletLink: walletlink,
-  Ledger: ledger,
-  Trezor: trezor,
-  Frame: frame,
-  Fortmatic: fortmatic,
-  Portis: portis,
-  Squarelink: squarelink,
-  Torus: torus,
-  Authereum: authereum
+  WalletLink: walletlink
 };
 
 function getErrorMessage(error) {
