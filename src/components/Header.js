@@ -94,6 +94,18 @@ function Header() {
     return library;
   }
 
+  const context = useWeb3React();
+  const {
+      connector,
+      library,
+      chainId,
+      account,
+      activate,
+      deactivate,
+      active,
+      error
+  } = context;
+
   function MyComponent() {
     const context = useWeb3React();
     const {
@@ -198,7 +210,9 @@ function Header() {
 
     return (
       <div style={{ padding: "1rem" }}>
-        
+        <h1 style={{ margin: "0", textAlign: "right" }}>
+          {active ? "🟢" : error ? "🔴" : "🟠"}
+        </h1>
         <h3
           style={{
             display: "grid",
