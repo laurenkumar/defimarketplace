@@ -41,6 +41,16 @@ function Header() {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
 
+  const web3 = useWeb3React();
+
+  const handleConnect = () => {
+    try {
+      web3.activate(injected, undefined, true);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const connectorsByName = {
     Injected: injected,
     WalletConnect: walletconnect,
