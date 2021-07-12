@@ -27,9 +27,9 @@ import {
   injected,
   walletconnect,
   walletlink
-} from "./connectors";
-import { useEagerConnect, useInactiveListener } from "./hooks";
-import { Spinner } from "./Spinner";
+} from "../connectors";
+import { useEagerConnect, useInactiveListener } from "../hooks";
+import { Spinner } from "../Spinner";
 
 function Header() {
   const location = useLocation();
