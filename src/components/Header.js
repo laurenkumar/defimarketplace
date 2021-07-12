@@ -402,6 +402,8 @@ function Header() {
     height: "2rem"
   }
 
+  console.log(active)
+
   return (
     <div className="header">
       <div className="buttons">
@@ -409,7 +411,7 @@ function Header() {
       </div>
       <h1 style={{ margin: "0", textAlign: "right" }}>
           {active ? "🟢" : error ? "🔴" : "🟠"}
-        </h1>
+      </h1>
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
