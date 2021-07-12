@@ -472,8 +472,8 @@ function App() {
       <div className="app__inner">
         <AnimatePresence exitBeforeEnter>
           <AnimateSharedLayout>
-            <Header />
             <Web3ReactProvider getLibrary={getLibrary}>
+              <Header />
             </Web3ReactProvider>
             <Switch location={location} key={location.pathname}>
               <Route path="/product/:id">
