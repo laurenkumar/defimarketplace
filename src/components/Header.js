@@ -60,7 +60,6 @@ function Header() {
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
   }
 
   function closeModal() {
@@ -68,7 +67,7 @@ function Header() {
   }
 
   const connectorsByName = {
-    Injected: Metamask,
+    Injected: injected,
     WalletConnect: walletconnect,
     WalletLink: walletlink
   };
