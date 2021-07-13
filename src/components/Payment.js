@@ -44,7 +44,6 @@ function Payment() {
     }
   };
 
-  const safemoonCart = 0;
   const [safemoon, setSafemoonPrice] = useState("");
   const [safemoonTotal, setSafemoonTotal] = useState("");
   useEffect(() => {
@@ -52,7 +51,7 @@ function Payment() {
       axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
           const safemoonPrice = parseFloat(res.data.data.price);
           const priceDollar = parseFloat(getCartTotal(cart));
-          safemoonCart = priceDollar / safemoonPrice;
+          const safemoonCart = priceDollar / safemoonPrice;
           setSafemoonTotal(safemoonCart);
           setSafemoonPrice(safemoonPrice);
       }).catch(err => console.log(err));
@@ -61,8 +60,8 @@ function Payment() {
     safemoonPrice();
   }, [safemoon]);
 
-  const createCheckoutSession = async () => {
-    console.log(safemoonCart)
+  function createCryptoPayment(price) {
+    console.log(price)
   }
 
   const createCheckoutSession = async () => {
@@ -489,7 +488,7 @@ function Payment() {
                 />
               </button>
               <button
-                onClick={createCryptoPayment}
+                onClick={createCryptoPayment({safemoonTotal})}
                 disabled={processing}
                 className="button buttonSecondary outline"
               >
