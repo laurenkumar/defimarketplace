@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Payment.css";
 import { useStateValue } from "../StateProvider";
-import { getCartTotal } from "../reducer";
+import { getCartTotal, safemoonPrice } from "../reducer";
 import { Link, useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useQuery, errorAnim } from "../util";
@@ -46,10 +46,10 @@ function Payment() {
 
   const [safemoon, setSafemoonPrice] = useState("");
   useEffect(() => {
-    const safemoonPrice = () => {
+    const safemoonPrice2 = () => {
       axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
-          const safemoonPrice = res.data.data.price;
-          setSafemoonPrice(safemoonPrice);
+          const safemoonPrice3 = res.data.data.price;
+          setSafemoonPrice(safemoonPrice3);
       }).catch(err => console.log(err));
     }
 
@@ -108,7 +108,7 @@ function Payment() {
   useEffect(() => {
     const calculateTotal = async () => {
       const totalAmount = await parseFloat(getCartTotal(cart));
-      const totalAmountSafemoon = safemoon;
+      const totalAmountSafemoon = safemoonPrice;
       console.log(totalAmountSafemoon);
       const withTax = totalAmount + totalAmount * 0.10;
       const totalAmountWithTax = parseFloat(withTax.toFixed(2));

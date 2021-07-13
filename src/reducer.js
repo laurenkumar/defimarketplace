@@ -8,6 +8,12 @@ export const initialState = {
   fuse: null,
 };
 
+const safemoonPrice = () => {
+      axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
+          const safemoonPrice = res.data.data.price;
+          return safemoonPrice;
+      }).catch(err => console.log(err));
+
 const getCartTotal = (cart) =>
   cart
     ?.reduce((amount, item) => item.price * item.quantity + amount, 0)
@@ -145,4 +151,4 @@ const reducer = (state, action) => {
 };
 
 export default reducer;
-export { getCartTotal, getTotalItems };
+export { getCartTotal, getTotalItems, safemoonPrice };
