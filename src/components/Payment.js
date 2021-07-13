@@ -53,7 +53,7 @@ function Payment() {
     safemoonPrice();
   }, []);
 
-  console.log(safemoon);
+  console.log(setSafemoonPrice);
     
 
   function safemoonPrice() {
