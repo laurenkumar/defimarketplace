@@ -30,6 +30,7 @@ function Payment() {
   const [clientSecret, setClientSecret] = useState("");
   const [cardHolder, setCardHolder] = useState("");
   const [cartTotal, setCartTotal] = useState(0);
+  const [totalSafemoon, settotalSafemoon] = useState(0);
   const [cartTotalWithTax, setCartTotalWithTax] = useState(0);
   const [deliveryCharges, setDeliveryCharges] = useState(false);
   const [method, setMethod] = useState("card");
@@ -54,13 +55,6 @@ function Payment() {
 
     safemoonPrice();
   }, []);
-    
-
-  function safemoonPrice() {
-    axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
-          setSafemoonPrice(res.data.price)
-    }).catch(err => console.log(err));
-  }
 
   const createCheckoutSession = async () => {
     setProcessing(true);
@@ -114,6 +108,8 @@ function Payment() {
   useEffect(() => {
     const calculateTotal = async () => {
       const totalAmount = await parseFloat(getCartTotal(cart));
+      const totalAmountSafemoon = parseFloat(safemoon);
+      console.log(totalAmountSafemoon);
       const withTax = totalAmount + totalAmount * 0.10;
       const totalAmountWithTax = parseFloat(withTax.toFixed(2));
       if (totalAmount < 25 && totalAmount > 0) {
@@ -429,17 +425,11 @@ function Payment() {
                   <small>$</small>
                   {cartTotal.toFixed(2)}
                 </span>
+              </div>
+              <div className="payment__item">
                 <span className="payment__price">
                   <small>Safemoon Price</small>
                   {safemoon}
-                </span>
-              </div>
-              <div className="payment__item">
-                <span className="payment__name">Tax</span>
-                <small className="payment__quantity">(+5%)</small>
-                <span className="payment__price">
-                  <small>$</small>
-                  {(cartTotal * 0.18).toFixed(2)}
                 </span>
               </div>
               <div style={{ marginTop: "1.5rem" }} className="payment__item">
@@ -447,7 +437,13 @@ function Payment() {
                 <span className="payment__price">
                   <strong style={{ fontSize: "1.25em", fontWeight: "900" }}>
                     <small>$</small>
-                    {cartTotalWithTax.toFixed(2)}
+                    {cartTotal.toFixed(2)}
+                  </strong>
+                </span>
+                <span className="payment__price">
+                  <strong style={{ fontSize: "1.25em", fontWeight: "900" }}>
+                    <small>$</small>
+                    {cartTotal.toFixed(2)}
                   </strong>
                 </span>
               </div>
