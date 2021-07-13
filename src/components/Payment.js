@@ -108,7 +108,7 @@ function Payment() {
   useEffect(() => {
     const calculateTotal = async () => {
       const totalAmount = await parseFloat(getCartTotal(cart));
-      const totalAmountSafemoon = parseFloat(safemoon);
+      const totalAmountSafemoon = safemoon;
       console.log(totalAmountSafemoon);
       const withTax = totalAmount + totalAmount * 0.10;
       const totalAmountWithTax = parseFloat(withTax.toFixed(2));
