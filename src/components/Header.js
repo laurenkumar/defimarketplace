@@ -45,7 +45,7 @@ function Header() {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const chainId = [1, 3, 4, 5, 42, 56];
+  const chainId = [56, 1, 3, 4, 5, 42];
 
   const customStyles = {
     content: {
@@ -188,9 +188,8 @@ function Header() {
           setEthBalance(undefined);
         };
       }
+      console.log(account)
     }, [library, account, chainId]);
-
-    console.log(account);
 
     // log the walletconnect URI
     React.useEffect(() => {
