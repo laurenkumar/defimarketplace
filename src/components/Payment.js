@@ -43,11 +43,16 @@ function Payment() {
     }
   };
 
-  const safemoonPrice = axios.get(
+  const usePriceSafemoonUsd = async () => {
+      const {
+        data: { data },
+      } = await axios.get(
           "https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3"
       );
-    console.log(safemoonPrice)
+      return (parseFloat(data.price) || 0.0).toFixed(3);
+    };
 
+    console.log(usePriceSafemoonUsd)
 
   const createCheckoutSession = async () => {
     setProcessing(true);
