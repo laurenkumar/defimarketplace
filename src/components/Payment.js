@@ -43,6 +43,10 @@ function Payment() {
     }
   };
 
+  state = {
+    safemoon: [],
+  }
+
   const [safemoon, setSafemoonPrice] = useState([]);
 
   useEffect(() => {
