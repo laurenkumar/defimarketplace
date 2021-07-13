@@ -70,7 +70,7 @@ function Header() {
   const bscConnector = new BscConnector({ supportedChainIds: [56, 97] });
 
   const connectorsByName = {
-    Injected: injected,
+    Metamask: injected,
     WalletConnect: walletconnect,
     WalletLink: walletlink,
     BSC: bscConnector

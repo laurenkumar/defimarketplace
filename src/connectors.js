@@ -9,7 +9,7 @@ const RPC_URLS = {
 };
 
 export const injected = new InjectedConnector({
-  supportedChainIds: [1, 3, 4, 5, 42]
+  supportedChainIds: [1, 3, 4, 5, 42, 56]
 });
 
 export const walletconnect = new WalletConnectConnector({
