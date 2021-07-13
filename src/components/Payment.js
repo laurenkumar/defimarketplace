@@ -44,6 +44,7 @@ function Payment() {
     }
   };
 
+  const safemoonCart = 0;
   const [safemoon, setSafemoonPrice] = useState("");
   const [safemoonTotal, setSafemoonTotal] = useState("");
   useEffect(() => {
@@ -51,7 +52,7 @@ function Payment() {
       axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
           const safemoonPrice = parseFloat(res.data.data.price);
           const priceDollar = parseFloat(getCartTotal(cart));
-          const safemoonCart = priceDollar / safemoonPrice;
+          safemoonCart = priceDollar / safemoonPrice;
           setSafemoonTotal(safemoonCart);
           setSafemoonPrice(safemoonPrice);
       }).catch(err => console.log(err));
@@ -59,6 +60,10 @@ function Payment() {
 
     safemoonPrice();
   }, [safemoon]);
+
+  const createCheckoutSession = async () => {
+    console.log(safemoonCart)
+  }
 
   const createCheckoutSession = async () => {
     setProcessing(true);
@@ -482,6 +487,14 @@ function Payment() {
                   src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg"
                   alt="Stripe"
                 />
+              </button>
+              <button
+                onClick={createCryptoPayment}
+                disabled={processing}
+                className="button buttonSecondary outline"
+              >
+                <span>Pay via Safemoon</span>
+                
               </button>
             </div>
           </div>
