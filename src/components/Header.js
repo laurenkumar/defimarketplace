@@ -47,6 +47,18 @@ function Header() {
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const chainId = [1, 3, 4, 5, 42, 56];
 
+  const context = useWeb3React();
+  const {
+      connector,
+      library,
+      chainId,
+      account,
+      activate,
+      deactivate,
+      active,
+      error
+  } = context;
+
   const customStyles = {
     content: {
       top: '50%',
@@ -102,17 +114,6 @@ function Header() {
   }
 
   function MyComponent() {
-    const context = useWeb3React();
-    const {
-      connector,
-      library,
-      chainId,
-      account,
-      activate,
-      deactivate,
-      active,
-      error
-    } = context;
 
     // handle logic to recognize the connector currently being activated
     const [activatingConnector, setActivatingConnector] = React.useState();
