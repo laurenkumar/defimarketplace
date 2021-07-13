@@ -8,6 +8,7 @@ import { useHistory, useLocation } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
 import Modal from 'react-modal';
+import { ethers } from 'ethers'
 import {
   Web3ReactProvider,
   useWeb3React,
@@ -15,6 +16,7 @@ import {
 } from "@web3-react/core";
 import { BscConnector } from '@binance-chain/bsc-connector';
 import {
+  InjectedConnector,
   NoEthereumProviderError,
   UserRejectedRequestError as UserRejectedRequestErrorInjected
 } from "@web3-react/injected-connector";
@@ -67,13 +69,12 @@ function Header() {
     setIsOpen(false);
   }
 
-  const bscConnector = new BscConnector({ supportedChainIds: [56, 97] });
+  const injected = new InjectedConnector({ supportedChainIds: [chainId] })
 
   const connectorsByName = {
     Metamask: injected,
     WalletConnect: walletconnect,
-    WalletLink: walletlink,
-    BSC: bscConnector
+    WalletLink: walletlink
   };
 
   function getErrorMessage(error) {
@@ -93,7 +94,7 @@ function Header() {
   }
 
   function getLibrary(provider) {
-    const library = new Web3Provider(provider);
+    const library = new ethers.providers.Web3Provider(provider);
     library.pollingInterval = 8000;
     return library;
   }
@@ -406,8 +407,6 @@ function Header() {
     height: "2rem"
   }
 
-  console.log(active)
-
   return (
     <div className="header">
       
@@ -475,6 +474,15 @@ function Header() {
         <h1 style={{ margin: "0", textAlign: "right" }}>
             {active ? "🟢" : error ? "🔴" : "🟠"}
         </h1>
+        <span>
+            {account === undefined
+              ? "..."
+              : account === null
+              ? "None"
+              : `${account.substring(0, 6)}...${account.substring(
+                  account.length - 4
+                )}`}
+          </span>
       </div>
     </div>
   );
