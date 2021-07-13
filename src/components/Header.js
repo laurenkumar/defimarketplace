@@ -45,7 +45,8 @@ function Header() {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const chainId = [1, 3, 4, 5, 42, 56, 0x38];
+  const chainId = [1, 3, 4, 5, 42, 56];
+  const [accountAddress, activeAccount] = useState("");
 
   const customStyles = {
     content: {
@@ -72,7 +73,6 @@ function Header() {
 
   const injected = new InjectedConnector({ supportedChainIds: [chainId] })
 
-  console.log(injected)
   const connectorsByName = {
     Metamask: injected,
     WalletConnect: walletconnect,
@@ -190,6 +190,9 @@ function Header() {
         };
       }
     }, [library, account, chainId]);
+
+    accountAddress = account;
+    console.log(accountAddress);
 
     // log the walletconnect URI
     React.useEffect(() => {
