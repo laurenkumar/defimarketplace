@@ -43,6 +43,8 @@ function Payment() {
     }
   };
 
+  console.log(parseFloat(getCartTotal(cart)))
+
   const createCheckoutSession = async () => {
     setProcessing(true);
     loadingBar.current.continuousStart();

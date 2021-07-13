@@ -45,7 +45,7 @@ function Header() {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const chainId = [56, 1, 3, 4, 5, 42];
+  const chainId = [56];
 
   const customStyles = {
     content: {
