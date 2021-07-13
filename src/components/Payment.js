@@ -45,11 +45,14 @@ function Payment() {
   };
 
   const [safemoon, setSafemoonPrice] = useState("");
+  const [safemoonTotal, setSafemoonTotal] = useState("");
   useEffect(() => {
     const safemoonPrice = () => {
       axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
-          const safemoonPrice = res.data.data.price;
-          console.log(parseFloat(getCartTotal(cart)));
+          const safemoonPrice = parseFloat(res.data.data.price);
+          const priceDollar = await parseFloat(getCartTotal(cart));
+          const safemoonCart = priceDollar / safemoonPrice;
+          setSafemoonTotal(safemoonCart);
           setSafemoonPrice(safemoonPrice);
       }).catch(err => console.log(err));
     }
@@ -429,6 +432,12 @@ function Payment() {
                 <span className="payment__price">
                   <small>Safemoon Price</small>
                   {safemoon}
+                </span>
+              </div>
+              <div className="payment__item">
+                <span className="payment__price">
+                  <small>Safemoon Total</small>
+                  {safemoonTotal}
                 </span>
               </div>
               <div style={{ marginTop: "1.5rem" }} className="payment__item">
