@@ -43,20 +43,14 @@ function Payment() {
     }
   };
 
-  state = {
-    safemoon: [],
-  }
+  const [safemoon, setSafemoonPrice] = useState("");
 
-  const [safemoon, setSafemoonPrice] = useState([]);
-
-  useEffect(() => {
+  const safemoonPrice = () => {
     axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
-        this.setState({ safemoon: res.data})
+        setSafemoonPrice(res.data.price)
     }).catch(err => console.log(err));
-  }, [])
+  }
     
-  console.log(safemoon)
-
   const createCheckoutSession = async () => {
     setProcessing(true);
     loadingBar.current.continuousStart();
@@ -423,6 +417,10 @@ function Payment() {
                 <span className="payment__price">
                   <small>$</small>
                   {cartTotal.toFixed(2)}
+                </span>
+                <span className="payment__price">
+                  <small>Safemoon Price</small>
+                  {safemoon}
                 </span>
               </div>
               <div className="payment__item">
