@@ -45,19 +45,7 @@ function Header() {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const chainIdIn = [1, 3, 4, 5, 42, 56];
-
-  const context = useWeb3React();
-  const {
-      connector,
-      library,
-      chainId,
-      account,
-      activate,
-      deactivate,
-      active,
-      error
-  } = context;
+  const chainId = [1, 3, 4, 5, 42, 56];
 
   const customStyles = {
     content: {
@@ -82,7 +70,7 @@ function Header() {
     setIsOpen(false);
   }
 
-  const injected = new InjectedConnector({ supportedChainIds: [chainIdIn] })
+  const injected = new InjectedConnector({ supportedChainIds: [chainId] })
 
   const connectorsByName = {
     Metamask: injected,
@@ -114,6 +102,17 @@ function Header() {
   }
 
   function MyComponent() {
+    const context = useWeb3React();
+    const {
+      connector,
+      library,
+      chainId,
+      account,
+      activate,
+      deactivate,
+      active,
+      error
+    } = context;
 
     // handle logic to recognize the connector currently being activated
     const [activatingConnector, setActivatingConnector] = React.useState();
