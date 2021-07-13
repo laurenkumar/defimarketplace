@@ -43,8 +43,11 @@ function Payment() {
     }
   };
 
-  const safemoonPrice = axios.get("0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3");
-    console.log(safemoonPrice);
+  const safemoonPrice = axios.get(
+          "https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3"
+      );
+    console.log(safemoonPrice)
+
 
   const createCheckoutSession = async () => {
     setProcessing(true);
@@ -53,7 +56,6 @@ function Payment() {
       return;
       loadingBar.current.complete();
     }
-
     const totAmount = await parseFloat(getCartTotal(cart));
     axios
       .post("/api/create-new-session", {
