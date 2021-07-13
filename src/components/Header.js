@@ -81,6 +81,7 @@ function Header() {
     if (error instanceof NoEthereumProviderError) {
       return "No Ethereum browser extension detected, install MetaMask on desktop or visit from a dApp browser on mobile.";
     } else if (error instanceof UnsupportedChainIdError) {
+      console.log(UnsupportedChainIdError);
       return "You're connected to an unsupported network.";
     } else if (
       error instanceof UserRejectedRequestErrorInjected ||
