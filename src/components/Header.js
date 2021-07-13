@@ -97,7 +97,7 @@ function Header() {
 
   function getLibrary(provider) {
     const library = new ethers.providers.Web3Provider(provider);
-    library.pollingInterval = 8000;
+    library.pollingInterval = 12000;
     return library;
   }
 
@@ -478,6 +478,15 @@ function Header() {
         <h1 style={{ margin: "0", textAlign: "right" }}>
             {active ? "🟢" : error ? "🔴" : "🟠"}
         </h1>
+        <span>
+            {account === undefined
+              ? "..."
+              : account === null
+              ? "None"
+              : `${account.substring(0, 6)}...${account.substring(
+                  account.length - 4
+                )}`}
+          </span>
       </div>
     </div>
   );
