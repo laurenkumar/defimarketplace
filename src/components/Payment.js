@@ -97,7 +97,7 @@ function Payment() {
   useEffect(() => {
     const safemoonPrice = () => {
       axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
-          const safemoonPrice = res.data.data.price;
+          const safemoonPrice2 = res.data.data.price;
           setSafemoonPrice(safemoonPrice);
       }).catch(err => console.log(err));
     }
@@ -105,7 +105,7 @@ function Payment() {
     safemoonPrice();
     const calculateTotal = async () => {
       const totalAmount = await parseFloat(getCartTotal(cart));
-      const totalAmountSafemoon = safemoonPrice;
+      const totalAmountSafemoon = safemoonPrice2;
       console.log(totalAmountSafemoon);
       const withTax = totalAmount + totalAmount * 0.10;
       const totalAmountWithTax = parseFloat(withTax.toFixed(2));
