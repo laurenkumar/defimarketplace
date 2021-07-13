@@ -70,11 +70,13 @@ function Header() {
   }
 
   const injected = new InjectedConnector({ supportedChainIds: [chainId] })
+  const bscConnector = new BscConnector({ supportedChainIds: [56, 97] });
 
   const connectorsByName = {
     Metamask: injected,
     WalletConnect: walletconnect,
-    WalletLink: walletlink
+    WalletLink: walletlink,
+    BSC: bscConnector
   };
 
   function getErrorMessage(error) {
@@ -406,6 +408,8 @@ function Header() {
   const styleButton = {
     height: "2rem"
   }
+
+  console.log(active)
 
   return (
     <div className="header">
