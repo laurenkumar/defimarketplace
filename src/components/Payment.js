@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Payment.css";
 import { useStateValue } from "../StateProvider";
-import { getCartTotal, safemoonPrice } from "../reducer";
+import { getCartTotal } from "../reducer";
 import { Link, useHistory } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useQuery, errorAnim } from "../util";
@@ -46,11 +46,11 @@ function Payment() {
 
   const [safemoon, setSafemoonPrice] = useState("");
   useEffect(() => {
-    const safemoonPrice2 = () => {
+    const safemoonPrice = () => {
       axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
-          const safemoonPrice3 = res.data.data.price;
-          console.log(parseFloat(getCartTotal(cart))
-          setSafemoonPrice(safemoonPrice3);
+          const safemoonPrice = res.data.data.price;
+          console.log(parseFloat(getCartTotal(cart)));
+          setSafemoonPrice(safemoonPrice);
       }).catch(err => console.log(err));
     }
 
