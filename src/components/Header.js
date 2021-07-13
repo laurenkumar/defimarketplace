@@ -46,7 +46,7 @@ function Header() {
   const [status, setStatus] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const chainId = [1, 3, 4, 5, 42, 56];
-  const [accountAddress, activeAccount] = useState("");
+  const accountAddress= "";
 
   const customStyles = {
     content: {
