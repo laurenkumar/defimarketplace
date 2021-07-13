@@ -100,18 +100,6 @@ function Header() {
     return library;
   }
 
-  const context = useWeb3React();
-  const {
-      connector,
-      library,
-      chainId,
-      account,
-      activate,
-      deactivate,
-      active,
-      error
-  } = context;
-
   function MyComponent() {
     const context = useWeb3React();
     const {
@@ -380,7 +368,7 @@ function Header() {
     height: "2rem"
   }
 
-  console.log(active)
+  console.log(chainId)
 
   return (
     <div className="header">
