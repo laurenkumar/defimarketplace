@@ -410,12 +410,7 @@ function Header() {
 
   return (
     <div className="header">
-      <div className="buttons">
-        <button className="buttonSecondary" onClick={openModal}>Connect</button>
-      </div>
-      <h1 style={{ margin: "0", textAlign: "right" }}>
-          {active ? "🟢" : error ? "🔴" : "🟠"}
-      </h1>
+      
       <Modal
         isOpen={modalIsOpen}
         onAfterOpen={afterOpenModal}
@@ -474,7 +469,12 @@ function Header() {
           </motion.div>
         )}
         
-        <img src={amazonLogo} className="header__logo" />
+        <div className="buttons">
+          <button className="buttonSecondary" onClick={openModal}>Connect</button>
+        </div>
+        <h1 style={{ margin: "0", textAlign: "right" }}>
+            {active ? "🟢" : error ? "🔴" : "🟠"}
+        </h1>
       </div>
     </div>
   );
