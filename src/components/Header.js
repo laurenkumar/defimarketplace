@@ -45,6 +45,7 @@ function Header() {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
+  const chainId = [1, 3, 4, 5, 42, 56, 0x38];
 
   const customStyles = {
     content: {
@@ -71,6 +72,7 @@ function Header() {
 
   const injected = new InjectedConnector({ supportedChainIds: [chainId] })
 
+  console.log(injected)
   const connectorsByName = {
     Metamask: injected,
     WalletConnect: walletconnect,
@@ -368,8 +370,6 @@ function Header() {
     height: "2rem"
   }
 
-  console.log(chainId)
-
   return (
     <div className="header">
       
@@ -434,18 +434,6 @@ function Header() {
         <div className="buttons">
           <button className="buttonSecondary" onClick={openModal}>Connect</button>
         </div>
-        <h1 style={{ margin: "0", textAlign: "right" }}>
-            {active ? "🟢" : error ? "🔴" : "🟠"}
-        </h1>
-        <span>
-            {account === undefined
-              ? "..."
-              : account === null
-              ? "None"
-              : `${account.substring(0, 6)}...${account.substring(
-                  account.length - 4
-                )}`}
-          </span>
       </div>
     </div>
   );
