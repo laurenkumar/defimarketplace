@@ -70,13 +70,11 @@ function Header() {
   }
 
   const injected = new InjectedConnector({ supportedChainIds: [chainId] })
-  const bscConnector = new BscConnector({ supportedChainIds: [56, 97] });
 
   const connectorsByName = {
     Metamask: injected,
     WalletConnect: walletconnect,
-    WalletLink: walletlink,
-    BSC: bscConnector
+    WalletLink: walletlink
   };
 
   function getErrorMessage(error) {
@@ -231,9 +229,6 @@ function Header() {
           }}
         >
           <span>Account</span>
-          <span role="img" aria-label="robot">
-            🤖
-          </span>
           <span>
             {account === undefined
               ? "..."
@@ -350,31 +345,6 @@ function Header() {
             margin: "auto"
           }}
         >
-          {!!(library && account) && (
-            <button
-              style={{
-                height: "3rem",
-                borderRadius: "1rem",
-                cursor: "pointer"
-              }}
-              onClick={() => {
-                library
-                  .getSigner(account)
-                  .signMessage("👋")
-                  .then(signature => {
-                    window.alert(`Success!\n\n${signature}`);
-                  })
-                  .catch(error => {
-                    window.alert(
-                      "Failure!" +
-                        (error && error.message ? `\n\n${error.message}` : "")
-                    );
-                  });
-              }}
-            >
-              Sign Message
-            </button>
-          )}
           {connector === walletconnect && (
             <button
               style={{
