@@ -46,14 +46,15 @@ function Payment() {
   const [safemoon, setSafemoonPrice] = useState("");
   useEffect(() => {
     const safemoonPrice = () => {
-      const price = axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3");
-      setSafemoonPrice(price.data);
+      axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
+          const safemoonPrice = res.data.price;
+          console.log(safemoonPrice);
+          setSafemoonPrice(safemoonPrice);
+      }).catch(err => console.log(err));
     }
 
     safemoonPrice();
   }, []);
-
-  console.log(setSafemoonPrice);
     
 
   function safemoonPrice() {
