@@ -47,8 +47,7 @@ function Payment() {
   useEffect(() => {
     const safemoonPrice = () => {
       axios.get("https://api.pancakeswap.info/api/v2/tokens/0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3").then(res=>{
-          const safemoonPrice = res.data.price;
-          console.log(res.data.data.price);
+          const safemoonPrice = res.data.data.price;
           setSafemoonPrice(safemoonPrice);
       }).catch(err => console.log(err));
     }
