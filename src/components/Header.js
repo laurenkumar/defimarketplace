@@ -45,7 +45,7 @@ function Header() {
   const [walletAddress, setWallet] = useState("");
   const [status, setStatus] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
-  const chainId = [1, 3, 4, 5, 42, 56];
+  const chainIdIn = [1, 3, 4, 5, 42, 56];
 
   const context = useWeb3React();
   const {
@@ -82,7 +82,7 @@ function Header() {
     setIsOpen(false);
   }
 
-  const injected = new InjectedConnector({ supportedChainIds: [chainId] })
+  const injected = new InjectedConnector({ supportedChainIds: [chainIdIn] })
 
   const connectorsByName = {
     Metamask: injected,
