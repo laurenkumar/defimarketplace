@@ -46,7 +46,6 @@ function Header() {
   const [status, setStatus] = useState("");
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const chainId = [1, 3, 4, 5, 42, 56];
-  const accountAddress= "";
 
   const customStyles = {
     content: {
@@ -191,8 +190,7 @@ function Header() {
       }
     }, [library, account, chainId]);
 
-    accountAddress = account;
-    console.log(accountAddress);
+    console.log(account);
 
     // log the walletconnect URI
     React.useEffect(() => {
