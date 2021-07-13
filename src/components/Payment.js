@@ -43,7 +43,8 @@ function Payment() {
     }
   };
 
-  console.log(parseFloat(getCartTotal(cart)))
+  const safemoonPrice = await axios.get("0x8076c74c5e3f5852037f31ff0093eeb8c8add8d3");
+  console.log(safemoonPrice);
 
   const createCheckoutSession = async () => {
     setProcessing(true);
