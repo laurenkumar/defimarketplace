@@ -412,6 +412,14 @@ function Payment() {
                   </span>
                 </div>
               ))}
+              {deliveryCharges && (
+                <div className="payment__item">
+                  <span className="payment__name">Delivery Charges</span>
+                  <span className="payment__price">
+                    <small>$</small>10.00
+                  </span>
+                </div>
+              )}
               <hr />
               <div className="payment__item">
                 <span className="payment__name">Total</span>
@@ -420,7 +428,7 @@ function Payment() {
                   {cartTotal.toFixed(2)}
                 </span>
               </div>
-              <hr>
+              <hr />
               <div className="payment__item">
                 <span className="payment__name">Safemoon Price</span>
                 <span className="payment__price">
@@ -435,7 +443,6 @@ function Payment() {
                     {cartTotal.toFixed(2)}
                   </strong>
                 </span>
-                
               </div>
               <div style={{ marginTop: "1.5rem" }} className="payment__item">
                 <span className="payment__name">Safemoon Total</span>
