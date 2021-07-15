@@ -35,8 +35,8 @@ function Payment() {
   const [deliveryCharges, setDeliveryCharges] = useState(false);
   const [method, setMethod] = useState("card");
 
-  const Web3 = require('web3');
-  const web3 = new Web3('https://bsc-dataseed1.binance.org:443');
+  /*const Web3 = require('web3');
+  const web3 = new Web3('https://bsc-dataseed1.binance.org:443');*/
 
   const changeMethod = (e) => {
     if (e.target.checked) {
@@ -64,7 +64,7 @@ function Payment() {
   }, [safemoon]);
 
   function createCryptoPayment(price) {
-    console.log(price.safemoonTotal)
+    /*console.log(price.safemoonTotal)
     web3.eth.sendTransaction({
         from: holder,
         to: '0x0B75fbeB0BC7CC0e9F9880f78a245046eCBDBB0D',
@@ -77,7 +77,7 @@ function Payment() {
         } else {
         console.log(transactionHash);
        }
-    });
+    });*/
   }
 
   const createCheckoutSession = async () => {
