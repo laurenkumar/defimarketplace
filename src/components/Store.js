@@ -53,7 +53,12 @@ function Store() {
     if (user) {
         const user2 = db.collection("users")
           .doc(user.uid)
-          .collection("products").get();
+          .collection("products").get().then((response) => {
+            if (loadingBar) {
+              loadingBar.current.complete();
+            }
+            console.log(response.docs.map((doc) => doc.data()));
+        });
         console.log(user2)
           const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
           .get()
