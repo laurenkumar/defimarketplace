@@ -67,7 +67,7 @@ function Store() {
           console.log(productOwned);
     }
     
-  }, []);
+  }, [user]);
 
   return (
     <div className="store cart">
