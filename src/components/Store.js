@@ -50,7 +50,7 @@ function Store() {
 
   useEffect(() => {
     const success = query.get("success");
-                console.log("toto")
+                console.log(success)
 
     if (success) {
                   console.log("tictoc")
