@@ -50,7 +50,7 @@ function Store() {
 
   useEffect(() => {
     
-
+    console.lo(user)
     setProcessing(true);
     if (loadingBar) loadingBar.current.continuousStart();
     try {
