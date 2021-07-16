@@ -70,8 +70,6 @@ function Header() {
     setIsOpen(false);
   }
 
-  const injected = new InjectedConnector({ supportedChainIds: [chainId] })
-
   const connectorsByName = {
     Metamask: injected,
     WalletConnect: walletconnect,

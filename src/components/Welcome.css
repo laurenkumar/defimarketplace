@@ -20,6 +20,7 @@
 }
 .welcome__inner {
   display: flex;
+  align-self:  self-start;
 }
 .welcome .form__split {
   display: flex;
