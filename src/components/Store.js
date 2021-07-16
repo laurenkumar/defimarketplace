@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import "./Cart.css";
 import "./Store.css";
 import CartItem from "./CartItem";
@@ -12,6 +12,8 @@ import db, {auth} from "../firebase";
 function Store() {
   const [checked, setChecked] = useState(false);
   const query = useQuery();
+  const [processing, setProcessing] = useState(false);
+  const [error, setError] = useState(null);  
   const [{ user, loadingBar }] = useStateValue();
   const [loading, setLoading] = useState(false);
   const [{ cart }] = useStateValue();
