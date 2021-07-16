@@ -51,8 +51,9 @@ function Store() {
   useEffect(() => {
     
     if (user) {
-        console.log(user)
-        const user2 = db.collection("users").get()
+        const user2 = db.collection("users")
+          .doc(user.uid)
+          .collection("products").get();
         console.log(user2)
           const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
           .get()
@@ -65,7 +66,6 @@ function Store() {
           .catch((error) => {
               console.log("Error getting documents: ", error);
           });
-
           console.log(productOwned);
     }
     
