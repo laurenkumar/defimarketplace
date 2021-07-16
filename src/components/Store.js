@@ -52,8 +52,9 @@ function Store() {
     
     if (user) {
           console.log(user)
-          const user = db.collection("users")
+          const user2 = db.collection("users")
         .doc(user.uid).ref.collection('products').get()
+        console.log(user2)
           const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
           .get()
           .then((querySnapshot) => {
