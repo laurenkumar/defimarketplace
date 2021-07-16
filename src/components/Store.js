@@ -6,16 +6,13 @@ import { Tab, Tabs, TabList, TabPanel } from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
-import { errorAnim } from "../util";
+import { useQuery, errorAnim } from "../util";
 import db, {auth} from "../firebase";
 
 function Store() {
   const [checked, setChecked] = useState(false);
+  const query = useQuery();
   const [{ user, loadingBar }] = useStateValue();
-  if (user) {
-  } else {
-
-  }
   const [loading, setLoading] = useState(false);
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
@@ -49,19 +46,36 @@ function Store() {
       });
   };
 
-  const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
-    .get()
-    .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-            // doc.data() is never undefined for query doc snapshots
-            console.log(doc.id, " => ", doc.data());
-        });
-    })
-    .catch((error) => {
-        console.log("Error getting documents: ", error);
-    });
+  useEffect(() => {
+    const success = query.get("success");
+    if (success) {
+      setProcessing(true);
+      if (loadingBar) loadingBar.current.continuousStart();
+      try {
+        auth.onAuthStateChanged((signedIn) => {
+          if (signedIn) {
+            const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
+            .get()
+            .then((querySnapshot) => {
+                querySnapshot.forEach((doc) => {
+                    // doc.data() is never undefined for query doc snapshots
+                    console.log(doc.id, " => ", doc.data());
+                });
+            })
+            .catch((error) => {
+                console.log("Error getting documents: ", error);
+            });
 
-  console.log(productOwned);
+            console.log(productOwned);
+          }
+        });
+      } catch (e) {
+        setError(e.error ? e.error.message : "Some error occured. Try again!");
+        setProcessing(false);
+        if (loadingBar) loadingBar.current.complete();
+      }
+    }
+  }, []);
 
   return (
     <div className="store cart">

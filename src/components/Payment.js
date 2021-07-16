@@ -17,7 +17,7 @@ function Payment() {
   const query = useQuery();
 
   const exchangeRateUrl =
-    "http://apilayer.net/api/live?access_key=85c2840ba2ac0097106aaf4cc489729b&currencies=INR&source=USD&format=1";
+    "http://apilayer.net/api/live?access_key=85c2840ba2ac0097106aaf4cc489729b&currencies=USD&source=USD&format=1";
 
   const [{ user, cart, loadingBar }, dispatch] = useStateValue();
   const [orderId, setOrderId] = useState(null);
