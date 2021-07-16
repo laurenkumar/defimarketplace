@@ -50,12 +50,8 @@ function Store() {
 
   useEffect(() => {
     
-    console.log(user)
-    setProcessing(true);
-    if (loadingBar) loadingBar.current.continuousStart();
-    try {
-      auth.onAuthStateChanged((signedIn) => {
-        if (signedIn) {
+    if (user) {
+    
           const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
           .get()
           .then((querySnapshot) => {
@@ -69,13 +65,8 @@ function Store() {
           });
 
           console.log(productOwned);
-        }
-      });
-    } catch (e) {
-      setError(e.error ? e.error.message : "Some error occured. Try again!");
-      setProcessing(false);
-      if (loadingBar) loadingBar.current.complete();
     }
+    
   }, []);
 
   return (
