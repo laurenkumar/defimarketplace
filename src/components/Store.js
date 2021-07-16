@@ -51,7 +51,7 @@ function Store() {
   useEffect(() => {
     
     if (user) {
-        const user2 = db.collection("users")
+        const productOwned = db.collection("users")
           .doc(user.uid)
           .collection("products").get().then((response) => {
             if (loadingBar) {
@@ -59,19 +59,7 @@ function Store() {
             }
             console.log(response.docs.map((doc) => doc.data()));
         });
-        console.log(user2)
-          const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
-          .get()
-          .then((querySnapshot) => {
-              querySnapshot.forEach((doc) => {
-                  // doc.data() is never undefined for query doc snapshots
-                  console.log(doc.id, " => ", doc.data());
-              });
-          })
-          .catch((error) => {
-              console.log("Error getting documents: ", error);
-          });
-          console.log(productOwned);
+        console.log(productOwned)
     }
     
   }, [user]);
