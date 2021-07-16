@@ -51,9 +51,8 @@ function Store() {
   useEffect(() => {
     
     if (user) {
-          console.log(user)
-          const user2 = db.collection("users")
-        .doc(user.uid).ref.collection('products').get()
+        console.log(user)
+        const user2 = db.collection("users").get()
         console.log(user2)
           const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
           .get()
