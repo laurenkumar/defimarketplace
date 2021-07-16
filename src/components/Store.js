@@ -49,37 +49,32 @@ function Store() {
   };
 
   useEffect(() => {
-    const success = query.get("success");
-                console.log(success)
+    
 
-    if (success) {
-                  console.log("tictoc")
+    setProcessing(true);
+    if (loadingBar) loadingBar.current.continuousStart();
+    try {
+      auth.onAuthStateChanged((signedIn) => {
+        if (signedIn) {
+          const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
+          .get()
+          .then((querySnapshot) => {
+              querySnapshot.forEach((doc) => {
+                  // doc.data() is never undefined for query doc snapshots
+                  console.log(doc.id, " => ", doc.data());
+              });
+          })
+          .catch((error) => {
+              console.log("Error getting documents: ", error);
+          });
 
-      setProcessing(true);
-      if (loadingBar) loadingBar.current.continuousStart();
-      try {
-        auth.onAuthStateChanged((signedIn) => {
-          if (signedIn) {
-            const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
-            .get()
-            .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                    // doc.data() is never undefined for query doc snapshots
-                    console.log(doc.id, " => ", doc.data());
-                });
-            })
-            .catch((error) => {
-                console.log("Error getting documents: ", error);
-            });
-
-            console.log(productOwned);
-          }
-        });
-      } catch (e) {
-        setError(e.error ? e.error.message : "Some error occured. Try again!");
-        setProcessing(false);
-        if (loadingBar) loadingBar.current.complete();
-      }
+          console.log(productOwned);
+        }
+      });
+    } catch (e) {
+      setError(e.error ? e.error.message : "Some error occured. Try again!");
+      setProcessing(false);
+      if (loadingBar) loadingBar.current.complete();
     }
   }, []);
 
