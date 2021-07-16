@@ -56,6 +56,7 @@ function Store() {
       try {
         auth.onAuthStateChanged((signedIn) => {
           if (signedIn) {
+            console.log("toto")
             const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
             .get()
             .then((querySnapshot) => {
