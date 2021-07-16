@@ -51,7 +51,7 @@ function Store() {
   useEffect(() => {
     
     if (user) {
-    
+          console.log(user)
           const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
           .get()
           .then((querySnapshot) => {
