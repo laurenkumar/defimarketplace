@@ -50,13 +50,16 @@ function Store() {
 
   useEffect(() => {
     const success = query.get("success");
+                console.log("toto")
+
     if (success) {
+                  console.log("tictoc")
+
       setProcessing(true);
       if (loadingBar) loadingBar.current.continuousStart();
       try {
         auth.onAuthStateChanged((signedIn) => {
           if (signedIn) {
-            console.log("toto")
             const productOwned = db.collectionGroup("products").where("ownerId", "==", user.uid)
             .get()
             .then((querySnapshot) => {
