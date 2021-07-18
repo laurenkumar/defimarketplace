@@ -188,7 +188,6 @@ function Store() {
                 <div className="payment__summary">
                   <h5>Product ID: {product.created}</h5>
                   <div className="order__list noScrollbar">
-                    {product.map((item) => (
                       <div className="order__item">
                         <div className="order__image">
                           <img src={item.imgUrl} />
@@ -196,7 +195,6 @@ function Store() {
                         <span className="order__name">{item.name}</span>
                         <small className="order__quantity">x{item.quantity}</small>
                       </div>
-                    ))}
                   </div>
                   <div style={{ marginTop: "auto" }} className="payment__item">
                     <span className="payment__name">Amount</span>
