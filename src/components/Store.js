@@ -190,10 +190,10 @@ function Store() {
                   <div className="order__list noScrollbar">
                       <div className="order__item">
                         <div className="order__image">
-                          <img src={item.imgUrl} />
+                          <img src={product.imgUrl} />
                         </div>
-                        <span className="order__name">{item.name}</span>
-                        <small className="order__quantity">x{item.quantity}</small>
+                        <span className="order__name">{product.name}</span>
+                        <small className="order__quantity">x{product.price}</small>
                       </div>
                   </div>
                   <div style={{ marginTop: "auto" }} className="payment__item">
