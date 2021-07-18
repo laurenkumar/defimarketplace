@@ -59,7 +59,7 @@ function Store() {
       if (user) {
         db.collection("users")
           .doc(user.uid)
-          .collection("products").orderBy("created", "desc").get().then((response) => {
+          .collection("products").get().then((response) => {
             if (loadingBar) {
               loadingBar.current.complete();
             }
