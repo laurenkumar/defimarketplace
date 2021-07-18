@@ -18,7 +18,6 @@ function Store() {
   const [productOwned, setProductOwned] = useState(); 
   const [{ user, loadingBar }] = useStateValue();
   const [loading, setLoading] = useState(false);
-  const [{ loadingBar }] = useStateValue();
   const history = useHistory();
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
