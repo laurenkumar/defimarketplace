@@ -185,7 +185,7 @@ function Store() {
             <div className="orders__inner">
               {productOwned?.map((product) => (
                 <div className="payment__summary">
-                  <h5>Product ID: {order.created}</h5>
+                  <h5>Product ID: {product.created}</h5>
                   <div className="order__list noScrollbar">
                     {product.items.map((item) => (
                       <div className="order__item">
