@@ -7,7 +7,7 @@ import {BrowserRouter as Router} from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
 import {StateProvider} from "./StateProvider";
 import reducer, {initialState} from "./reducer";
-import ScrollToTop from "./scrollToTop";
+import ScrollToTop from "./components/misc/scrollToTop";
 
 ReactDOM.render(
   <React.StrictMode>
