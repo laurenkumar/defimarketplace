@@ -3,10 +3,10 @@ import ReactDOM from "react-dom";
 import "./assets/bootstrap-reboot.css";
 import "./index.css";
 import App from "./App";
-import { BrowserRouter as Router } from "react-router-dom";
+import {BrowserRouter as Router} from "react-router-dom";
 import * as serviceWorker from "./serviceWorker";
-import { StateProvider } from "./StateProvider";
-import reducer, { initialState } from "./reducer";
+import {StateProvider} from "./StateProvider";
+import reducer, {initialState} from "./reducer";
 import ScrollToTop from "./scrollToTop";
 
 ReactDOM.render(

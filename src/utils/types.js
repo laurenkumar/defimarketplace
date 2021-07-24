@@ -1,4 +1,4 @@
-import ethers, { Contract, ContractFunction } from 'ethers'
+import ethers, {Contract, ContractFunction} from 'ethers'
 
 export type MultiCallResponse<T> = T | null
 

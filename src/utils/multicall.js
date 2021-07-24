@@ -1,6 +1,6 @@
-import { ethers } from 'ethers'
-import { getMulticallContract } from 'utils/contractHelpers'
-import { MultiCallResponse } from './types'
+import {ethers} from 'ethers'
+import {getMulticallContract} from 'utils/contractHelpers'
+import {MultiCallResponse} from './types'
 
 export interface Call {
   address: string // Address of the contract

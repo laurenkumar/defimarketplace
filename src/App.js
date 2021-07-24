@@ -1,27 +1,27 @@
-import React, { useEffect, useRef } from "react";
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import "./components/Button.css";
-import Home from "./views/Home";
-import Auth from "./views/Auth";
-import OrdersPage from "./views/OrdersPage";
-import AdminPage from "./views/AdminPage";
-import ProductPage from "./views/ProductPage";
-import PaymentPage from "./views/PaymentPage";
-import CartPage from "./views/CartPage";
-import DonationPage from "./views/DonationPage";
-import BookmarkPage from "./views/BookmarkPage";
-import UserPage from "./views/UserPage";
-import { Switch, Route, useLocation } from "react-router-dom";
-import { AnimatePresence, AnimateSharedLayout } from "framer-motion";
+import React, {useEffect, useRef} from "react";
+import Sidebar from "./components/layout/Sidebar";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
+import "./components/layout/Button.css";
+import Home from "./pages/Home";
+import Auth from "./pages/Auth";
+import OrdersPage from "./pages/OrdersPage";
+import AdminPage from "./pages/AdminPage";
+import ProductPage from "./pages/ProductPage";
+import PaymentPage from "./pages/PaymentPage";
+import CartPage from "./pages/CartPage";
+import DonationPage from "./pages/DonationPage";
+import BookmarkPage from "./pages/BookmarkPage";
+import UserPage from "./pages/UserPage";
+import {Route, Switch, useLocation} from "react-router-dom";
+import {AnimatePresence, AnimateSharedLayout} from "framer-motion";
 import "./App.css";
-import db, { auth } from "./firebase";
-import { useStateValue } from "./StateProvider";
+import {auth} from "./firebase";
+import {useStateValue} from "./StateProvider";
 import LoadingBar from "react-top-loading-bar";
-import { loadStripe } from "@stripe/stripe-js";
-import { Elements } from "@stripe/react-stripe-js";
-import { shuffleArray } from "./util";
+import {loadStripe} from "@stripe/stripe-js";
+import {Elements} from "@stripe/react-stripe-js";
+import {shuffleArray} from "./util";
 import Fuse from "fuse.js";
 import axios from "axios";
 
@@ -55,7 +55,7 @@ function App() {
         bookmarks: JSON.parse(localBookmarks),
       });
     }
-  }, []);
+  }, );
 
   useEffect(() => {
     if (loadingBar) {
