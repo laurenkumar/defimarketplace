@@ -4,6 +4,8 @@ import {Canvas, useFrame, useThree} from "@react-three/fiber";
 import {Physics, usePlane, useCompoundBody, useSphere} from "@react-three/cannon";
 import {Environment, useGLTF} from "@react-three/drei";
 import {EffectComposer, SSAO} from "@react-three/postprocessing";
+import cap from '../../assets/cap.glb';
+import adams from '../../assets/adamsbridge.hdr';
 
 function Donator3D() {
   const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#00a99f", transparent: true, opacity: 0.9 })
@@ -17,7 +19,7 @@ function Donator3D() {
   }))
 
   function Bauble({ vec = new THREE.Vector3(), ...props }) {
-    const { nodes } = useGLTF("/cap.glb")
+    const { nodes } = useGLTF(cap)
     const [ref, api] = useCompoundBody(() => ({
       ...props,
       shapes: [
@@ -59,7 +61,7 @@ function Donator3D() {
           <Collisions />
           {baubles.map((props, i) => <Bauble key={i} {...props} />) /* prettier-ignore */}
         </Physics>
-        <Environment files="/adamsbridge.hdr" />
+        <Environment files={adams} />
         <EffectComposer multisampling={0}>
           <SSAO samples={11} radius={30} intensity={30} luminanceInfluence={0.6} color="green" />
           <SSAO samples={21} radius={5} intensity={30} luminanceInfluence={0.6} color="blue" />
