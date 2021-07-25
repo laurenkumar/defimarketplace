@@ -38,6 +38,7 @@ function AddProductStore() {
       })
       .then(() => {
         setLoading(false);
+        setShowForm(false);
         productForm.current.reset();
       });
   };
