@@ -43,7 +43,7 @@ function Collisions() {
   return useFrame((state) => api.position.set((state.mouse.x * viewport.width) / 2, (state.mouse.y * viewport.height) / 2, 2.5))
 }
 
-export const App = () => (
+export const Donator3D = () => (
   <Canvas
     dpr={1.5}
     gl={{ alpha: true, stencil: false, depth: false, antialias: false }}
