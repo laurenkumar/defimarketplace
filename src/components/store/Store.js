@@ -24,6 +24,9 @@ function Store() {
   const history = useHistory();
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
+  const [showForm, setShowForm] = useState(false);
+
+  const onClick = () => setShowForm(true);
 
   useEffect(() => {
     if (loadingBar) {
@@ -93,7 +96,9 @@ function Store() {
           </TabPanel>
           <TabPanel>
             <h3 style={{ marginBottom: "1rem" }}>Your Product(s)</h3>
-            <AddProductStore />
+            {showForm ? <AddProductStore /> : null}
+
+            <button onClick={onClick}>Add a product</button>
 
             <div className="orders__inner">
               {productOwned?.map((product) => (
