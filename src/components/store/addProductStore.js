@@ -11,6 +11,7 @@ function AddProductStore() {
   const [{ user, loadingBar }] = useStateValue();
   const [loading, setLoading] = useState(false);
   const productForm = useRef(null);
+  const [showForm, setShowForm] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
