@@ -1,0 +1,6 @@
+@media screen and (max-width: 768px) {
+  .full {
+    visibility: hidden;
+    display: none;
+  }
+}
