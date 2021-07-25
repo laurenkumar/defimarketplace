@@ -96,51 +96,52 @@ function Store() {
           </TabPanel>
           <TabPanel>
             <h3 style={{ marginBottom: "1rem" }}>Your Product(s)</h3>
-            {showForm ? <AddProductStore /> : null}
 
-            <button onClick={onClick}>Add a product</button>
+            <button className="button buttonPrimary" onClick={onClick}>Add a product</button>
 
-            <div className="orders__inner">
-              {productOwned?.map((product) => (
-                <div className="payment__summary">
-                  <h5>Product Name: {product.name}</h5>
-                  <div className="order__list noScrollbar">
-                      <div className="order__item">
-                        <div className="order__image">
-                          <img src={product.imgUrl} />
+            {showForm ? <AddProductStore /> :
+              <div className="orders__inner">
+                {productOwned?.map((product) => (
+                  <div className="payment__summary">
+                    <h5>Product Name: {product.name}</h5>
+                    <div className="order__list noScrollbar">
+                        <div className="order__item">
+                          <div className="order__image">
+                            <img src={product.imgUrl} />
+                          </div>
+                          <small className="order__quantity">x{product.stock}</small>
                         </div>
-                        <small className="order__quantity">x{product.stock}</small>
-                      </div>
-                      <div className="storeProduct__remove">
-                        <button
-                          onClick={() => removeItem(product.id)}
-                          data-for="removeTooltip"
-                          data-tip="Delete Product"
-                          className="buttonRed"
-                        >
-                          <DeleteRoundedIcon style={{ fontSize: 16 }} />
-                        </button>
-                        <button
-                          onClick={editItem}
-                          data-for="editItem"
-                          data-tip="Edit your product"
-                          className="buttonSecondary"
-                        >
-                          <EditRoundedIcon style={{ fontSize: 16 }} />
-                        </button>
-                      </div>
+                        <div className="storeProduct__remove">
+                          <button
+                            onClick={() => removeItem(product.id)}
+                            data-for="removeTooltip"
+                            data-tip="Delete Product"
+                            className="buttonRed"
+                          >
+                            <DeleteRoundedIcon style={{ fontSize: 16 }} />
+                          </button>
+                          <button
+                            onClick={editItem}
+                            data-for="editItem"
+                            data-tip="Edit your product"
+                            className="buttonSecondary"
+                          >
+                            <EditRoundedIcon style={{ fontSize: 16 }} />
+                          </button>
+                        </div>
+                    </div>
+                    <div style={{ marginTop: "auto" }} className="payment__item">
+                      <span className="payment__name">Price</span>
+                      <span className="payment__price">
+                        <strong style={{ fontSize: "1.25em", fontWeight: "900" }}>
+                          <small>{product.price} $</small>
+                        </strong>
+                      </span>
+                    </div>
                   </div>
-                  <div style={{ marginTop: "auto" }} className="payment__item">
-                    <span className="payment__name">Price</span>
-                    <span className="payment__price">
-                      <strong style={{ fontSize: "1.25em", fontWeight: "900" }}>
-                        <small>{product.price} $</small>
-                      </strong>
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            }
           </TabPanel>
           <TabPanel>
             <h3 style={{ marginBottom: "1rem" }}>Your Deliveries</h3>
