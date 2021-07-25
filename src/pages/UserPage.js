@@ -2,7 +2,7 @@ import React from "react";
 import Login from "../components/auth/Login";
 import Signup from "../components/auth/Signup";
 import Welcome from "../components/auth/Welcome";
-import Store from "../components/Store";
+import Store from "../components/store/Store";
 import PasswordReset from "../components/auth/PasswordReset";
 import Profile from "../components/user/Profile";
 import {motion} from "framer-motion";
