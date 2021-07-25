@@ -2,14 +2,10 @@ import * as THREE from "three";
 import React, {useEffect} from "react";
 import {Canvas, useFrame, useThree} from "@react-three/fiber";
 import {Physics, usePlane, useCompoundBody, useSphere} from "@react-three/cannon";
-import {Environment, useGLTF} from "@react-three/drei";
 import {EffectComposer, SSAO} from "@react-three/postprocessing";
-import cap from '../../assets/cap.glb';
-import adams from '../../assets/adamsbridge.hdr';
 
 function Donator3D() {
   const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#00a99f", transparent: true, opacity: 0.9 });
-  const capMaterial = new THREE.MeshStandardMaterial({ metalness: 0.9, roughness: 0.1, color: "#00a99f", emissive: "#00a99f", envMapIntensity: 9 });
   const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
   const baubles = [...Array(50)].map(() => ({
     args: [0.6, 0.6, 0.8, 0.8, 1][Math.floor(Math.random() * 5)],
@@ -19,7 +15,6 @@ function Donator3D() {
   }));
 
   function Bauble({ vec = new THREE.Vector3(), ...props }) {
-    const { nodes } = useGLTF(cap);
     const [ref, api] = useCompoundBody(() => ({
       ...props,
       shapes: [
@@ -31,13 +26,11 @@ function Donator3D() {
     return (
       <group ref={ref} dispose={null}>
         <mesh scale={props.args} geometry={sphereGeometry} material={baubleMaterial} />
-        <mesh scale={2.5 * props.args} position={[0, 0, -1.8 * props.args]} geometry={nodes.Mesh_1.geometry} material={capMaterial} />
       </group>
-    )
+    );
   }
 
   function Collisions() {
-    console.log("collision")
     const viewport = useThree((state) => state.viewport);
     usePlane(() => ({ position: [0, 0, 0], rotation: [0, 0, 0] }));
     usePlane(() => ({ position: [0, 0, 8], rotation: [0, -Math.PI, 0] }));
@@ -62,7 +55,6 @@ function Donator3D() {
           <Collisions />
           {baubles.map((props, i) => <Bauble key={i} {...props} />) /* prettier-ignore */}
         </Physics>
-        <Environment files={adams} />
         <EffectComposer multisampling={0}>
           <SSAO samples={11} radius={30} intensity={30} luminanceInfluence={0.6} color="green" />
           <SSAO samples={21} radius={5} intensity={30} luminanceInfluence={0.6} color="blue" />
