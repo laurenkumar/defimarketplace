@@ -1,5 +1,5 @@
 import * as THREE from "three"
-import {useEffect} from "react"
+import React, {useEffect} from "react"
 import {Canvas, useFrame, useThree} from "@react-three/fiber"
 import {Physics, usePlane, useCompoundBody, useSphere} from "@react-three/cannon"
 import {Environment, useGLTF} from "@react-three/drei"
