@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { useQuery, errorAnim } from "../../util";
 import db, {auth} from "../../firebase";
 import AddProductStore from "./addProductStore";
+import AddInfosStore from "./addInfosStore";
 import { Link, useHistory } from "react-router-dom";
 import EditRoundedIcon from '@material-ui/icons/EditRounded';
 import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
@@ -151,7 +152,8 @@ function Store() {
             <h3 style={{ marginBottom: "1rem" }}>Your Deliveries</h3>
           </TabPanel>
           <TabPanel>
-            <h3 style={{ marginBottom: "1rem" }}>General informations about your store</h3>   
+            <h3 style={{ marginBottom: "1rem" }}>General informations about your store</h3> 
+            <AddInfosStore />    
           </TabPanel>
         </Tabs>
       </div>
