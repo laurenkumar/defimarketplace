@@ -5,13 +5,12 @@ import {motion} from "framer-motion";
 import {errorAnim} from "../../util";
 import db from "../../firebase";
 
-function AddProductStore() {
+function AddProductStore({showForm, triggerParentUpdate}) {
   const [checked, setChecked] = useState(false);
   const [error, setError] = useState(null);
   const [{ user, loadingBar }] = useStateValue();
   const [loading, setLoading] = useState(false);
   const productForm = useRef(null);
-  const [showForm, setShowForm] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -39,7 +38,7 @@ function AddProductStore() {
       })
       .then(() => {
         setLoading(false);
-        setShowForm(false);
+        triggerParentUpdate(false);
         productForm.current.reset();
       });
   };

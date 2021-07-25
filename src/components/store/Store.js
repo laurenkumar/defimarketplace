@@ -70,6 +70,10 @@ function Store() {
 
   }
 
+  const updatePageState = (state) => {
+    setShowForm(state);
+  } 
+
   return (
     <div className="store cart">
       <h2>Hey, welcome to your store</h2>
@@ -97,7 +101,7 @@ function Store() {
           <TabPanel>
             <h3 style={{ marginBottom: "1rem" }}>Your Product(s)</h3>
 
-            {showForm ? <AddProductStore showForm={showForm} setShowForm={setShowForm}/> :
+            {showForm ? <AddProductStore showForm={showForm} triggerParentUpdate={updatePageState}/> :
               <div className="orders__inner">
                 <button className="button buttonPrimary" onClick={onClick}>Add a product</button>
                 {productOwned?.map((product) => (
