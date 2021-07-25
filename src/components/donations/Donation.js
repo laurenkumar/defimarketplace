@@ -13,6 +13,7 @@ import xrp from '../../assets/xrp.png';
 import safemoon from '../../assets/safemoon.png';
 
 function Donation() {
+	console.log("titi")
   return (
     <div className="donation">
        	<div className="wrapper">
