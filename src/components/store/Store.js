@@ -10,6 +10,8 @@ import { useQuery, errorAnim } from "../../util";
 import db, {auth} from "../../firebase";
 import AddProductStore from "./addProductStore";
 import { Link, useHistory } from "react-router-dom";
+import EditRoundedIcon from '@material-ui/icons/EditRounded';
+import RemoveShoppingCartRoundedIcon from "@material-ui/icons/RemoveShoppingCartRounded";
 
 function Store() {
   const [checked, setChecked] = useState(false);
@@ -22,28 +24,6 @@ function Store() {
   const history = useHistory();
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
-
-  constructor() {
-    super();
-    this.state = {
-      showHideFName: false,
-      showHideLName: true
-    };
-    this.hideComponent = this.hideComponent.bind(this);
-  }
-
-  hideComponent(name) {
-    switch (name) {
-      case "showHideFName":
-        this.setState({ showHideFName: !this.state.showHideFName });
-        break;
-      case "showHideLName":
-        this.setState({ showHideLName: !this.state.showHideLName });
-        break;
-      default:
-        null;
-    }
-  }
 
   useEffect(() => {
     if (loadingBar) {
@@ -69,6 +49,14 @@ function Store() {
       }
     });
   }, []);
+
+  const removeItem = () => {
+
+  }
+
+  const editItem = () => {
+
+  }
 
   return (
     <div className="store cart">
@@ -96,41 +84,49 @@ function Store() {
           </TabPanel>
           <TabPanel>
             <h3 style={{ marginBottom: "1rem" }}>Your Product(s)</h3>
-            {showHideFName && (
-              <AddProductStore />
-              <button onClick={() => this.hideComponent("showHideFName")}>
-                Show Your Products
-              </button>
-            )}
-            {showHideLName && (
-              <div className="orders__inner">
-                {productOwned?.map((product) => (
-                  <div className="payment__summary">
-                    <h5>Product Name: {product.name}</h5>
-                    <div className="order__list noScrollbar">
-                        <div className="order__item">
-                          <div className="order__image">
-                            <img src={product.imgUrl} />
-                          </div>
-                          <small className="order__quantity">x{product.stock}</small>
+            <AddProductStore />
+
+            <div className="orders__inner">
+              {productOwned?.map((product) => (
+                <div className="payment__summary">
+                  <h5>Product Name: {product.name}</h5>
+                  <div className="order__list noScrollbar">
+                      <div className="order__item">
+                        <div className="order__image">
+                          <img src={product.imgUrl} />
                         </div>
-                    </div>
-                    <div style={{ marginTop: "auto" }} className="payment__item">
-                      <span className="payment__name">Price</span>
-                      <span className="payment__price">
-                        <strong style={{ fontSize: "1.25em", fontWeight: "900" }}>
-                          <small>{product.price}</small>
-                        </strong>
-                      </span>
-                    </div>
+                        <small className="order__quantity">x{product.stock}</small>
+                      </div>
+                      <div className="storeProduct__remove">
+                        <button
+                          onClick={removeItem}
+                          data-for="removeTooltip"
+                          data-tip="Delete Product"
+                          className="buttonRed"
+                        >
+                          <RemoveStoreProductRoundedIcon style={{ fontSize: 16 }} />
+                        </button>
+                        <button
+                          onClick={editItem}
+                          data-for="editItem"
+                          data-tip="Edit your product"
+                          className="buttonSecondary"
+                        >
+                          <EditRoundedIcon style={{ fontSize: 16 }} />
+                        </button>
+                      </div>
                   </div>
-                ))}
-              </div>
-            )}
-            
-            <button onClick={() => this.hideComponent("showHideLName")}>
-                Add a product
-            </button>
+                  <div style={{ marginTop: "auto" }} className="payment__item">
+                    <span className="payment__name">Price</span>
+                    <span className="payment__price">
+                      <strong style={{ fontSize: "1.25em", fontWeight: "900" }}>
+                        <small>{product.price} $</small>
+                      </strong>
+                    </span>
+                  </div>
+                </div>
+              ))}
+            </div>
           </TabPanel>
           <TabPanel>
             <h3 style={{ marginBottom: "1rem" }}>Your Deliveries</h3>
