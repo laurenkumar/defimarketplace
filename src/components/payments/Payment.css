@@ -87,7 +87,7 @@
   padding-bottom: calc((100% - 2rem) * 0.6);
   width: calc(100% - 2rem);
   margin: 1rem;
-  background: url(/src/assets/card.jpg);
+  background: url(../../assets/card.jpg);
   background-size: cover;
   border-radius: 1rem;
   position: relative;
