@@ -53,7 +53,7 @@ function Store() {
     console.log(itemId);
     db.collection("users")
       .doc(user.uid)
-      .collection("products").doc(itemId.uid).delete().then((response) => {
+      .collection("products").doc(itemId).delete().then((response) => {
         if (loadingBar) {
           loadingBar.current.complete();
         }
@@ -105,7 +105,7 @@ function Store() {
                       </div>
                       <div className="storeProduct__remove">
                         <button
-                          onClick={() => removeItem(product)}
+                          onClick={() => removeItem(product.id)}
                           data-for="removeTooltip"
                           data-tip="Delete Product"
                           className="buttonRed"
