@@ -7,10 +7,7 @@ import db from "../../firebase";
 
 function AddProductStore() {
   const [checked, setChecked] = useState(false);
-  const query = useQuery();
-  const [processing, setProcessing] = useState(false);
   const [error, setError] = useState(null);
-  const [productOwned, setProductOwned] = useState();
   const [{ user, loadingBar }] = useStateValue();
   const [loading, setLoading] = useState(false);
   const productForm = useRef(null);
