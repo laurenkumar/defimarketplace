@@ -6,7 +6,7 @@ import {Tab, TabList, TabPanel, Tabs} from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
 import { useStateValue } from "../StateProvider";
 import { motion } from "framer-motion";
-import { useQuery, errorAnim } from "../util";
+import { useQuery, errorAnim } from "../../util";
 import db, {auth} from "../../firebase";
 import { Link, useHistory } from "react-router-dom";
 
