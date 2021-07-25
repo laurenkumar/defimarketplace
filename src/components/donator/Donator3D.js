@@ -42,6 +42,17 @@ function Donator3D() {
 
   return (
     <div className="donator">
+      <div className="donator-text">
+        <h1>Thank You !</h1>
+        <p>
+          <b>To all of you who contributed</b>
+          <br />
+          And keeps contributing to this project
+        </p>
+      </div>
+      <p className="donator-drag">
+        DRAG CURSOR ●
+      </p>
       <Canvas
         dpr={1.5}
         gl={{ alpha: true, stencil: false, depth: false, antialias: false }}
@@ -60,6 +71,16 @@ function Donator3D() {
           <SSAO samples={21} radius={5} intensity={30} luminanceInfluence={0.6} color="blue" />
         </EffectComposer>
       </Canvas>
+
+      <div class='marquee-bottom'>
+        <span>Thank you to donator</span>
+        <span>Thank you to donator</span>
+        <span>Thank you to donator</span>
+        <span>Thank you to donator</span>
+        <span>Thank you to donator</span>
+        <span>Thank you to donator</span>
+        <span>Thank you to donator</span>
+      </div>
     </div>
   );
 }

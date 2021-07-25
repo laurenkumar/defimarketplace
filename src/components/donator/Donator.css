@@ -1,6 +1,70 @@
-@media screen and (max-width: 768px) {
-  .full {
-    visibility: hidden;
-    display: none;
+.donator {
+  width: 100%;
+  height: 100vh;
+  max-height:  150vh;
+  margin: 0;
+  padding-top: 2rem;
+  overscroll-behavior-y: none;
+}
+
+.donator-text {
+  padding-left: 1.8rem;
+}
+
+.donator-drag {
+  position: absolute;
+  right: 2%;
+  top: 25%;
+  transform: rotate3d(0, 0, 1, 90deg) translate3d(100%,10px,0);
+  transform-origin: right;
+  font-weight: 700;
+  line-height: 100%;
+  text-align: right;
+  color: black;
+  white-space: nowrap;
+}
+
+@-webkit-keyframes marquee-horizontal {
+  0% {
+    text-indent: 0;
   }
+  100% {
+    text-indent: -66.666vw;
+  }
+}
+@keyframes marquee-horizontal {
+  0% {
+    text-indent: 0;
+  }
+  100% {
+    text-indent: -66.666vw;
+  }
+}
+
+[class*=marquee] {
+  font-size: 2em;
+  white-space: nowrap;
+  overflow: hidden;
+  position: fixed;
+  color: #0a080b;
+}
+[class*=marquee] span {
+  display: inline-block;
+  text-align: center;
+  text-indent: 0;
+  width: fit-content;
+  color: #008a81;
+  width: -moz-fit-content;
+  padding-left: 2vw;
+  padding-right: 2vw;
+}
+
+.marquee-bottom {
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 0 1rem rgb(26 26 44 / 5%);
+  -webkit-animation: marquee-horizontal 30s linear infinite;
+          animation: marquee-horizontal 30s linear infinite;
 }
