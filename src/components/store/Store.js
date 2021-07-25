@@ -150,7 +150,8 @@ function Store() {
             <h3 style={{ marginBottom: "1rem" }}>Your Deliveries</h3>
           </TabPanel>
           <TabPanel>
-            <h3 style={{ marginBottom: "1rem" }}>General informations about your store</h3>   
+            <h3 style={{ marginBottom: "1rem" }}>General informations about your store</h3>
+            <AddInfosStore />  
           </TabPanel>
         </Tabs>
       </div>
