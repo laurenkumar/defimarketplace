@@ -55,7 +55,7 @@ function App() {
         bookmarks: JSON.parse(localBookmarks),
       });
     }
-  }, );
+  }, []);
 
   useEffect(() => {
     if (loadingBar) {
