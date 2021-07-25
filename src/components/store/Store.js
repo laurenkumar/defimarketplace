@@ -102,8 +102,10 @@ function Store() {
             <h3 style={{ marginBottom: "1rem" }}>Your Product(s)</h3>
 
             {showForm ? <AddProductStore showForm={showForm} triggerParentUpdate={updatePageState}/> :
-              <div className="orders__inner">
+              <div className="buttons">
                 <button className="button buttonPrimary" onClick={onClick}>Add a product</button>
+              </div>
+              <div className="orders__inner">
                 {productOwned?.map((product) => (
                   <div className="payment__summary">
                     <h5>Product Name: {product.name}</h5>

@@ -38,8 +38,8 @@ function AddProductStore({showForm, triggerParentUpdate}) {
       })
       .then(() => {
         setLoading(false);
-        triggerParentUpdate(false);
         productForm.current.reset();
+        triggerParentUpdate(false);
       });
   };
 
