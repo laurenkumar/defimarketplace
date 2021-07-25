@@ -58,7 +58,7 @@ function AddInfosStore() {
                     type="submit"
                     onClick={(e) => handleSubmit(e)}
                   >
-                    {loading ? "Adding..." : "Add Product"}
+                    {loading ? "Saving..." : "Save"}
                   </button>
                 </div>
               </form>
