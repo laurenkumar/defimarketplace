@@ -1,4 +1,4 @@
-import {React, Suspense} from "react";
+import React, {Suspense} from "react";
 import Donator3D from "../components/donator/Donator3D";
 import {Underlay, Overlay} from "../components/donator/Donator";
 import "../components/donator/Donator.css";
