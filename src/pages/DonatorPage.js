@@ -19,7 +19,6 @@ function DonatorPage() {
       <Suspense fallback={null}>
         <Donator3D />
       </Suspense>
-      <Overlay />
     </motion.div>
   );
 }

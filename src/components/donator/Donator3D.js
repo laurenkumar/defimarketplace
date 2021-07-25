@@ -1,12 +1,11 @@
-import * as THREE from "three"
-import React, {useEffect} from "react"
-import {Canvas, useFrame, useThree} from "@react-three/fiber"
-import {Physics, usePlane, useCompoundBody, useSphere} from "@react-three/cannon"
-import {Environment, useGLTF} from "@react-three/drei"
-import {EffectComposer, SSAO} from "@react-three/postprocessing"
+import * as THREE from "three";
+import React, {useEffect} from "react";
+import {Canvas, useFrame, useThree} from "@react-three/fiber";
+import {Physics, usePlane, useCompoundBody, useSphere} from "@react-three/cannon";
+import {Environment, useGLTF} from "@react-three/drei";
+import {EffectComposer, SSAO} from "@react-three/postprocessing";
 
 function Donator3D() {
-  console.log("tototo")
   const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#00a99f", transparent: true, opacity: 0.9 })
   const capMaterial = new THREE.MeshStandardMaterial({ metalness: 0.9, roughness: 0.1, color: "#00a99f", emissive: "#00a99f", envMapIntensity: 9 })
   const sphereGeometry = new THREE.SphereGeometry(1, 28, 28)

@@ -19,7 +19,6 @@ export function Underlay() {
       <div style={{ width: "100%", padding: 0, display: "inline-flex", flexDirection: "row", alignItems: "center", justifyContent: "center" }}>
         <p
           style={{
-            fontFamily: "'Antonio', sans-serif",
             flex: "1 1 0%",
             height: 30,
             fontSize: 30,
@@ -28,30 +27,8 @@ export function Underlay() {
             color: "black",
             letterSpacing: -2,
           }}>
-          POIMANDRES
+          Thank You
         </p>
-        <div style={{ width: 10 }} />
-        <p className="full" style={{ flex: "1 1 0%", height: 12, fontSize: 12, lineHeight: "12px", textAlign: "center", color: "black" }}>
-          DIVINE NAMES
-        </p>
-        <div style={{ width: 10 }} />
-        <p className="full" style={{ flex: "1 1 0%", height: 12, fontSize: 12, lineHeight: "12px", textAlign: "center", color: "black" }}>
-          CREATIONS
-        </p>
-        <div style={{ width: 10 }} />
-        <p className="full" style={{ flex: "1 1 0%", height: 12, fontSize: 12, lineHeight: "12px", textAlign: "center", color: "black" }}>
-          FORMATIONS
-        </p>
-        <div style={{ width: 10 }} />
-        <p className="full" style={{ flex: "1 1 0%", height: 12, fontSize: 12, lineHeight: "12px", textAlign: "center", color: "black" }}>
-          SUBSTANCES
-        </p>
-        <div style={{ width: 10 }} />
-        <p className="full" style={{ flex: "1 1 0%", height: 12, fontSize: 12, lineHeight: "12px", textAlign: "center", color: "black" }}>
-          MATTER
-        </p>
-        <div style={{ width: 10 }} />
-        <p style={{ flex: "1 1 0%", height: 30, fontSize: 30, lineHeight: "30px", textAlign: "right", color: "black" }}>⎑</p>
       </div>
       <div style={{ height: 60 }} />
       <div style={{ width: "100%", padding: 0, display: "inline-flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "center" }}>
@@ -74,25 +51,8 @@ export function Underlay() {
             color: "black",
             whiteSpace: "nowrap",
           }}>
-          DRAG POINTER &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ●
+          DRAG CURSOR &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ●
         </p>
-      </div>
-      <div style={{ height: 10 }} />
-      <div
-        className="full"
-        style={{
-          fontFamily: "'Antonio', sans-serif",
-          width: "100%",
-          flex: "1 1 0%",
-          padding: 0,
-          display: "inline-flex",
-          flexDirection: "row",
-          alignItems: "flex-end",
-          justifyContent: "center",
-        }}>
-        <p style={{ flex: "1 1 0%", fontSize: 250, lineHeight: "1em", color: "black", margin: 0, letterSpacing: -10 }}>X</p>
-        <div style={{ width: 10 }} />
-        <p style={{ flex: "1 1 0%", fontSize: 250, lineHeight: "100%", textAlign: "right", color: "black", margin: 0, letterSpacing: -10 }}>01-</p>
       </div>
       <div style={{ height: 60 }} />
       <div
@@ -106,11 +66,6 @@ export function Underlay() {
           alignItems: "flex-end",
           justifyContent: "center",
         }}>
-        <p className="full" style={{ whiteSpace: "nowrap", flex: "1 1 0%", fontSize: 12, lineHeight: "1.5em", color: "black" }}>
-          <b>Wonders of Antiquity</b>
-          <br />
-          Pythagorean Mathematics
-        </p>
         <div style={{ width: 10 }} />
         <p
           className="full"
@@ -128,18 +83,7 @@ export function Underlay() {
           THE SUMMIT OF THE MANY
         </p>
         <div style={{ width: 10 }} />
-        <p className="full" style={{ flex: "1 1 0%", fontSize: 12, lineHeight: "1em", textAlign: "right", color: "black" }}></p>
       </div>
-    </div>
-  )
-}
-
-export function Overlay() {
-  return (
-    <div style={{ position: "absolute", bottom: 40, right: 40 }}>
-      <p style={{ flex: "1 1 0%", fontSize: 12, lineHeight: "1em", textAlign: "right", color: "black" }}>
-        <a href="http://pmnd.rs/">pmnd.rs</a> <a href="https://github.com/pmndrs">git</a> <a href="https://codesandbox.io/s/zxpv7">csb</a>
-      </p>
     </div>
   )
 }
