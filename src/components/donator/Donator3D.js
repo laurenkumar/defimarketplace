@@ -7,7 +7,7 @@ import {EffectComposer, SSAO} from "@react-three/postprocessing"
 
 function Donator3D() {
   console.log("tototo")
-  const baubleMaterial = new THREE.MeshLambertMaterial({ metalness: 0.9, color: "#00a99f", emissive: "dark", transparent: true, opacity: 0.9 })
+  const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#00a99f", transparent: true, opacity: 0.9 })
   const capMaterial = new THREE.MeshStandardMaterial({ metalness: 0.9, roughness: 0.1, color: "#00a99f", emissive: "#00a99f", envMapIntensity: 9 })
   const sphereGeometry = new THREE.SphereGeometry(1, 28, 28)
   const baubles = [...Array(50)].map(() => ({
