@@ -53,7 +53,7 @@ function Store() {
     console.log(itemId);
     db.collection("users")
       .doc(user.uid)
-      .collection("products").doc(itemId).delete().then((response) => {
+      .collection("products").doc(itemId.id).delete().then((response) => {
         if (loadingBar) {
           loadingBar.current.complete();
         }
