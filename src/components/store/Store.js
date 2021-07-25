@@ -37,7 +37,10 @@ function Store() {
             if (loadingBar) {
               loadingBar.current.complete();
             }
-            setProductOwned(response.docs.map((doc) => doc.data()));
+            setProductOwned(response.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data(),
+            })));
         });
         unsubscribe();
       } else {
