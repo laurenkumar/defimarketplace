@@ -97,10 +97,9 @@ function Store() {
           <TabPanel>
             <h3 style={{ marginBottom: "1rem" }}>Your Product(s)</h3>
 
-            <button className="button buttonPrimary" onClick={onClick}>Add a product</button>
-
-            {showForm ? <AddProductStore /> :
+            {showForm ? <AddProductStore showForm={showForm} setShowForm={setShowForm}/> :
               <div className="orders__inner">
+                <button className="button buttonPrimary" onClick={onClick}>Add a product</button>
                 {productOwned?.map((product) => (
                   <div className="payment__summary">
                     <h5>Product Name: {product.name}</h5>
