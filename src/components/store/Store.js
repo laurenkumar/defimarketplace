@@ -108,7 +108,7 @@ function Store() {
                       </div>
                       <div className="storeProduct__remove">
                         <button
-                          onClick={() => removeItem(product.uid)}
+                          onClick={() => removeItem(product.id)}
                           data-for="removeTooltip"
                           data-tip="Delete Product"
                           className="buttonRed"
