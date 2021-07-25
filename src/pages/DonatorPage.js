@@ -16,11 +16,7 @@ function DonatorPage() {
       transition={pageTransition}
     >
 
-      <Underlay />
-      <Suspense fallback={null}>
         <Donator3D />
-      </Suspense>
-      <Overlay />
     </motion.div>
   );
 }
