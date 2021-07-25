@@ -4,6 +4,7 @@ import {motion} from "framer-motion";
 import {pageTransition, pageZoom} from "../util";
 
 function DonationPage() {
+  console.log("toto")
   return (
     <motion.div
       initial="initial"
