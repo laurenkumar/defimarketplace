@@ -37,7 +37,6 @@ function Store() {
             if (loadingBar) {
               loadingBar.current.complete();
             }
-            console.log(response.docs.map((doc) => doc.data()));
             setProductOwned(response.docs.map((doc) => doc.data()));
         });
         unsubscribe();
@@ -52,6 +51,13 @@ function Store() {
 
   function removeItem(itemId) {
     console.log(itemId);
+    db.collection("users")
+      .doc(user.uid)
+      .collection("products").doc(itemId).delete().then((response) => {
+        if (loadingBar) {
+          loadingBar.current.complete();
+        }
+    });
   }
 
   const editItem = () => {

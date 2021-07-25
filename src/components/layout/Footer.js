@@ -6,7 +6,7 @@ import amazonLogo from "../../assets/logo.svg";
 const footerLinks = [
   {
     title: "Get to Know Us",
-    list: ["Donation"],
+    list: ["Donation", "Donator"],
   },
 ];
 
