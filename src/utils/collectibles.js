@@ -1,7 +1,7 @@
-import Nfts, { IPFS_GATEWAY, nftSources } from 'config/constants/nfts'
-import { Nft, NftType } from 'config/constants/types'
-import { getAddress } from './addressHelpers'
-import { getErc721Contract } from './contractHelpers'
+import Nfts, {IPFS_GATEWAY, nftSources} from 'config/constants/nfts'
+import {Nft, NftType} from 'config/constants/types'
+import {getAddress} from './addressHelpers'
+import {getErc721Contract} from './contractHelpers'
 
 /**
  * Gets the identifier key based on the nft address
