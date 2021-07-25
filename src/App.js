@@ -11,6 +11,7 @@ import ProductPage from "./pages/ProductPage";
 import PaymentPage from "./pages/PaymentPage";
 import CartPage from "./pages/CartPage";
 import DonationPage from "./pages/DonationPage";
+import DonatorPage from "./pages/DonatorPage";
 import BookmarkPage from "./pages/BookmarkPage";
 import UserPage from "./pages/UserPage";
 import {Route, Switch, useLocation} from "react-router-dom";
@@ -142,8 +143,11 @@ function App() {
               <Route path="/admin">
                 <AdminPage />
               </Route>
-              <Route path="/Donation">
+              <Route path="/donation">
                 <DonationPage />
+              </Route>
+              <Route path="/donator">
+                <DonatorPage />
               </Route>
               <Route path="/payment">
                 <Elements options={{ fonts: elFonts }} stripe={promise}>
