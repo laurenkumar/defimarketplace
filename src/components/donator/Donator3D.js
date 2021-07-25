@@ -8,26 +8,26 @@ import cap from '../../assets/cap.glb';
 import adams from '../../assets/adamsbridge.hdr';
 
 function Donator3D() {
-  const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#00a99f", transparent: true, opacity: 0.9 })
-  const capMaterial = new THREE.MeshStandardMaterial({ metalness: 0.9, roughness: 0.1, color: "#00a99f", emissive: "#00a99f", envMapIntensity: 9 })
-  const sphereGeometry = new THREE.SphereGeometry(1, 28, 28)
+  const baubleMaterial = new THREE.MeshLambertMaterial({ color: "#00a99f", transparent: true, opacity: 0.9 });
+  const capMaterial = new THREE.MeshStandardMaterial({ metalness: 0.9, roughness: 0.1, color: "#00a99f", emissive: "#00a99f", envMapIntensity: 9 });
+  const sphereGeometry = new THREE.SphereGeometry(1, 28, 28);
   const baubles = [...Array(50)].map(() => ({
     args: [0.6, 0.6, 0.8, 0.8, 1][Math.floor(Math.random() * 5)],
     mass: 0.7,
     angularDamping: 0.5,
     linearDamping: 0.95,
-  }))
+  }));
 
   function Bauble({ vec = new THREE.Vector3(), ...props }) {
-    const { nodes } = useGLTF(cap)
+    const { nodes } = useGLTF(cap);
     const [ref, api] = useCompoundBody(() => ({
       ...props,
       shapes: [
         { type: "Box", position: [0, 0, 1.2 * props.args], args: new THREE.Vector3().setScalar(props.args * 0.4).toArray() },
         { type: "Sphere", args: props.args },
       ],
-    }))
-    useEffect(() => api.position.subscribe((p) => api.applyForce(vec.set(...p).normalize().multiplyScalar(-props.args * 35).toArray(), [0, 0, 0])), [api]) // prettier-ignore
+    }));
+    useEffect(() => api.position.subscribe((p) => api.applyForce(vec.set(...p).normalize().multiplyScalar(-props.args * 35).toArray(), [0, 0, 0])), [api]);
     return (
       <group ref={ref} dispose={null}>
         <mesh scale={props.args} geometry={sphereGeometry} material={baubleMaterial} />
@@ -37,13 +37,14 @@ function Donator3D() {
   }
 
   function Collisions() {
-    const viewport = useThree((state) => state.viewport)
-    usePlane(() => ({ position: [0, 0, 0], rotation: [0, 0, 0] }))
-    usePlane(() => ({ position: [0, 0, 8], rotation: [0, -Math.PI, 0] }))
-    usePlane(() => ({ position: [0, -4, 0], rotation: [-Math.PI / 2, 0, 0] }))
-    usePlane(() => ({ position: [0, 4, 0], rotation: [Math.PI / 2, 0, 0] }))
-    const [, api] = useSphere(() => ({ type: "Kinematic", args: 2 }))
-    return useFrame((state) => api.position.set((state.mouse.x * viewport.width) / 2, (state.mouse.y * viewport.height) / 2, 2.5))
+    console.log("collision")
+    const viewport = useThree((state) => state.viewport);
+    usePlane(() => ({ position: [0, 0, 0], rotation: [0, 0, 0] }));
+    usePlane(() => ({ position: [0, 0, 8], rotation: [0, -Math.PI, 0] }));
+    usePlane(() => ({ position: [0, -4, 0], rotation: [-Math.PI / 2, 0, 0] }));
+    usePlane(() => ({ position: [0, 4, 0], rotation: [Math.PI / 2, 0, 0] }));
+    const [, api] = useSphere(() => ({ type: "Kinematic", args: 2 }));
+    return useFrame((state) => api.position.set((state.mouse.x * viewport.width) / 2, (state.mouse.y * viewport.height) / 2, 2.5));
   }
 
   return (
