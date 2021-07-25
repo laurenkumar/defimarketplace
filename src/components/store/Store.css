@@ -14,11 +14,22 @@
   font-size: 1rem;
   opacity: 1;
 }
+.store .oreder__item {
+  flex: 1;
+}
 .store .orders__inner {
   justify-content: space-around;
 }
 .store .payment__summary {
   margin-bottom: 2rem;
+}
+.store .buttonSecondary {
+  color: #fff;
+  border: none;
+  height: 1.5rem;
+  border-radius: .25rem;
+  margin-left: .5rem;
+  background: black;
 }
 .store .react-tabs {
   flex-grow: 1;

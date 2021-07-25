@@ -11,7 +11,7 @@ import db, {auth} from "../../firebase";
 import AddProductStore from "./addProductStore";
 import { Link, useHistory } from "react-router-dom";
 import EditRoundedIcon from '@material-ui/icons/EditRounded';
-import RemoveShoppingCartRoundedIcon from "@material-ui/icons/RemoveShoppingCartRounded";
+import DeleteRoundedIcon from '@material-ui/icons/DeleteRounded';
 
 function Store() {
   const [checked, setChecked] = useState(false);
@@ -50,8 +50,8 @@ function Store() {
     });
   }, []);
 
-  const removeItem = () => {
-
+  function removeItem(itemId) {
+    console.log(itemId);
   }
 
   const editItem = () => {
@@ -99,12 +99,12 @@ function Store() {
                       </div>
                       <div className="storeProduct__remove">
                         <button
-                          onClick={removeItem}
+                          onClick={() => removeItem(product)}
                           data-for="removeTooltip"
                           data-tip="Delete Product"
                           className="buttonRed"
                         >
-                          <RemoveShoppingCartRoundedIcon style={{ fontSize: 16 }} />
+                          <DeleteRoundedIcon style={{ fontSize: 16 }} />
                         </button>
                         <button
                           onClick={editItem}
