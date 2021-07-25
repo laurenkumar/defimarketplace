@@ -1,10 +1,10 @@
 import React, {useEffect, useRef, useState} from "react";
-import "../components/cart/Cart.css";
+import "../cart/Cart.css";
 import "./Store.css";
-import CartItem from "../components/cart/CartItem";
+import CartItem from "../cart/CartItem";
 import {Tab, TabList, TabPanel, Tabs} from 'react-tabs';
 import 'react-tabs/style/react-tabs.css';
-import { useStateValue } from "../StateProvider";
+import { useStateValue } from "../../StateProvider";
 import { motion } from "framer-motion";
 import { useQuery, errorAnim } from "../../util";
 import db, {auth} from "../../firebase";
