@@ -42,7 +42,7 @@
 }
 
 [class*=marquee] {
-  font-size: 2em;
+  font-size: 1.7em;
   white-space: nowrap;
   overflow: hidden;
   position: fixed;

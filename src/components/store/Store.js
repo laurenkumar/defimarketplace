@@ -21,6 +21,12 @@ function Store() {
   const history = useHistory();
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
+  const [showForm, setShowForm] = useState(false);
+
+  const showForm = () => {
+    setShowForm(!showForm);
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const formData = new FormData(productForm.current);
@@ -101,8 +107,9 @@ function Store() {
               </div>
           </TabPanel>
           <TabPanel>
-            <form className="form cart__checkout" ref={productForm}>
-                <h3 style={{ marginBottom: "1rem" }}>Add New Product</h3>
+            <h3 style={{ marginBottom: "1rem" }}>Your Product(s)</h3>
+            {showForm && (
+              <form className="form cart__checkout" ref={productForm}>
                 <div className="form__element">
                   <input id="name" name="name" type="text" required />
                   <label for="name">Product Name</label>
@@ -183,24 +190,29 @@ function Store() {
                   </button>
                 </div>
               </form>
+            )}
+
+            <form>
+              <button onClick={showForm}>Add a product</button>
+            </form>
+
             <div className="orders__inner">
               {productOwned?.map((product) => (
                 <div className="payment__summary">
-                  <h5>Product ID: {product.created}</h5>
+                  <h5>Product Name: {product.name}</h5>
                   <div className="order__list noScrollbar">
                       <div className="order__item">
                         <div className="order__image">
                           <img src={product.imgUrl} />
                         </div>
-                        <span className="order__name">{product.name}</span>
                         <small className="order__quantity">x{product.price}</small>
                       </div>
                   </div>
                   <div style={{ marginTop: "auto" }} className="payment__item">
-                    <span className="payment__name">Amount</span>
+                    <span className="payment__name">Price</span>
                     <span className="payment__price">
                       <strong style={{ fontSize: "1.25em", fontWeight: "900" }}>
-                        <small>$</small>
+                        <small>{product.price}</small>
                       </strong>
                     </span>
                   </div>
