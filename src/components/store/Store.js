@@ -104,7 +104,7 @@ function Store() {
                           data-tip="Delete Product"
                           className="buttonRed"
                         >
-                          <RemoveStoreProductRoundedIcon style={{ fontSize: 16 }} />
+                          <RemoveShoppingCartRoundedIcon style={{ fontSize: 16 }} />
                         </button>
                         <button
                           onClick={editItem}
