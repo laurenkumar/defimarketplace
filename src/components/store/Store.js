@@ -23,6 +23,28 @@ function Store() {
   const [{ cart }] = useStateValue();
   const productForm = useRef(null);
 
+  constructor() {
+    super();
+    this.state = {
+      showHideFName: false,
+      showHideLName: true
+    };
+    this.hideComponent = this.hideComponent.bind(this);
+  }
+
+  hideComponent(name) {
+    switch (name) {
+      case "showHideFName":
+        this.setState({ showHideFName: !this.state.showHideFName });
+        break;
+      case "showHideLName":
+        this.setState({ showHideLName: !this.state.showHideLName });
+        break;
+      default:
+        null;
+    }
+  }
+
   useEffect(() => {
     if (loadingBar) {
       loadingBar.current.continuousStart();
@@ -74,33 +96,41 @@ function Store() {
           </TabPanel>
           <TabPanel>
             <h3 style={{ marginBottom: "1rem" }}>Your Product(s)</h3>
+            {showHideFName && (
               <AddProductStore />
-
-            
-
-            <div className="orders__inner">
-              {productOwned?.map((product) => (
-                <div className="payment__summary">
-                  <h5>Product Name: {product.name}</h5>
-                  <div className="order__list noScrollbar">
-                      <div className="order__item">
-                        <div className="order__image">
-                          <img src={product.imgUrl} />
+              <button onClick={() => this.hideComponent("showHideFName")}>
+                Show Your Products
+              </button>
+            )}
+            {showHideLName && (
+              <div className="orders__inner">
+                {productOwned?.map((product) => (
+                  <div className="payment__summary">
+                    <h5>Product Name: {product.name}</h5>
+                    <div className="order__list noScrollbar">
+                        <div className="order__item">
+                          <div className="order__image">
+                            <img src={product.imgUrl} />
+                          </div>
+                          <small className="order__quantity">x{product.stock}</small>
                         </div>
-                        <small className="order__quantity">x{product.price}</small>
-                      </div>
+                    </div>
+                    <div style={{ marginTop: "auto" }} className="payment__item">
+                      <span className="payment__name">Price</span>
+                      <span className="payment__price">
+                        <strong style={{ fontSize: "1.25em", fontWeight: "900" }}>
+                          <small>{product.price}</small>
+                        </strong>
+                      </span>
+                    </div>
                   </div>
-                  <div style={{ marginTop: "auto" }} className="payment__item">
-                    <span className="payment__name">Price</span>
-                    <span className="payment__price">
-                      <strong style={{ fontSize: "1.25em", fontWeight: "900" }}>
-                        <small>{product.price}</small>
-                      </strong>
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
+            
+            <button onClick={() => this.hideComponent("showHideLName")}>
+                Add a product
+            </button>
           </TabPanel>
           <TabPanel>
             <h3 style={{ marginBottom: "1rem" }}>Your Deliveries</h3>

@@ -29,7 +29,7 @@ function AddProductStore() {
         owner: user.displayName,
         ownerId: user.uid,
         price: parseFloat(formData.get("price")),
-        rating: parseFloat(formData.get("rating")),
+        stock: parseFloat(formData.get("stock")),
         category: formData.get("category"),
         discount: formData.get("offer") === "true",
         originalPrice: parseFloat(formData.get("originalPrice")),
@@ -53,8 +53,8 @@ function AddProductStore() {
                   <label for="category">Product Category</label>
                 </div>
                 <div className="form__element">
-                  <input id="rating" name="rating" type="text" required />
-                  <label for="rating">Rating</label>
+                  <input id="stock" name="stock" type="text" required />
+                  <label for="stock">Stock - How much you got ?</label>
                 </div>
                 <div className="form__element">
                   <input id="url" name="url" type="text" required />
@@ -96,22 +96,22 @@ function AddProductStore() {
                     <label for="originalPrice">Original Price</label>
                   </motion.div>
                 )}
-                <h5 style={{ margin: "2rem 0 1rem 0" }}>Features</h5>
+                <h5 style={{ margin: "2rem 0 1rem 0" }}>Description</h5>
                 <div className="form__element">
                   <input id="feat1" name="feat1" type="text" required />
-                  <label for="feat1">Feature 1</label>
+                  <label for="feat1">Short Description 1</label>
                 </div>
                 <div className="form__element">
                   <input id="feat2" name="feat2" type="text" required />
-                  <label for="feat2">Feature 2</label>
+                  <label for="feat2">Short Description 2</label>
                 </div>
                 <div className="form__element">
                   <input id="feat3" name="feat3" type="text" required />
-                  <label for="feat3">Feature 3</label>
+                  <label for="feat3">Short Description 3</label>
                 </div>
                 <div className="form__element">
                   <input id="feat4" name="feat4" type="text" required />
-                  <label for="feat4">Feature 4</label>
+                  <label for="feat4">Short Description 4</label>
                 </div>
                 <div style={{ marginTop: "2rem" }} className="form__element buttons">
                   <button
