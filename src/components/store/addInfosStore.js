@@ -16,6 +16,7 @@ function AddInfosStore() {
     e.preventDefault();
     const formData = new FormData(storeForm.current);
     setLoading(true);
+    console.log(formData);
     db.collection("users")
       .doc(user.uid)
       .collection("store")
