@@ -97,7 +97,7 @@ function Sidebar() {
         >
           <ChatBubbleOutlineRoundedIcon
             className="sidebar__menuIcon"
-            style={iconStyle(32)}
+            style={iconStyle(30)}
           />
         </NavLink>
       </div>
