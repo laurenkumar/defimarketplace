@@ -4,6 +4,7 @@
   font-size: 0.85rem;
   opacity: 0.25;
 }
+
 .store .form__split {
   display: flex;
   border-radius: .5rem;
@@ -67,4 +68,11 @@
   background: transparent;
   border-radius: 0;
   box-shadow: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.store .cart__checkout .form {
+  margin-top: 0;
+  padding-top: 0;
 }
