@@ -12,8 +12,7 @@ function Messenger() {
       <h2>Messenger</h2>
       {messenger.length > 0 ? (
         <div className="products">
-          /*{messenger.map((messenger) => (
-          ))}*/
+          
         </div>
       ) : (
         <div className="cart__inner messenger__inner">
