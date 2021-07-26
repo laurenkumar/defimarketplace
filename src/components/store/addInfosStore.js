@@ -16,18 +16,17 @@ function AddInfosStore() {
     e.preventDefault();
     const formData = new FormData(storeForm.current);
     setLoading(true);
-    const featureArray = [];
-    formData.get("feat1") && featureArray.push(formData.get("feat1"));
     db.collection("users")
       .doc(user.uid)
-      .collection("storeInfo")
-      .add({
+      .collection("store")
+      .set({
         name: formData.get("name"),
         owner: user.displayName,
         ownerId: user.uid,
         address: formData.get("address"),
-        feature: featureArray,
-      })
+        description: formData.get("description"),
+      }, { merge: true }
+      )
       .then(() => {
         setLoading(false);
         storeForm.current.reset();
@@ -48,8 +47,8 @@ function AddInfosStore() {
                 
                 <h5 style={{ margin: "2rem 0 1rem 0" }}>Description</h5>
                 <div className="form__element">
-                  <input id="feat1" name="feat1" type="text" required />
-                  <label for="feat1">Description: what are you selling ?</label>
+                  <input id="description" name="description" type="text" required />
+                  <label for="description">Description: what are you selling ?</label>
                 </div>
                 <div style={{ marginTop: "2rem" }} className="form__element buttons">
                   <button
