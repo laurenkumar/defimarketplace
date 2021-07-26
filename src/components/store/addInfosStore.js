@@ -45,6 +45,7 @@ function AddInfosStore() {
     db.collection("users")
       .doc(user.uid)
       .collection("store")
+      .doc()
       .set({
         name: name,
         owner: user.displayName,
