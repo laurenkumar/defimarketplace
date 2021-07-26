@@ -43,19 +43,16 @@ function AddInfosStore() {
   const storeInfos = db.collection("users")
       .doc(user.uid)
       .collection("store").get().then((response) => {
-        if (loadingBar) {
-          loadingBar.current.complete();
-        }
         setStore(response.docs.map((doc) => ({
           id: doc.id,
           ...doc.data(),
         })));
-        console.log(store)
         return store;
   });
 
   const updateStore = async () => {
-    if (storeInfos != "null") {
+    console.log("Updating", storeInfos  )
+    if (storeInfos.length === 0) {
       setLoading(true);
       db.collection("users")
         .doc(user.uid)
