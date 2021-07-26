@@ -51,7 +51,6 @@ function AddInfosStore() {
   });
 
   const updateStore = async () => {
-    console.log("Updating", store.length  )
     if (store.length === 0) {
       setLoading(true);
       db.collection("users")
@@ -77,7 +76,7 @@ function AddInfosStore() {
           loadingBar.current.complete();
       });
     } else {
-      console.log(store.id)
+      console.log(store[0].id)
       setLoading(true);
       db.collection("users")
         .doc(user.uid)
