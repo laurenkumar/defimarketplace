@@ -61,7 +61,7 @@ function AddInfosStore() {
       .doc(user.uid)
       .collection("store")
       .doc()
-      .set({
+      .update({
         name: name,
         owner: user.displayName,
         ownerId: user.uid,
