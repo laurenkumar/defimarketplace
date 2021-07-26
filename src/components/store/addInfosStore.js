@@ -41,7 +41,7 @@ function AddInfosStore() {
   const updateStore = async () => {
     setLoading(true);
     console.log("Loading", db.collection("users")
-      .doc(user.uid).get())
+      .doc(user.uid).collection("products").get())
     db.collection("users")
       .doc(user.uid)
       .collection("store")
