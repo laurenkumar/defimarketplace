@@ -6,7 +6,6 @@ import {errorAnim} from "../../util";
 import db from "../../firebase";
 
 function AddInfosStore() {
-  const [checked, setChecked] = useState(false);
   const [error, setError] = useState(null);
   const [address, setAddress] = useState("");
   const [name, setName] = useState("");
