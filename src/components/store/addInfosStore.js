@@ -52,7 +52,7 @@ function AddInfosStore() {
 
   const updateStore = async () => {
     console.log("Updating", store.length  )
-    if (store.length === undefined) {
+    if (store.length === 0) {
       setLoading(true);
       db.collection("users")
         .doc(user.uid)
