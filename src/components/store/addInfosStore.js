@@ -40,7 +40,7 @@ function AddInfosStore() {
     return re.test(value);
   };
 
-  useEffect(() => {
+  /*useEffect(() => {
     db.collection("users")
       .doc(user.uid)
       .collection("store").get().then((response) => {
@@ -53,7 +53,7 @@ function AddInfosStore() {
         })));
         console.log(store)
       });
-  });
+  });*/
 
   const updateStore = async () => {
     setLoading(true);
