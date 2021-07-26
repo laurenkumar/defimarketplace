@@ -9,6 +9,7 @@ import OrdersPage from "./pages/OrdersPage";
 import AdminPage from "./pages/AdminPage";
 import ProductPage from "./pages/ProductPage";
 import PaymentPage from "./pages/PaymentPage";
+import MessengerPage from "./pages/MessengerPage";
 import CartPage from "./pages/CartPage";
 import DonationPage from "./pages/DonationPage";
 import DonatorPage from "./pages/DonatorPage";
@@ -118,6 +119,9 @@ function App() {
               </Route>
               <Route path="/bookmarks">
                 <BookmarkPage />
+              </Route>
+              <Route path="/messenger">
+                <MessengerPage />
               </Route>
               <Route path="/login">
                 <UserPage type="login" />
