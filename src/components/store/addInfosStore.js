@@ -3,10 +3,12 @@ import "./Store.css";
 import {useStateValue} from "../../StateProvider";
 import {motion} from "framer-motion";
 import {errorAnim} from "../../util";
+import {countries, useQuery} from "../../util";
 import db from "../../firebase";
 
 function AddInfosStore() {
   const [error, setError] = useState(null);
+  const checkbox = useRef(null);
   const [address, setAddress] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -37,7 +39,6 @@ function AddInfosStore() {
   };
 
   const updateStore = async () => {
-    e.preventDefault();
     setLoading(true);
     db.collection("users")
       .doc(user.uid)
