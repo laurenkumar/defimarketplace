@@ -4,6 +4,11 @@
   font-size: 0.85rem;
   opacity: 0.25;
 }
+.store .form__split {
+  display: flex;
+  border-radius: .5rem;
+  overflow: hidden;
+}
 .store input[type="checkbox"] + label {
   padding: 0.5rem;
   padding-left: 3rem;
