@@ -1,4 +1,4 @@
-.messengers > h2 {
+.messenger > h2 {
   font-size: 1.5rem;
   margin-left: 3rem;
   margin-top: 5rem;
@@ -12,7 +12,7 @@
   .messenger__inner {
     padding: 1.5rem;
   }
-  .messengers > h4 {
+  .messenger > h2 {
     margin: 3rem 1.5rem;
   }
 }
