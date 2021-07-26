@@ -39,9 +39,8 @@ function AddInfosStore() {
     const re = /^(\+\d{1,3}[- ]?)?\d{10}$/;
     return re.test(value);
   };
-
-  /*useEffect(() => {
-    db.collection("users")
+ 
+  const storeInfos = db.collection("users")
       .doc(user.uid)
       .collection("store").get().then((response) => {
         if (loadingBar) {
@@ -52,33 +51,38 @@ function AddInfosStore() {
           ...doc.data(),
         })));
         console.log(store)
-      });
-  });*/
+        return store;
+  });
 
   const updateStore = async () => {
-    setLoading(true);
-    db.collection("users")
-      .doc(user.uid)
-      .collection("store")
-      .doc()
-      .update({
-        name: name,
-        owner: user.displayName,
-        ownerId: user.uid,
-        walletAddress: walletAddress,
-        email: user.email,
-        phone: phone,
-        description: description,
-        address: address,
-        state: stateName,
-        country: country,
-        postal_code: zipcode,
-      }, { merge: true }
-      )
-      .then(() => {
-        setLoading(false);
-        loadingBar.current.complete();
+    if (storeInfos != "null") {
+      setLoading(true);
+      db.collection("users")
+        .doc(user.uid)
+        .collection("store")
+        .doc()
+        .set({
+          name: name,
+          owner: user.displayName,
+          ownerId: user.uid,
+          walletAddress: walletAddress,
+          email: user.email,
+          phone: phone,
+          description: description,
+          address: address,
+          state: stateName,
+          country: country,
+          postal_code: zipcode,
+        }, { merge: true }
+        )
+        .then(() => {
+          setLoading(false);
+          loadingBar.current.complete();
       });
+    } else {
+      console.log("yous should")
+    }
+    
   };
 
   return (
