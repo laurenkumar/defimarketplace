@@ -19,6 +19,7 @@ function AddInfosStore() {
   const [walletAddress, setWalletAddress] = useState("");
   const [checked, setChecked] = useState(false);
   const [status, setStatus] = useState(false);
+  const [store, setStore] = useState(false);
   const [{ user, loadingBar }] = useStateValue();
   const [loading, setLoading] = useState(false);
 
@@ -38,6 +39,21 @@ function AddInfosStore() {
     const re = /^(\+\d{1,3}[- ]?)?\d{10}$/;
     return re.test(value);
   };
+
+  useEffect(() => {
+    db.collection("users")
+      .doc(user.uid)
+      .collection("store").get().then((response) => {
+        if (loadingBar) {
+          loadingBar.current.complete();
+        }
+        setStore(response.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        })));
+        console.log(store)
+      });
+  });
 
   const updateStore = async () => {
     setLoading(true);
