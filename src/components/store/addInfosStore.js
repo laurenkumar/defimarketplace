@@ -76,12 +76,11 @@ function AddInfosStore() {
           loadingBar.current.complete();
       });
     } else {
-      console.log(store[0].id)
       setLoading(true);
       db.collection("users")
         .doc(user.uid)
         .collection("store")
-        .doc(store.id)
+        .doc(store[0].id)
         .set({
           name: name,
           owner: user.displayName,
