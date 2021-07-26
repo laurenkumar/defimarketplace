@@ -6,6 +6,7 @@ import ShoppingCartRoundedIcon from "@material-ui/icons/ShoppingCartRounded";
 import BookmarksRoundedIcon from "@material-ui/icons/BookmarksRounded";
 import WatchLaterRoundedIcon from "@material-ui/icons/WatchLaterRounded";
 import AccountCircleRoundedIcon from "@material-ui/icons/AccountCircleRounded";
+import ChatBubbleOutlineRoundedIcon from '@material-ui/icons/ChatBubbleOutlineRounded';
 import {NavLink, useHistory} from "react-router-dom";
 import defaultImage from "../../assets/default.jpg";
 import ReactTooltip from "react-tooltip";
@@ -82,6 +83,19 @@ function Sidebar() {
           onClick={toggleSidebar}
         >
           <WatchLaterRoundedIcon
+            className="sidebar__menuIcon"
+            style={iconStyle(32)}
+          />
+        </NavLink>
+        <NavLink
+          to="/messenger"
+          className="sidebar__menuItem"
+          activeClassName="active"
+          data-tip="Messenger"
+          data-for="sidebarTooltip"
+          onClick={toggleSidebar}
+        >
+          <ChatBubbleOutlineRoundedIcon
             className="sidebar__menuIcon"
             style={iconStyle(32)}
           />
