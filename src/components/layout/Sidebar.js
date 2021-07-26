@@ -96,7 +96,7 @@ function Sidebar() {
           onClick={toggleSidebar}
         >
           <ChatBubbleOutlineRoundedIcon
-            className="sidebar__menuIcon"
+            className="sidebar__menuIcon messenger"
             style={iconStyle(30)}
           />
         </NavLink>

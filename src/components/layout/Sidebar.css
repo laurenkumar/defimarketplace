@@ -33,6 +33,10 @@
   transform: scale(0.9);
   transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
+.sidebar__menuIcon.messenger {
+  fill: transparent !important;
+  stroke: rgb(26, 26, 44) !important;
+}
 .sidebar__menuItem.active .sidebar__menuIcon {
   transform: scale(1);
   fill: #1a1a2c !important;
