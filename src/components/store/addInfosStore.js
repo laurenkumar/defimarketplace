@@ -52,7 +52,7 @@ function AddInfosStore() {
 
   const updateStore = async () => {
     console.log("Updating", storeInfos.length  )
-    if (storeInfos.length === "undefined") {
+    if (storeInfos.length === undefined) {
       setLoading(true);
       db.collection("users")
         .doc(user.uid)
@@ -82,7 +82,7 @@ function AddInfosStore() {
       db.collection("users")
         .doc(user.uid)
         .collection("store")
-        .doc()
+        .doc(store.id)
         .set({
           name: name,
           owner: user.displayName,
