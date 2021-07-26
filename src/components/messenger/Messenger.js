@@ -10,11 +10,7 @@ function Messenger() {
   return (
     <div className="messenger">
       <h2>Messenger</h2>
-      {messenger.length > 0 ? (
-        <div className="products">
-          
-        </div>
-      ) : (
+      
         <div className="cart__inner messenger__inner">
           <div className="cart__items">
             <img src={chatting} className="cart__empty" />
@@ -31,7 +27,6 @@ function Messenger() {
             </div>
           </div>
         </div>
-      )}
     </div>
   );
 }
