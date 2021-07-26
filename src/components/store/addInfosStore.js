@@ -52,7 +52,7 @@ function AddInfosStore() {
 
   const updateStore = async () => {
     console.log("Updating", storeInfos.length  )
-    if (storeInfos.length === 0) {
+    if (storeInfos.length === "undefined") {
       setLoading(true);
       db.collection("users")
         .doc(user.uid)
@@ -77,7 +77,30 @@ function AddInfosStore() {
           loadingBar.current.complete();
       });
     } else {
-      console.log("yous should")
+      console.log(store)
+      setLoading(true);
+      db.collection("users")
+        .doc(user.uid)
+        .collection("store")
+        .doc()
+        .set({
+          name: name,
+          owner: user.displayName,
+          ownerId: user.uid,
+          walletAddress: walletAddress,
+          email: user.email,
+          phone: phone,
+          description: description,
+          address: address,
+          state: stateName,
+          country: country,
+          postal_code: zipcode,
+        }, { merge: true }
+        )
+        .then(() => {
+          setLoading(false);
+          loadingBar.current.complete();
+      });
     }
     
   };
