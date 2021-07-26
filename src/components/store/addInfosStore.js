@@ -77,7 +77,7 @@ function AddInfosStore() {
           loadingBar.current.complete();
       });
     } else {
-      console.log(store)
+      console.log(store.id)
       setLoading(true);
       db.collection("users")
         .doc(user.uid)
