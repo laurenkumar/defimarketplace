@@ -28,6 +28,7 @@ function AddInfosStore() {
       setStatus(true);
       loadingBar.current.continuousStart();
       updateStore();
+      setStatus(false);
     } else {
       alert("Please check your details again!");
     }
@@ -40,8 +41,6 @@ function AddInfosStore() {
 
   const updateStore = async () => {
     setLoading(true);
-    console.log("Loading", db.collection("users")
-      .doc(user.uid).collection("products").get())
     db.collection("users")
       .doc(user.uid)
       .collection("store")
@@ -62,6 +61,7 @@ function AddInfosStore() {
       )
       .then(() => {
         setLoading(false);
+        loadingBar.current.complete();
       });
   };
 
