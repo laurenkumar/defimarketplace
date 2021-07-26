@@ -12,8 +12,7 @@ function Messenger() {
       <h2>Messenger</h2>
       {messenger.length > 0 ? (
         <div className="products">
-          /*{bookmarks.map((product) => (
-            <Product id={product.id} item={product} />
+          /*{messenger.map((messenger) => (
           ))}*/
         </div>
       ) : (
@@ -37,4 +36,4 @@ function Messenger() {
     </div>
   );
 }
-export default Bookmarks;
+export default Messenger;
