@@ -1,6 +1,6 @@
 // Constructing the two forward-slash-separated parts of the 'Add Liquidity' URL
 // Each part of the url represents a different side of the LP pair.
-import { getWbnbAddress } from './addressHelpers'
+import {getWbnbAddress} from './addressHelpers'
 
 const getLiquidityUrlPathParts = ({ quoteTokenAddress, tokenAddress }) => {
   const chainId = process.env.REACT_APP_CHAIN_ID

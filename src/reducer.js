@@ -1,6 +1,7 @@
 export const initialState = {
   cart: [],
   bookmarks: [],
+  messenger: [],
   products: [],
   user: null,
   loadingBar: null,

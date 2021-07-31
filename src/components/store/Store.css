@@ -1,0 +1,77 @@
+.store input:valid + label {
+  left: 0.75rem;
+  top: 0.4rem;
+  font-size: 0.85rem;
+  opacity: 0.25;
+}
+.store .form__split {
+  display: flex;
+  border-radius: .5rem;
+  overflow: hidden;
+}
+.store input[type="checkbox"] + label {
+  padding: 0.5rem;
+  padding-left: 3rem;
+}
+.store input[type="checkbox"]:valid + label {
+  left: 0;
+  top: 0;
+  font-size: 1rem;
+  opacity: 1;
+}
+.store .order__item {
+  flex: 1;
+}
+.store .orders__inner {
+  justify-content: space-around;
+}
+.store .payment__summary {
+  margin-bottom: 2rem;
+}
+.store .buttonSecondary {
+  color: #fff;
+  border: none;
+  height: 1.5rem;
+  border-radius: .25rem;
+  margin-left: .5rem;
+  background: black;
+}
+.store .react-tabs {
+  flex-grow: 1;
+}
+.store .react-tabs__tab-list {
+  border-bottom: none;
+}
+.store .react-tabs__tab--selected {
+  border: none;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: calc(50% - 2rem);
+  background: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 0.25rem 0.5rem rgb(26 26 44 / 5%);
+  align-self: flex-start;
+  padding: 2rem;
+}
+.store .react-tabs__tab-panel--selected {
+    flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: calc(50% - 2rem);
+    background: #fff;
+    border-radius: .5rem;
+    box-shadow: 0 0.25rem 0.5rem rgb(26 26 44 / 5%);
+    align-self: flex-start;
+    padding: 2rem;
+}
+.store .cart__checkout {
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.store .cart__checkout .form {
+  margin-top: 0;
+  padding-top: 0;
+}

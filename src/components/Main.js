@@ -1,7 +1,7 @@
 import React from "react";
 import "./Main.css";
-import Product from "./Product";
-import { useStateValue } from "../StateProvider";
+import Product from "./products/Product";
+import {useStateValue} from "../StateProvider";
 
 function Main() {
   const [{ products, category }] = useStateValue();

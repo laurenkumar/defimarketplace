@@ -1,28 +1,28 @@
-import { ethers } from 'ethers'
-import { simpleRpcProvider } from 'utils/providers'
-import { poolsConfig } from 'config/constants'
-import { PoolCategory } from 'config/constants/types'
+import {ethers} from 'ethers'
+import {simpleRpcProvider} from 'utils/providers'
+import {poolsConfig} from 'config/constants'
+import {PoolCategory} from 'config/constants/types'
 
 // Addresses
 import {
-  getAddress,
-  getPancakeProfileAddress,
-  getPancakeRabbitsAddress,
-  getBunnyFactoryAddress,
-  getBunnySpecialAddress,
-  getCakeAddress,
-  getLotteryV2Address,
-  getMasterChefAddress,
-  getPointCenterIfoAddress,
-  getClaimRefundAddress,
-  getTradingCompetitionAddress,
-  getEasterNftAddress,
-  getCakeVaultAddress,
-  getPredictionsAddress,
-  getChainlinkOracleAddress,
-  getMulticallAddress,
-  getBunnySpecialCakeVaultAddress,
-  getBunnySpecialPredictionAddress,
+    getAddress,
+    getBunnyFactoryAddress,
+    getBunnySpecialAddress,
+    getBunnySpecialCakeVaultAddress,
+    getBunnySpecialPredictionAddress,
+    getCakeAddress,
+    getCakeVaultAddress,
+    getChainlinkOracleAddress,
+    getClaimRefundAddress,
+    getEasterNftAddress,
+    getLotteryV2Address,
+    getMasterChefAddress,
+    getMulticallAddress,
+    getPancakeProfileAddress,
+    getPancakeRabbitsAddress,
+    getPointCenterIfoAddress,
+    getPredictionsAddress,
+    getTradingCompetitionAddress,
 } from 'utils/addressHelpers'
 
 // ABI
@@ -51,7 +51,7 @@ import chainlinkOracleAbi from 'config/abi/chainlinkOracle.json'
 import MultiCallAbi from 'config/abi/Multicall.json'
 import bunnySpecialCakeVaultAbi from 'config/abi/bunnySpecialCakeVault.json'
 import bunnySpecialPredictionAbi from 'config/abi/bunnySpecialPrediction.json'
-import { ChainLinkOracleContract, PredictionsContract } from './types'
+import {ChainLinkOracleContract, PredictionsContract} from './types'
 
 const getContract = (abi: any, address: string, signer?: ethers.Signer | ethers.providers.Provider) => {
   const signerOrProvider = signer ?? simpleRpcProvider

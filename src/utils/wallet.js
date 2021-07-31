@@ -1,7 +1,7 @@
 // Set of helper functions to facilitate wallet setup
 
-import { BASE_BSC_SCAN_URL } from 'config'
-import { nodes } from './getRpcUrl'
+import {BASE_BSC_SCAN_URL} from 'config'
+import {nodes} from './getRpcUrl'
 
 /**
  * Prompt the user to add BSC as a network on Metamask, or switch to BSC if the wallet is on a different network
