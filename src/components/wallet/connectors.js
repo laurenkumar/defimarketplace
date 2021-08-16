@@ -8,7 +8,7 @@ const RPC_URLS = {
 
 export const walletconnect = new WalletConnectConnector({
   rpc: { 1: RPC_URLS[1] },
-  bridge: "wss://relay.walletconnect.org",
+  bridge: "https://bridge.walletconnect.org", // Required
   qrcode: true,
   pollingInterval: POLLING_INTERVAL
 });

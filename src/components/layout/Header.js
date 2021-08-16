@@ -9,6 +9,7 @@ import Modal from 'react-modal';
 import {Web3ReactProvider} from "@web3-react/core";
 import {ethers} from "ethers";
 import {WalletConnectorsComponent} from "../wallet/walletConnectorsComponent"
+import {WalletConnectorsComponentv2} from "../wallet/walletConnectorsComponentv2"
 
 function Header() {
     const location = useLocation();
@@ -17,10 +18,7 @@ function Header() {
     const [results, setResults] = useState(null);
     const [resultsOpen, setResultsOpen] = useState(false);
     const [{fuse}] = useStateValue();
-    const [walletAddress, setWallet] = useState("");
-    const [status, setStatus] = useState("");
     const [modalIsOpen, setIsOpen] = React.useState(false);
-    const chainId = [56];
 
     const customStyles = {
         content: {
@@ -62,6 +60,7 @@ function Header() {
         }
     };
 
+
     return (
         <div className="header">
 
@@ -76,6 +75,7 @@ function Header() {
                     <WalletConnectorsComponent/>
                 </Web3ReactProvider>
             </Modal>
+
             <div className="header__nav">
                 {location.pathname !== "/" && (
                     <button onClick={() => history.goBack()} className="header__back">
@@ -124,7 +124,8 @@ function Header() {
                 )}
 
                 <div className="buttons">
-                    <button className="buttonSecondary" onClick={openModal}>Connect</button>
+                    <button className="buttonSecondary" onClick={openModal}>Connect wallet v1</button>
+                    <WalletConnectorsComponentv2></WalletConnectorsComponentv2>
                 </div>
             </div>
         </div>

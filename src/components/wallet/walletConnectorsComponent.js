@@ -118,7 +118,7 @@ export function WalletConnectorsComponent() {
     // handle logic to recognize the connector currently being activated
     const [activatingConnector, setActivatingConnector] = React.useState()
     React.useEffect(() => {
-        if (activatingConnector && activatingConnector === connector) {
+        if (activatingConnector === connector) {
             setActivatingConnector(undefined)
         }
     }, [activatingConnector, connector])
