@@ -3,8 +3,6 @@ import axios from 'axios';
 import Charts from './Charts';
 import List from './List.js';
 import SearchRoundedIcon from "@material-ui/icons/SearchRounded";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import {Button, Container, Row, Col} from 'react-bootstrap';
 import './News.css';
 
 function News() {
