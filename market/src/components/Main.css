@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6, a, strong {
 }
 
 @media (max-width: 769px) {
-    .coin-container {
+    .compare-dashboard .coin-container {
         flex-direction: column !important;
     }
     .first-coin .coin-name {
@@ -57,7 +57,7 @@ h1, h2, h3, h4, h5, h6, a, strong {
     .first-coin .coin-name > div {
         margin-right: 1rem;
     }
-    .coin-container > div {
+    .compare-dashboard .coin-container > div {
         flex-direction: column;
         margin-left: 0 !important;
         width: 100%;

@@ -45,7 +45,7 @@ function CompareCoins() {
   }
 
   return (
-    <div>
+    <div className="compare-dashboard">
       <h2 className="coin-text">What if SafeMoon reached the market cap of... <span className="crypto-caption">(With a circulating supply of 100T)</span> </h2>
       {stats?.map((coin) => (
         <div className="coin-container">
