@@ -16,6 +16,10 @@ th, td {
     font-weight: 400;
 }
 
+th {
+    text-align: left;
+}
+
 tbody {
     margin-bottom: .5rem;
 }
