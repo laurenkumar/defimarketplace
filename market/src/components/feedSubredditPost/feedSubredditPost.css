@@ -1,0 +1,11 @@
+.header__back {
+    margin-right: auto;
+    padding: .33rem .66rem;
+    display: inline-block;
+    border: none;
+    margin-bottom: 10vh;
+}
+
+.post-page-component {
+    margin-top:  8vh;
+}

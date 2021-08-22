@@ -1,0 +1,73 @@
+.calculator-container {	
+	display:  flex;
+}
+
+.calculator-container >	div {
+	flex: 1 1;
+    text-decoration: none;
+    background: #fff;
+    margin: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: .5rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 6px 10px 0 rgb(31 38 135 / 37%);
+    transition: transform .2s,box-shadow .2s;
+}
+
+h2.crypto-caption a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #059b64;
+}
+
+.calcul-results {
+	display: flex;
+    color: #059b64;
+    border-bottom: .5px solid #008a81;
+    line-height: 3.5;
+    justify-content: space-between;
+}
+
+.calcul-results span {
+	color: #000;
+}
+
+.calculator-container form > div {
+	width: 90%;
+    margin: 1.5rem auto;
+}
+
+.calculator-container form > div > div {
+	width: 100%;
+}
+
+.calculator-container .MuiFormLabel-root {
+	color: black;
+}
+
+.calculator-container .MuiFormLabel-root.Mui-focused {
+	color: #008a81;
+}
+
+.calculator-container .MuiOutlinedInput-notchedOutline {
+	border-color: black;
+}
+
+.calculator-container .Mui-focused .MuiOutlinedInput-notchedOutline {
+	border-color: #008a81 !important;
+}
+
+@media (max-width: 768px) {
+	.calculator-container {	
+		flex-direction: column;
+	}
+}
+
+@media (max-width: 550px) {
+	.coin-text {
+		margin-left: 1rem;
+	}
+	.calcul-dashboard h1, .calcul-dashboard h2 {	
+		margin-left: 1rem;
+	}
+}

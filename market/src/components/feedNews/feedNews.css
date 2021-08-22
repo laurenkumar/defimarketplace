@@ -1,0 +1,120 @@
+.news-container {
+	margin: 2rem;
+	margin-left: 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.news-container a {
+	text-decoration: none;
+	width: calc(33.33333% - 2rem);
+    background: #fff;
+    margin: 1rem;
+    border-radius: .5rem;
+    box-shadow: 0 8px 32px 0 rgb(31 38 135 / 37%);
+    display: flex;
+    flex-flow: column nowrap;
+    transition: box-shadow .2s,-webkit-transform .2s;
+    transition: transform .2s,box-shadow .2s;
+    transition: transform .2s,box-shadow .2s,-webkit-transform .2s;
+}
+
+.news-container a:hover {
+    -webkit-transform: scale(1.025);
+    transform: scale(1.025);
+    box-shadow: 0 1rem 1rem -0.5rem rgb(26 26 44 / 10%);
+}
+
+.post-selftext p {
+	color: #000;
+}
+
+.details-container {
+	padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    flex: 1 1;
+}
+
+.show-posts-container h2 {
+	height: 4rem;
+    overflow: hidden;
+    font-size: 1.12rem;
+}
+
+.posts-img {
+	width: auto;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    padding: 1.5rem;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+
+.posts-img-container {
+	width: 100%;
+    height: 0;
+    padding-bottom: 75%;
+    position: relative;
+    overflow: hidden;
+    display: block;
+    border-radius: .5rem .5rem 0 0;
+}
+
+.posts-img-container:after, .posts-img-container:before {
+    position: absolute;
+    opacity: 0;
+    transition: all .2s;
+}
+
+.posts-img-container:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    background: rgba(0,0,0,.1);
+}
+
+.posts-img-container:before {
+    content: "View Article";
+    padding: .5rem 1rem;
+    background: #fff;
+    box-shadow: 0 1rem 1rem -0.5rem rgb(26 26 44 / 50%);
+    color: #1a1a2c;
+    border-radius: .5rem;
+    z-index: 3;
+    -webkit-transform: translate(-50%,-25%);
+    transform: translate(-50%,-25%);
+    top: 50%;
+    left: 50%;
+    white-space: nowrap;
+}
+
+.post-selftext p {
+	text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+@media (max-width: 850px) {
+	.news-container a {
+	    width: calc(50% - 2rem);
+	}
+}
+
+@media (max-width: 550px) {
+	.coin-app {
+	    margin-left: 0;
+	}
+	.news-container {
+	    margin: 0;
+	}
+	.news-container a {
+	    width: calc(100% - 3rem);
+	    margin: .75rem 1.5rem;
+	}
+}

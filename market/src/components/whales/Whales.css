@@ -1,0 +1,13 @@
+.whale {
+	margin: 1rem 0;
+    border: 1px solid #008a81;
+    padding: 10px;
+}
+
+@media (max-width: 550px) {
+    .whale > div {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}

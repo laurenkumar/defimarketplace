@@ -1,0 +1,8 @@
+.loader-icon-wrapper {
+  width: 100%;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 0;
+}

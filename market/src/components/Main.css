@@ -1,0 +1,78 @@
+/* Works on Firefox */
+.makeStyles-container-2 {
+  scrollbar-width: thin;
+  scrollbar-color: #008a81 black;
+}
+
+/* Works on Chrome, Edge, and Safari */
+.makeStyles-container-2::-webkit-scrollbar {
+    height: 5px;
+}
+
+.makeStyles-container-2::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.makeStyles-container-2::-webkit-scrollbar-thumb {
+  background-color: #008a81;
+}
+
+h1, h2, h3, h4, h5, h6, a, strong {
+	color: #008a81;
+}
+
+.safemoon-dashboard {
+    display: flex;
+    margin-top: 3rem;
+}
+
+.safemoon-dashboard > div {
+	flex:  1;
+	text-decoration: none;
+    background: #fff;
+    margin: 1rem;
+    margin-bottom: 1.5rem;
+    border-radius: .5rem;
+    padding: 1rem 2rem;
+    box-shadow: 0 6px 10px 0 rgb(31 38 135 / 37%);
+    transition: transform .2s,box-shadow .2s;
+}
+
+@media (max-width: 1025px) {
+    .safemoon-dashboard  {
+        flex-direction: column;
+    }
+    .coin-compare-safe .coin-name {
+        display: none;
+    }
+}
+
+@media (max-width: 769px) {
+    .coin-container {
+        flex-direction: column !important;
+    }
+    .first-coin .coin-name {
+        flex-direction: row;
+    }
+    .first-coin .coin-name > div {
+        margin-right: 1rem;
+    }
+    .coin-container > div {
+        flex-direction: column;
+        margin-left: 0 !important;
+        width: 100%;
+    }
+    .coin-potential {
+        justify-content: space-between;
+        width: 100%;
+    }
+    .coin-potential div > span {
+        margin-right: 0 !important;
+    }
+    .coin-compare-safe .coin-img {
+        margin-left: 0;
+    }
+    .coin-compare-init .first-coin {
+        justify-content: space-between !important;
+    }
+}
