@@ -134,7 +134,7 @@ function Whales() {
       .then(res => {
         setSafemoonTen(res.data.result);
       })
-      .catch(error => console.log(error)), 1300);
+      .catch(error => console.log(error)), 1450);
   }, []);
 
   const [stats, setStats] = useState([]);
