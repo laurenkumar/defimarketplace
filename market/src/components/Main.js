@@ -56,7 +56,7 @@ function Main() {
     <div className="main">
       <div className='coin-app'>
         <h1 className='coin-text'>Your crypto corner</h1>
-        <div className="makeStyles-container-2 {classes.container}">
+        <div className={classes.container}>
           <Link className={classes.link} to="/market">
             <Card className={classes.root}>
                 <TrendingUpRoundedIcon
