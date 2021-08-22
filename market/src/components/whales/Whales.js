@@ -112,7 +112,7 @@ function Whales() {
       .then(res => {
         setSafemoonEight(res.data.result);
       })
-      .catch(error => console.log(error)), 1250);
+      .catch(error => console.log(error)), 1350);
   }, []);
 
   useEffect(() => {
@@ -123,7 +123,7 @@ function Whales() {
       .then(res => {
         setSafemoonNine(res.data.result);
       })
-      .catch(error => console.log(error)), 1250);
+      .catch(error => console.log(error)), 1350);
   }, []);
 
   useEffect(() => {
@@ -134,7 +134,7 @@ function Whales() {
       .then(res => {
         setSafemoonTen(res.data.result);
       })
-      .catch(error => console.log(error)), 1200);
+      .catch(error => console.log(error)), 1300);
   }, []);
 
   const [stats, setStats] = useState([]);
