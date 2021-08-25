@@ -92,7 +92,7 @@ function CompareCoins() {
       {stats?.map((coin) => (
         <div className="coin-container">
           <div className="coin-compare-init coin-infos">
-            <div className="coin-count">{count2++}</div>
+            <div className="coin-count">{count2++}</div> 
             <div className="coin-infos first-coin">
               <div className="coin-img">
                 <img src={coin.image} />
