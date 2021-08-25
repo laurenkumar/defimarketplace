@@ -118,11 +118,8 @@ function CompareCoins() {
                 <div><span className="up-text">${(coin.market_cap / 100000000000000).toFixed(5)}</span></div>
               </div>
               <div>
-                <span>Reflections Per Day $</span>
-                <div><span className="upside">{((1000000000/(2*10000000000000000)*coin.total_volume)).toFixed()}</span></div>
-              </div>
-              <div>
                 <span>Reflections Per Day</span>
+                <div><span className="upside">${((1000000000/(2*10000000000000000)*coin.total_volume)).toFixed()}</span></div>
                 <div><span className="upside">{((1000000000/(2*10000000000000000)*coin.total_volume)/(coin.market_cap / 100000000000000)).toFixed()}</span></div>
               </div>
             </div>
