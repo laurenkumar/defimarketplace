@@ -61,17 +61,38 @@
   box-shadow: 0 0.5rem 1rem rgba(43, 156, 174, 0.25);
   padding: 0.5rem 1.5rem !important;
 }
+
 .buttonPrimary .MuiSvgIcon-root {
   margin-right: 0.5rem;
 }
+
 .buttonPrimary:hover {
   transform: scale(1.05);
   box-shadow: 0 1rem 1rem -0.75rem rgba(255, 153, 0, 0.5);
 }
+
+
+.buttonInfo {
+  background: #3a6df0;
+  box-shadow: 0 0.5rem 1rem rgba(43, 156, 174, 0.25);
+  padding: 0.5rem 1.5rem !important;
+}
+
+.buttonInfo .MuiSvgIcon-root {
+  margin-right: 0.5rem;
+}
+
+.buttonInfo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 1rem 1rem -0.75rem rgba(255, 153, 0, 0.5);
+}
+
+
 button:active {
   transform: scale(0.95) !important;
   box-shadow: inset 0 0 0.5rem 0 rgba(0, 0, 0, 0.25) !important;
 }
+
 button:focus {
   outline: none;
 }

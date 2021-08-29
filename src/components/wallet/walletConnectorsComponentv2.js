@@ -1,27 +1,12 @@
 import React from "react";
-import {useWeb3React} from "@web3-react/core";
-import {formatEther} from "@ethersproject/units";
 import WalletConnect from "@walletconnect/client";
 import QRCodeModal from "@walletconnect/qrcode-modal";
+import {apiGetAccountAssets} from "./chainsHelpers/eth.js";
+import Modal from "react-modal";
 
 function BalanceComponent(props) {
-    const {account, library, chainId} = useWeb3React()
-    const [balance, setBalance] = React.useState();
-    React.useEffect(() => {
-    }, [])
 
-
-    function formatBalance(balance) {
-        if (balance === null) {
-            return 'Error'
-        } else if (balance) {
-            return formatEther(balance);
-        } else {
-            return '';
-        }
-    }
-
-    if (balance !== null && balance !== undefined)
+    if (props.balance !== null && props.balance !== undefined)
         return (
             <>
                 <h3 style={{
@@ -33,7 +18,8 @@ function BalanceComponent(props) {
                     margin: "auto"
                 }}>
                     <span>Balance</span>
-                    <span>{formatBalance(balance)}</span>
+                    <span>{props.balance}</span>
+                    <span>{props.currency}</span>
                 </h3>
             </>
         );
@@ -83,9 +69,15 @@ export function WalletConnectorsComponentv2() {
     const [connected, setConnected] = React.useState(false);
     const [accounts, setAccounts] = React.useState(null);
     const [chainId, setChainId] = React.useState(null);
+    const [result, setResult] = React.useState(null);
+    const [isOpen, setIsOpen] = React.useState(false);
 
 
     function connectWallet() {
+        if (connector !== null) {
+            connector.killSession();
+            console.log("old session killed!")
+        }
         // Create a connector
         let connector2 = new WalletConnect({
             bridge: "https://bridge.walletconnect.org", // Required
@@ -105,18 +97,20 @@ export function WalletConnectorsComponentv2() {
                 throw error;
             }
             console.log("listener on");
-            setConnected(true);
+
             // Get provided accounts and chainId
             const {accounts, chainId} = payload.params[0];
-            console.log(accounts)
-            console.log(payload);
+            setAccounts(accounts);
+            setChainId(chainId);
+            loadAccountDetails(accounts, chainId).then(
+                it => setConnected(true)
+            )
         });
 
         connector2.on("session_update", (error, payload) => {
             if (error) {
                 throw error;
             }
-            console.log("session_update");
             // Get updated accounts and chainId
             const {accounts, chainId} = payload.params[0];
         });
@@ -127,7 +121,6 @@ export function WalletConnectorsComponentv2() {
             }
             setConnected(false);
             setConnector(null);
-            console.log("disconnect");
         });
 
         setConnector(connector2);
@@ -137,11 +130,67 @@ export function WalletConnectorsComponentv2() {
         connector.killSession();
     }
 
+    function toggleDetails() {
+        setIsOpen(!isOpen)
+    }
 
-    return (
-        !connected ?
-            <button className="buttonPrimary" onClick={connectWallet}>Connect wallet v2</button> :
-            <button className="buttonDanger" onClick={disconnectWallet}>Disconnect wallet</button>
-    );
+    function loadAccountDetails(accounts, chainId) {
+        return apiGetAccountAssets(accounts, chainId).then(
+            result => {
+                setResult(result);
+                console.log(result);
+                return Promise.resolve();
+            }
+        ).catch(error => Promise.reject(error));
+    }
+
+
+    if (!connected)
+        return (
+            <button className="buttonPrimary" onClick={connectWallet}>Connect wallet v2</button>
+        )
+    else if (result !== null) {
+        const balancesList = result.map((it) =>
+            <BalanceComponent key={it.symbol} balance={(it.balance / Math.pow(10, it.decimals)).toString()}
+                              currency={it.symbol}/>
+        );
+        return (
+            <div>
+                <button className="buttonInfo" onClick={toggleDetails}>Open wallet</button>
+                <Modal
+                    isOpen={isOpen}
+                    contentLabel="Wallet"
+                    style={{
+                        overlay: {
+                            position: 'fixed',
+                            top: 0,
+                            left: 0,
+                            right: 0,
+                            bottom: 0,
+                            backgroundColor: 'rgba(255, 255, 255, 0.75)'
+                        },
+                        content: {
+                            position: 'relative',
+                            top: '10%',
+                            left: '74%',
+                            height: '40%',
+                            width: '23%',
+                            border: '1px solid #ccc',
+                            background: '#fff',
+                            overflow: 'auto',
+                            WebkitOverflowScrolling: 'touch',
+                            borderRadius: '4px',
+                            outline: 'none',
+                            padding: '20px'
+                        }
+                    }}
+                >
+                    {balancesList}
+                    <button className="buttonDanger" onClick={disconnectWallet}>Leave</button>
+                </Modal>
+            </div>
+        );
+    }
+
 }
 
