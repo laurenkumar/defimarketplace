@@ -28,9 +28,9 @@ function Sidebar() {
     setSidebarActive((sidebarActive) => !sidebarActive);
 
   return (
-    <div className={`sidebar ${sidebarActive ? "active" : ""}`}>
+    <header className={`sidebar ${sidebarActive ? "active" : ""}`}>
       <img src={amazonIcon} className="sidebar__icon" onClick={toggleSidebar} />
-      <div className="sidebar__menu">
+      <nav className="sidebar__menu">
         <NavLink
           to="/"
           exact
@@ -97,7 +97,7 @@ function Sidebar() {
             style={iconStyle(34)}
           />
         </NavLink>
-      </div>
+      </nav>
       <ReactTooltip
         place="right"
         className="app__toolTip"
@@ -105,7 +105,7 @@ function Sidebar() {
         backgroundColor="#1a1a2cee"
         effect="solid"
       />
-    </div>
+    </header>
   );
 }
 export default Sidebar;

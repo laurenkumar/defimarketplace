@@ -29,9 +29,9 @@ function Sidebar() {
     setSidebarActive((sidebarActive) => !sidebarActive);
 
   return (
-    <div className={`sidebar ${sidebarActive ? "active" : ""}`}>
-      <img src={amazonIcon} className="sidebar__icon" onClick={toggleSidebar} />
-      <div className="sidebar__menu">
+    <header className={`sidebar ${sidebarActive ? "active" : ""}`}>
+      <img src={amazonIcon} alt="moonmarket logo" className="sidebar__icon" onClick={toggleSidebar} />
+      <nav className="sidebar__menu">
         <NavLink
           to="/"
           exact
@@ -100,7 +100,7 @@ function Sidebar() {
             style={iconStyle(30)}
           />
         </NavLink>
-      </div>
+      </nav>
       {user ? (
         <img
           src={user?.photoURL || defaultImage}
@@ -134,7 +134,7 @@ function Sidebar() {
         backgroundColor="#1a1a2cee"
         effect="solid"
       />
-    </div>
+    </header>
   );
 }
 export default Sidebar;
