@@ -168,7 +168,7 @@ function Whales() {
   }
 
   return (
-    <div>
+    <section>
       <h2 className="coin-text">Top Ten Safemoon whales</h2>   
       <div className="flex justify-content-between whale">
         <div>
@@ -270,8 +270,8 @@ function Whales() {
           <span>{getNumber(safemoonAddressTen/1000000000)}</span>
         </div>
       </div>
-      <div>Top 10 Whales own <span className="upside">{dominance}%</span> of the circulating supply.</div>
-    </div>
+      <h3>Top 10 Whales own <span className="upside">{dominance}%</span> of the circulating supply.</h3>
+    </section>
   );
 }
 

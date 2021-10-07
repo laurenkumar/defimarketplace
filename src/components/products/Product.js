@@ -21,34 +21,36 @@ function Product({ item, id }) {
       onClick={() => history.push(`/product/${id}`, { product: item })}
       className="product"
     >
-      <motion.div layoutId={id} className="product__image">
-        {item.discount && <span className="banner">Offer!</span>}
-        <img src={item.imgUrl || defaultImage} />
-      </motion.div>
-      <div className="product__details">
-        <span className="product__category">{item.category}</span>
-        <TextTruncate
-          line={3}
-          element="h6"
-          containerClassName="product__name"
-          truncateText="…"
-          text={item.name}
-        />
-        <div className="product__footer">
-          <p className="product__price">
-            <b>${item.price}</b>{" "}
-            {item.discount && (
-              <small>
-                <del>${item.originalPrice}</del>
-              </small>
-            )}
-          </p>
-          <div className="product__rating">
-            <StarRateRoundedIcon style={{ color: "#f90" }} />
-            {item.rating}
+      <a href={'/product/' + id} className="link-product" title={item.name}>
+        <motion.div layoutId={id} className="product__image">
+          {item.discount && <span className="banner">Offer!</span>}
+          <img src={item.imgUrl || defaultImage} />
+        </motion.div>
+        <div className="product__details">
+          <span className="product__category">{item.category}</span>
+          <TextTruncate
+            line={3}
+            element="h6"
+            containerClassName="product__name"
+            truncateText="…"
+            text={item.name}
+          />
+          <div className="product__footer">
+            <p className="product__price">
+              <b>${item.price}</b>{" "}
+              {item.discount && (
+                <small>
+                  <del>${item.originalPrice}</del>
+                </small>
+              )}
+            </p>
+            <div className="product__rating">
+              <StarRateRoundedIcon style={{ color: "#f90" }} />
+              {item.rating}
+            </div>
           </div>
         </div>
-      </div>
+      </a>
     </motion.div>
   );
 }

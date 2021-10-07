@@ -72,7 +72,7 @@ function Donator3D() {
         </EffectComposer>
       </Canvas>
 
-      <div class='marquee-bottom'>
+      <div className='marquee-bottom'>
         <span>Thank you to donator</span>
         <span>Thank you to donator</span>
         <span>Thank you to donator</span>

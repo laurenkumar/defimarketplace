@@ -66,11 +66,11 @@ const CoinFilter = ({coins, setCoins}) => {
      return (
       <div className="filter-market"> 
         <h2 style={{color:"black"}}>Filter by:</h2>
-        <Button onClick={toggle ? sortByNameDescending : sortByNameAscending} variant="outline-success"> Name</Button>   
-        <Button onClick={sortByPrice} variant="outline-success"> Price </Button>  
-        <Button onClick={sortByVolume} variant="outline-success"> Vol </Button>
-        <Button onClick={sortByPercent} variant="outline-success"> % </Button>
-        <Button onClick={sortByMarketcap} variant="outline-success"> MktCap </Button>
+        <Button type="button" title="Filter by name" aria-label="Filter by name" onClick={toggle ? sortByNameDescending : sortByNameAscending} variant="outline-success"> Name</Button>   
+        <Button type="button" title="Filter by price" aria-label="Filter by price" onClick={sortByPrice} variant="outline-success"> Price </Button>  
+        <Button type="button" title="Filter by volume" aria-label="Filter by volume" onClick={sortByVolume} variant="outline-success"> Vol </Button>
+        <Button type="button" title="Filter by percent" aria-label="Filter by percent" onClick={sortByPercent} variant="outline-success"> % </Button>
+        <Button type="button" title="Filter by market cap" aria-label="Filter by market cap" onClick={sortByMarketcap} variant="outline-success"> MktCap </Button>
       </div>
     )
 }

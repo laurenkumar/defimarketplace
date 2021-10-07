@@ -19,7 +19,7 @@ const FeedNews = () => {
       return news.data.articles.map((el) => {
         return (
           <Fragment>
-            <a href={el.url} target="_blank" rel="noopener noreferrer">
+            <a href={el.url} className="link-news" title={el.title} target="_blank" rel="noopener noreferrer">
               <article className="show-posts-container" key={uuidv4()}>
                 <div className="posts-img-container">
                   <img src={el.image} alt={el.title} className="posts-img" />
@@ -31,6 +31,7 @@ const FeedNews = () => {
                   </div>
                 </div>
               </article>
+              <span className="ac-link">Opens in a new window</span>
             </a>
           </Fragment>
         );
@@ -53,12 +54,12 @@ const FeedNews = () => {
   };
 
   return (
-    <div className='coin-app'>
+    <main className='coin-app'>
       <h1 className='coin-text'>Last News About SafeMoon</h1>
-      <div className='news-container'>
+      <section className='news-container'>
         <ShowData />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

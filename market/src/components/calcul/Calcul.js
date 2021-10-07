@@ -51,16 +51,17 @@ function Calcul() {
   },[dailyRoi])
 
   return (
-    <div className='coin-app calcul-dashboard'>
+    <main className='coin-app calcul-dashboard'>
       <h1 className='coin-text'>SafeMoon Simple Calculator</h1>
-      <div className="calculator-container">
+      <section className="calculator-container">
         <div>
-          <form className={classes.root}>
+          <form className={classes.root} ariaLabel="Calculator of safemoon reflections">
             <div>
               <TextField type="number"
                     value={quantity}
                     onChange={(e) => handleSubmit(e)}
-                    placeholder='Safemoon Quantity' 
+                    placeholder='Safemoon Quantity'
+                    ariaLabel='Set SafeMoon Quantity'
                     id="quantity" 
                     label="Set SafeMoon Quantity" variant="outlined"
               />
@@ -68,6 +69,7 @@ function Calcul() {
             <div>
               <TextField type="number"
                     value={price}
+                    ariaLabel='Set SafeMoon Price'
                     onChange={(e) => handleSubmit(e)}
                     placeholder='SafeMoon Price' 
                     id="price" 
@@ -78,6 +80,7 @@ function Calcul() {
             <div>
               <TextField type="number"
                     value={volume}
+                    ariaLabel='Set SafeMoon Volume'
                     onChange={(e) => handleSubmit(e)}
                     placeholder='SafeMoon Volume' 
                     id="volume" 
@@ -91,21 +94,21 @@ function Calcul() {
           <div>
             <div className="calcul-results">
                 <span>Daily reflections:</span>
-                <div className="bold">${reflectionDayDollar ? reflectionDayDollar : "0"}</div>
-                <div className="bold">{reflectionDay ? reflectionDay : "0"}SFM</div>
+                <p className="bold">${reflectionDayDollar ? reflectionDayDollar : "0"}</p>
+                <p className="bold">{reflectionDay ? reflectionDay : "0"}SFM</p>
             </div>
-            <div className="calcul-results"><span>Daily ROI:</span><div className="bold">{dailyRoi ? dailyRoi : "0"}%</div></div>
-            <div className="calcul-results"><span>APY:</span><div className="bold">{yearRoi ? Math.round(yearRoi) : "0"}%</div></div>
-            <div className="calcul-results"><span>Account balance:</span><div className="bold">{quantity && price ? quantity*price : "0"}$</div></div>
+            <div className="calcul-results"><span>Daily ROI:</span><p className="bold">{dailyRoi ? dailyRoi : "0"}%</p></div>
+            <div className="calcul-results"><span>APY:</span><p className="bold">{yearRoi ? Math.round(yearRoi) : "0"}%</p></div>
+            <div className="calcul-results"><span>Account balance:</span><p className="bold">{quantity && price ? quantity*price : "0"}$</p></div>
             <div>
-              <span className="crypto-caption">{Math.round(yearRoi) > 30 ? 'APY is > 30 % Increase the price for more realistic results!' : ''}</span>
-              <span className="crypto-caption">{Math.round(yearRoi) < 2 ? 'APY is < 2 % Try to lower the price for more realistic results!' : ''}</span>      
+              <span className="crypto-caption" style={{color:"red"}}>{Math.round(yearRoi) > 30 ? 'APY is > 30 % Increase the price for more realistic results!' : ''}</span>
+              <span className="crypto-caption" style={{color:"red"}}>{Math.round(yearRoi) < 2 ? 'APY is < 2 % Try to lower the price for more realistic results!' : ''}</span>      
             </div>
           </div>
         </div>
-      </div>
-      <h2 className="crypto-caption">Big thanks to <a href="https://www.reddit.com/r/SafeMoon/comments/nl1sgo/tokenomics_and_mathemagics/" target="_blank">Material_Rich9906</a> on reddit for the maths!</h2>
-    </div>
+      </section>
+      <h2 className="crypto-caption">Big thanks to <a className="link-post" href="https://www.reddit.com/r/SafeMoon/comments/nl1sgo/tokenomics_and_mathemagics/" title="Post on reddit" target="_blank">Material_Rich9906 on reddit<span className="ac-link">Opens in a new window</span></a> for the maths!</h2>
+    </main>
   );
 }
 

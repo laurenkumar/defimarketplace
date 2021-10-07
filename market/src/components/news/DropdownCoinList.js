@@ -31,6 +31,8 @@ const DropdownCoinList = ({ setCoin, filteredCoins, coin, firstUpdate}) => {
 
     return (
       <Select
+        id="listcoin"
+        ariaLabel="coins"
         options={options}
         onChange={e => handleChange(e)} isSearchable
         styles={customStyles}

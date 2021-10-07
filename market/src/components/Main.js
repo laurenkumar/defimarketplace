@@ -53,11 +53,11 @@ function Main() {
   const classes = useStyles();
 
   return (
-    <div className="main">
+    <main className="main">
       <div className='coin-app'>
         <h1 className='coin-text'>Your crypto corner</h1>
         <div className={classes.container}>
-          <Link className={classes.link} to="/market">
+          <Link className={classes.link} accessKey="m" title="Top 200 cryptocurrencies info" to="/market">
             <Card className={classes.root}>
                 <TrendingUpRoundedIcon
                   className="sidebar__menuIcon"
@@ -73,7 +73,7 @@ function Main() {
                 </CardContent>
             </Card>
           </Link>
-          <Link className={classes.link} to="/news">
+          <Link className={classes.link} accessKey="n" title="Last news regarding safemoon" to="/news">
             <Card className={classes.root}>
                 <ChromeReaderModeRoundedIcon
                   className="sidebar__menuIcon"
@@ -89,7 +89,7 @@ function Main() {
                 </CardContent>
             </Card>
           </Link>
-          <Link className={classes.link} to="/calculator">
+          <Link className={classes.link} accessKey="c" title="Calculator of safemoon reflections" to="/calculator">
             <Card className={classes.root}>
                 <FunctionsRoundedIcon
                   className="sidebar__menuIcon"
@@ -105,7 +105,7 @@ function Main() {
                 </CardContent>
             </Card>
           </Link>
-          <Link className={classes.link} to="/subs">
+          <Link className={classes.link} accessKey="o" title="Conversations from three sub reddits, safemoon, bitcoin and ethereum" to="/subs">
             <Card className={classes.root}>
                 <ForumRoundedIcon
                   className="sidebar__menuIcon"
@@ -128,7 +128,7 @@ function Main() {
         </div>
         <CompareCoins />
       </div>
-    </div>
+    </main>
   );
 }
 export default Main;

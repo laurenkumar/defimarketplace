@@ -31,19 +31,21 @@ function Categories() {
 
   return (
     <div className="categories">
-      <span
+      <a href="" title="All Departments"><span
         className="categories__category active"
         onClick={(e) => setActive(e, "all")}
       >
         All Departments
-      </span>
+      </span></a>
       {categories.map((category) => (
+        <a href="" title={category}>
         <span
           className="categories__category"
           onClick={(e) => setActive(e, category)}
         >
           {category}
         </span>
+        </a>
       ))}
     </div>
   );

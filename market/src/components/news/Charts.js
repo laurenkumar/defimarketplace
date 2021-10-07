@@ -78,6 +78,7 @@ useEffect( () => {
 }, [coin,]);
     return (
           <div>
+            <label for="listcoin">Select a crypto:</label>
             <DropdownCoinList id='dropdown'  filteredCoins={filteredCoins} setCoin={setCoin} coin={coin} />
             <Line
                 data={chartData}

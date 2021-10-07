@@ -72,23 +72,23 @@ const FeedSubreddits = () => {
   };
 
   return (
-    <div className="reddit-data-container coin-app">
+    <main className="reddit-data-container coin-app">
       <h1 className='coin-text'>Check the subreddit you want to interact with</h1>
       <div className="subreddits">
-        <button onClick={() => dispatch(getRedditData(page.bitcoin))}>
+        <button type="button" onClick={() => dispatch(getRedditData(page.bitcoin))}>
           Bitcoin
         </button>
-        <button onClick={() => dispatch(getRedditData(page.safemoon))}>
+        <button type="button" onClick={() => dispatch(getRedditData(page.safemoon))}>
           SafeMoon
         </button>
-        <button onClick={() => dispatch(getRedditData(page.ethereum))}>
+        <button type="button" onClick={() => dispatch(getRedditData(page.ethereum))}>
           Ethereum
         </button>
       </div>
-      <div className='news-container'>
+      <section className='news-container'>
         <ShowData />
-      </div>
-    </div>
+      </section>
+    </main>
   );
 };
 

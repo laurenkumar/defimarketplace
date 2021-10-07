@@ -64,13 +64,18 @@
   margin-bottom: 0;
 }
 
+button:focus {
+  border: 3px solid black;
+  padding:  10px;
+}
+
 .coin {
   display: flex;
   align-items: center;
   width: 30%;
 }
 
-.coin h1 {
+.coin p {
   font-size: 16px;
 }
 

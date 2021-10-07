@@ -36,28 +36,33 @@ function News() {
 
 
   return (
-    <div className='coin-app'>
+    <main className='coin-app'>
       <h1 className='coin-text'>Market overview</h1>
-      <div className='header__market'>
+      <header className='header__market'>
         <div className='header__search coin-search'>
           <form>
             <SearchRoundedIcon className="header__searchIcon" />
             <input
+              role="searchbox"
               className='coin-input'
-              type='text'
+              type='search'
+              title='Search'
+              aria-label='Search your crypto...'
               onChange={handleChange}
-              placeholder='Search...'
+              placeholder='Search your crypto...'
             />
           </form>
         </div>
         <div className="buttons">
-          <button className="buttonSecondary" onClick={onClick}>{showCharts ? `List` : `Charts`}</button>
+          <button type="button" title="See the data of the cryptocurrencies" aria-label="See the data of the cryptocurrencies" className="buttonSecondary" onClick={onClick}>{showCharts ? `List` : `Charts`}</button>
         </div>
-      </div>
-      {showCharts ? <Charts
-        filteredCoins={filteredCoins}/> :
-        <List filteredCoins={filteredCoins} setCoins={setCoins} />}
-    </div>
+      </header>
+      <section>
+        {showCharts ? <Charts
+          filteredCoins={filteredCoins}/> :
+          <List filteredCoins={filteredCoins} setCoins={setCoins} />}
+      </section>
+    </main>
   );
 }
 

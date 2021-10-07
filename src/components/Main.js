@@ -6,7 +6,7 @@ import {useStateValue} from "../StateProvider";
 function Main() {
   const [{ products, category }] = useStateValue();
   return (
-    <div className="main">
+    <main className="main">
       <div className="products">
         {products?.map((product) =>
           category === "all" ? (
@@ -16,7 +16,7 @@ function Main() {
           ) : null
         )}
       </div>
-    </div>
+    </main>
   );
 }
 export default Main;

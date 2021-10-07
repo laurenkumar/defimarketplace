@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;700;800;900&display=swap");
 
-html,
-.noScrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-html::-webkit-scrollbar,
-.noScrollbar::-webkit-scrollbar {
-  display: none;
-}
-
 body {
   margin: 0;
   font-family: "Nunito Sans", sans-serif;

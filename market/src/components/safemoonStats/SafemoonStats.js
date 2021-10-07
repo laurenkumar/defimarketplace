@@ -80,7 +80,7 @@ function SafemoonStats() {
   }
 
   return (
-    <div>
+    <section>
       <div> 
         <div>
           <h2 className="coin-text">Safemoon Stats</h2>
@@ -125,42 +125,42 @@ function SafemoonStats() {
               </div>
           </div>
           <div>
-            <h4>Market Data</h4> 
             <table>
+              <caption><h3>Market Data</h3></caption>
               <tbody>
                 <tr>
-                  <th>Market Cap Rank</th> 
+                  <th scope="row">Market Cap Rank</th> 
                   <td>
                     <div>#{stats?.market_data?.market_cap_rank}</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>CoinGecko Rank</th> 
+                  <th scope="row">CoinGecko Rank</th> 
                   <td>
                     <div>#{stats?.coingecko_rank}</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>CoinGecko Overall Score</th> 
+                  <th scope="row">CoinGecko Overall Score</th> 
                   <td>
                     <div>{Math.round(parseFloat(stats?.coingecko_score))}%</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>CoinGecko Liquidity Score</th> 
+                  <th scope="row">CoinGecko Liquidity Score</th> 
                   <td>
                       <div>{Math.round(parseFloat(stats?.liquidity_score))}%</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>All Time High</th> 
+                  <th scope="row">All Time High</th> 
                   <td>
                     <div>${stats?.market_data?.ath?.usd}</div> 
                     <div className="crypto-caption">{monthsDiff(stats?.market_data?.ath_date?.usd)} months ago</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>All Time Low</th> 
+                  <th scope="row">All Time Low</th> 
                   <td>
                     <div>${stats?.market_data?.atl?.usd.toFixed(8).replace(/\.?0+$/,"")}</div> 
                     <div className="crypto-caption">{monthsDiff(stats?.market_data?.atl_date?.usd)} months ago</div>
@@ -168,58 +168,60 @@ function SafemoonStats() {
                 </tr>
               </tbody>
             </table> 
-            <h4>Community Data</h4> 
+             
             <table>
+              <caption><h3>Community Data</h3></caption>
               <tbody>
                 <tr>
-                  <th>CoinGecko Community Score</th> 
+                  <th scope="row">CoinGecko Community Score</th> 
                   <td>
                     <div>{stats?.community_score}%</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>Reddit Subscribers</th> 
+                  <th scope="row">Reddit Subscribers</th> 
                   <td>
                     <div>{kFormatter(stats?.community_data?.reddit_subscribers)}</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>Twitter Followers</th> 
+                  <th scope="row">Twitter Followers</th> 
                   <td>
                     <div>{getNumber(stats?.community_data?.twitter_followers)}</div>  
                   </td>
                 </tr>
               </tbody>
             </table> 
-            <h4>Developer Data</h4> 
+             
             <table>
+              <caption><h3>Developer Data</h3></caption>
               <tbody>
                 <tr>
-                  <th>CoinGecko Developer Score</th> 
+                  <th scope="row">CoinGecko Developer Score</th> 
                   <td>
                     <div>{stats?.developer_score}%</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>Stars</th> 
+                  <th scope="row">Number of Stars</th> 
                   <td>
                     <div>{stats?.developer_data?.stars}</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>Contributors</th> 
+                  <th scope="row">Contributors</th> 
                   <td>
                     <div>{stats?.developer_data?.pull_request_contributors}</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>Forks</th> 
+                  <th scope="row">Forks</th> 
                   <td>
                     <div>{stats?.developer_data?.forks}</div>
                   </td>
                 </tr> 
                 <tr>
-                  <th>Issues</th> 
+                  <th scope="row">Issues</th> 
                   <td>
                     <div>{stats?.developer_data?.total_issues}</div> 
                     <div className="crypto-caption">{getOpenPercent()}% open</div>
@@ -231,7 +233,7 @@ function SafemoonStats() {
         </div>
       </div>
 
-    </div>
+    </section>
   );
 }
 
