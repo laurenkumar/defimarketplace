@@ -104,9 +104,9 @@ function AddInfosStore() {
   };
 
   return (
-        <form className="form__split" onSubmit={(e) => handleSubmit(e)}>
+        <form aria-label="Form for personnal data" className="form__split" onSubmit={(e) => handleSubmit(e)}>
           <div className="form">
-            <h5>Delivery Address</h5>
+            <h2>Delivery Address</h2>
             <div className="form__element">
               <input
                 className={address ? "active " : ""}
@@ -157,7 +157,7 @@ function AddInfosStore() {
             </div>
           </div>
           <div className="form">
-            <h5>Personal Details</h5>
+            <h2>Personal Details</h2>
             <div className="form__element">
               <input id="name" name="name" type="text" className={name ? "active " : ""}
                 value={name}

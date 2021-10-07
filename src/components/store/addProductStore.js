@@ -44,8 +44,9 @@ function AddProductStore({showForm, triggerParentUpdate}) {
   };
 
   return (
-              <form className="form cart__checkout form__split" ref={productForm}>
-                <div className="form">
+              <form aria-label="Form to add a product" className="form cart__checkout form__split" ref={productForm}>
+                <fieldset className="form">
+                  <legend style={{ margin: "2rem 0 1rem 0" }}>Product informations</legend>
                   <div className="form__element">
                     <input id="name" name="name" type="text" required />
                     <label for="name">Product Name</label>
@@ -98,9 +99,9 @@ function AddProductStore({showForm, triggerParentUpdate}) {
                       <label for="originalPrice">Original Price</label>
                     </motion.div>
                   )}
-                </div>
-                <div className="form">
-                  <h5 style={{ margin: "2rem 0 1rem 0" }}>Description</h5>
+                </fieldset>
+                <fieldset className="form">
+                  <legend style={{ margin: "2rem 0 1rem 0" }}>Description</legend>
                   <div className="form__element">
                     <input id="feat1" name="feat1" type="text" required />
                     <label for="feat1">Short Description 1</label>
@@ -127,7 +128,7 @@ function AddProductStore({showForm, triggerParentUpdate}) {
                       {loading ? "Adding..." : "Add Product"}
                     </button>
                   </div>
-                </div>
+                </fieldset>
               </form>
             
   );

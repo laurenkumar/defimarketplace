@@ -3,6 +3,9 @@
   display: flex;
   flex-flow: row wrap;
 }
+.product:focus {
+  outline: 1px solid black;
+}
 .product {
   width: calc(100% / 3 - 2rem);
   background: #fff;
