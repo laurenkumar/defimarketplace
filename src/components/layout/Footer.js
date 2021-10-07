@@ -6,11 +6,7 @@ import amazonLogo from "../../assets/logo.svg";
 const footerLinks = [
   {
     title: "Get to Know Us",
-    list: ["Donation", "Donator"],
-  },
-  {
-    title: "More Informations",
-    list: ["Market"],
+    list: ["Donation"],
   },
 ];
 
@@ -42,7 +38,7 @@ function Footer() {
           <img src={amazonLogo} className="footer__logo" />
           <span className="footer__copy">
             &copy; 2021 | Developed by{" "}
-            <a href="">The Community of SafeMoon</a>
+            <a title="Reddit community" className="footer__link"href="https://www.reddit.com/r/SafeMoon/" target="_blank">The SafeMoonArmy<span className="ac-link">Opens in a new window</span></a>
           </span>
         </div>
       </div>

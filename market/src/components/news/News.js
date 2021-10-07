@@ -35,7 +35,7 @@ function News() {
   );
 
 
-  return (
+  return ( 
     <main className='coin-app'>
       <h1 className='coin-text'>Market overview</h1>
       <header className='header__market'>

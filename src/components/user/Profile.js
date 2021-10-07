@@ -70,9 +70,9 @@ function Profile() {
   }
 
   return (
-    <div className="profile">
+    <section className="profile">
       <div className="profile__header">
-        <img className="profile__avatar" src={user?.photoURL} />
+        <img className="profile__avatar" src={user?.photoURL} alt="Profile Icon" />
         <span>
           <h3>Hi, {user?.displayName}</h3>
           <p style={{ maxWidth: "480px", marginBottom: "2rem", opacity: 0.5 }}>
@@ -81,7 +81,8 @@ function Profile() {
           </p>
         </span>
         <div className="buttons" style={{ marginLeft: "1rem" }}>
-          <button
+          <button type="button"
+            aria-label="Edit Profile"
             className="buttonPrimary"
             onClick={editProfile}
             style={ styleButton }
@@ -90,7 +91,8 @@ function Profile() {
           </button>
         </div>
         <div className="buttons" style={{ marginLeft: "1rem" }}>
-          <button
+          <button type="button"
+            aria-label="Add a product"
             className="buttonPrimary"
             onClick={seeStore}
             style={ styleButton }
@@ -99,7 +101,8 @@ function Profile() {
           </button>
         </div>
         <div className="buttons">
-          <button
+          <button type="button"
+            aria-label="Sign out"
             className="buttonRed"
             onClick={signOut}
             style={{ padding: "1rem 1.5rem" }}
@@ -148,7 +151,7 @@ function Profile() {
           </p>
         </div>
       )}
-    </div>
+    </section>
   );
 }
 export default Profile;

@@ -102,7 +102,7 @@ function ProductSingle() {
         <div className="productSingle__details">
           <TextTruncate
             line={3}
-            element="h5"
+            element="h1"
             containerClassName="productSingle__name"
             truncateText="…"
             text={productDetails?.name}
@@ -114,7 +114,7 @@ function ProductSingle() {
           </ul>
           <span className="productSingle__footer">
             <p className="productSingle__price">
-              <h4>${productDetails?.price}</h4>{" "}
+              <h2>${productDetails?.price}</h2>{" "}
               {(productDetails?.discount) && (
                 <small>
                   <del>

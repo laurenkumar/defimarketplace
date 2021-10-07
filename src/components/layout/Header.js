@@ -355,7 +355,7 @@ function Header() {
   }
 
   return (
-    <div className="header">
+    <header className="header">
       
       <Modal
         isOpen={modalIsOpen}
@@ -370,18 +370,22 @@ function Header() {
       </Modal>
       <div className="header__nav">
         {location.pathname !== "/" && (
-          <button onClick={() => history.goBack()} className="header__back">
+          <button type="button" aria-label="go back" onClick={() => history.goBack()} className="header__back">
             Back
           </button>
         )}
         <div className="header__search">
-          <SearchRoundedIcon className="header__searchIcon" />
-          <input
-            type="text"
-            ref={queryRef}
-            onChange={handleChange}
-            placeholder="Search..."
-          />
+          <form>
+            <SearchRoundedIcon className="header__searchIcon" />
+            <input
+              type="search"
+              title='Search'
+              aria-label='Search a product...'
+              ref={queryRef}
+              onChange={handleChange}
+              placeholder="Search a product..."
+            />
+          </form>
         </div>
         {resultsOpen && (
           <motion.div
@@ -416,10 +420,10 @@ function Header() {
         )}
         
         <div className="buttons">
-          <button className="buttonSecondary" onClick={openModal}>Connect</button>
+          <button type="button" className="buttonSecondary" onClick={openModal}>Connect</button>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 export default Header;
