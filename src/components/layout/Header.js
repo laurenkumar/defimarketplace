@@ -17,7 +17,7 @@ import {
     UserRejectedRequestError as UserRejectedRequestErrorWalletConnect
 } from "@web3-react/walletconnect-connector";
 
-import {injected, walletconnect, walletlink} from "../../connectors";
+import {metamask, walletconnect} from "../wallet/Connectors";
 import {useEagerConnect, useInactiveListener} from "../../hooks";
 import {Spinner} from "../misc/Spinner";
 
@@ -57,9 +57,8 @@ function Header() {
   }
 
   const connectorsByName = {
-    Metamask: injected,
-    WalletConnect: walletconnect,
-    WalletLink: walletlink
+    Metamask: metamask,
+    WalletConnect: walletconnect
   };
 
   function getErrorMessage(error) {
@@ -150,7 +149,6 @@ function Header() {
     // fetch eth balance of the connected account
     const [ethBalance, setEthBalance] = React.useState();
     React.useEffect(() => {
-      console.log('running')
       if (library && account) {
         let stale = false;
 

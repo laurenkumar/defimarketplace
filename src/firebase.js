@@ -1,7 +1,12 @@
+import GUN from "gun";
+import 'gun/sea';
+import 'gun/axe';
 import firebase from "firebase/app";
 import "firebase/analytics";
 import "firebase/firestore";
 import "firebase/auth";
+
+const gun = GUN(['http://localhost:8765/gun', 'https://gun-manhattan.herokuapp.com/gun']);
 
 const firebaseConfig = {
   apiKey: "AIzaSyC5SvOQLOnOj1bPeoNii3dFBdXUGOevI6k",
@@ -16,8 +21,10 @@ const firebaseConfig = {
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const provider = new firebase.auth.GoogleAuthProvider();
-const db = firebaseApp.firestore();
+//const db = firebaseApp.firestore();
 const auth = firebase.auth();
 const analytics = firebase.analytics();
 export { auth, provider };
+export {gun};
+export const db = GUN();
 export default db;

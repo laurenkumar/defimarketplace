@@ -10,14 +10,12 @@ import reducer, {initialState} from "./reducer";
 import ScrollToTop from "./components/misc/scrollToTop";
 
 ReactDOM.render(
-  <React.StrictMode>
     <Router>
       <ScrollToTop />
       <StateProvider initialState={initialState} reducer={reducer}>
         <App />
       </StateProvider>
-    </Router>
-  </React.StrictMode>,
+    </Router>,
   document.getElementById("root")
 );
 

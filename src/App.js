@@ -12,7 +12,6 @@ import PaymentPage from "./pages/PaymentPage";
 import MessengerPage from "./pages/MessengerPage";
 import CartPage from "./pages/CartPage";
 import DonationPage from "./pages/DonationPage";
-import DonatorPage from "./pages/DonatorPage";
 import NewsPage from "./pages/NewsPage";
 import BookmarkPage from "./pages/BookmarkPage";
 import UserPage from "./pages/UserPage";
@@ -150,9 +149,6 @@ function App() {
               </Route>
               <Route path="/donation">
                 <DonationPage />
-              </Route>
-              <Route path="/donator">
-                <DonatorPage />
               </Route>
               <Route path="/market">
                 <NewsPage />
