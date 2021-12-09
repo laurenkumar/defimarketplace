@@ -30,6 +30,10 @@
   opacity: 0.75;
   transform: scale(0.95);
 }
+.header__search form {
+  display: flex;
+  align-items: center;
+}
 .header__search input {
   background: none;
   border: none;
@@ -48,6 +52,101 @@ input::placeholder {
   height: 2rem;
   width: auto;
   margin-left: 1rem;
+}
+
+.modalTitle {
+  -webkit-box-align: center;
+  align-items: center;
+  display: flex;
+  padding: 12px 0px;
+}
+
+.pHelp {
+    color: rgb(184, 173, 210);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin-bottom: 16px;
+    text-align: center;
+}
+.walletMenu {
+  display: flex;
+  -webkit-box-align: center;
+  align-items: center;
+}
+.walletHead {
+  -webkit-box-align: center;
+    align-items: center;
+    background-color: rgba(39, 38, 44, 0.7);
+    border-radius: 16px;
+    box-shadow: rgb(0 0 0 / 10%) 0px -2px 0px inset;
+    cursor: pointer;
+    display: inline-flex;
+    height: 36px;
+    padding-left: 40px;
+    padding-right: 8px;
+    position: relative;
+}
+.logoWallet {
+  -webkit-box-align: center;
+    align-items: center;
+    background-color: rgb(8, 6, 11);
+    border-color: #57609c;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 2px;
+    display: flex;
+    height: 40px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    left: 0px;
+    position: absolute;
+    width: 40px;
+    z-index: 102;
+}
+.walletTitle {
+  color: rgb(244, 238, 255);
+    display: block;
+    font-weight: 600;
+}
+.walletTitle p {
+  margin: 0;
+  padding: 1rem;
+  padding-top: 1rem;
+}
+.logoDrop {
+      align-self: center;
+    fill: rgb(244, 238, 255);
+    flex-shrink: 0;
+}
+.buttonHelp {
+    -webkit-box-align: center;
+    align-items: center;
+    border: 0px;
+    border-radius: 7px;
+    box-shadow: rgb(14 14 44 / 40%) 0px -1px 0px 0px inset;
+    cursor: pointer;
+    display: inline-flex;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none;
+    -webkit-box-pack: center;
+    justify-content: center;
+    letter-spacing: 0.03em;
+    line-height: 1;
+    opacity: 1;
+    outline: 0px;
+    transition: background-color 0.2s ease 0s, opacity 0.2s ease 0s;
+    height: 48px;
+    padding: 0px 24px;
+    background-color: rgb(139 150 224);
+    color: rgb(39, 38, 44);
+    width: 100%;
+}
+
+.modalTitle h1 {
+  font-size: 1.5rem;
 }
 
 @media (max-width: 550px) {

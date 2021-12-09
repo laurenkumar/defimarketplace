@@ -1,7 +1,11 @@
 h1, h2, h3, h4, h5, h6, a, strong {
-	color: #008a81;
+	color: #fff !important;
 }
 button:focus {
 	outline: 1px solid black !important;
 	padding: 10px !important;
+}
+
+p {
+	color: #fff;	
 }

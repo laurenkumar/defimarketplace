@@ -2,7 +2,7 @@
   width: 100vw;
   min-height: 100vh;
   position: relative;
-  background: #fafafa;
+  background: linear-gradient(139.73deg, rgb(49, 61, 92) 0%, rgb(61, 42, 84) 100%);
   display: flex;
   flex-flow: column nowrap;
 }

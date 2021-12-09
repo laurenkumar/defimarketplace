@@ -7,7 +7,7 @@
   top: 0;
   left: 0;
   box-shadow: 0 0 1rem rgba(26, 26, 44, 0.05);
-  background: #fff;
+  background: rgba(39, 38, 44, 1);
   display: flex;
   flex-flow: column nowrap;
   justify-content: space-between;
@@ -35,11 +35,11 @@
 }
 .sidebar__menuIcon.messenger {
   fill: transparent !important;
-  stroke: rgb(26, 26, 44) !important;
+  stroke: #57609c !important;
 }
 .sidebar__menuItem.active .sidebar__menuIcon {
   transform: scale(1);
-  fill: #1a1a2c !important;
+  fill: #57609c !important;
   stroke-width: none !important;
   stroke: transparent !important;
 }
@@ -53,7 +53,7 @@
   text-align: center;
   min-width: 18px;
   height: 19px;
-  background: #008a81;
+  background: #57609c;
   color: #fff;
   font-weight: 700;
   left: calc(100% - 12px);

@@ -15,8 +15,8 @@ function Footer() {
     <div className="footer">
       <div className="footer__inner">
         <div className="footer__disclaimer">
-          <strong>Disclaimer:</strong> This is not the official Safemoon Marketplace. It
-          is a project done by a fan for the community.
+          <strong>Disclaimer:</strong> This is not an official project done by some big team. It
+          is a project done by a fan of Defi.
         </div>
         <div className="footer__links">
           {footerLinks.map((link) => (
@@ -38,7 +38,7 @@ function Footer() {
           <img src={amazonLogo} className="footer__logo" />
           <span className="footer__copy">
             &copy; 2021 | Developed by{" "}
-            <a title="Reddit community" className="footer__link"href="https://www.reddit.com/r/SafeMoon/" target="_blank">The SafeMoonArmy<span className="ac-link">Opens in a new window</span></a>
+            <a title="Reddit community" className="footer__link"href="https://github.com/laurenkumar" target="_blank">LaurenKumar<span className="ac-link">Opens in a new window</span></a>
           </span>
         </div>
       </div>

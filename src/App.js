@@ -104,7 +104,7 @@ function App() {
 
   return (
     <div className="app">
-      <LoadingBar height={3} color="#78cac8" ref={loadingBar} shadow={true} />
+      <LoadingBar height={3} color="#57609c" ref={loadingBar} shadow={true} />
       <Sidebar />
       <div className="app__inner">
         <AnimatePresence exitBeforeEnter>

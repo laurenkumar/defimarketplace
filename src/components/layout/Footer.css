@@ -28,7 +28,7 @@
 }
 .footer {
   margin-top: auto;
-  background: #eaeaea;
+  background: rgba(39, 38, 44, 0.7);
   display: flex;
   flex-flow: column nowrap;
   width: 100%;
@@ -41,8 +41,8 @@
 }
 .footer__disclaimer {
   font-size: 16px;
-  background: #dde8e7;
-  color: #000;
+  background: linear-gradient(139.73deg, rgb(49, 61, 92) 0%, rgb(61, 42, 84) 100%);
+  color: #fff;
   padding: 1rem 3rem;
 }
 .footer__links {
@@ -80,7 +80,7 @@
   padding: 2rem 3rem;
   display: flex;
   align-items: center;
-  background: #eaeaea;
+  background: linear-gradient(139.73deg, rgb(49, 61, 92) 0%, rgb(61, 42, 84) 100%);
   border-top: 1px solid rgba(26, 26, 44, 0.05);
 }
 .footer__logo {
@@ -92,6 +92,7 @@
   font-size: 14px;
   white-space: nowrap;
   opacity: 0.75;
+  color: #fff;
 }
 .footer__copy a {
   color: #008a81;

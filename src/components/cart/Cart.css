@@ -19,7 +19,7 @@
 }
 .cart__checkout {
   flex: 0 0 calc(50% - 2rem);
-  background: #fff;
+  background: rgb(39, 38, 44);
   margin-left: 2rem;
   border-radius: 0.5rem;
   box-shadow: 0 0.25rem 0.5rem rgba(26, 26, 44, 0.05);

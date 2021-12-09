@@ -19,7 +19,7 @@
   opacity: 0.5;
 }
 .buttonSecondary {
-  background: #1a1a2c;
+  background: rgba(39, 38, 44, 0.7);
   box-shadow: 0 0.5rem 1rem rgba(26, 26, 44, 0.25);
 }
 .buttonSecondary.outline {
@@ -43,7 +43,7 @@
   margin-left: 0.5rem;
 }
 .buttonPrimary {
-  background: #008a81;
+  background: #57609c;
   box-shadow: 0 0.5rem 1rem rgba(43, 156, 174, 0.25);
   padding: 0.5rem 1.5rem !important;
 }
@@ -52,7 +52,7 @@
 }
 .buttonPrimary:hover {
   transform: scale(1.05);
-  box-shadow: 0 1rem 1rem -0.75rem rgba(255, 153, 0, 0.5);
+  box-shadow: 0 1rem 1rem -0.75rem rgb(87, 96, 156);
 }
 button:active {
   transform: scale(0.95) !important;

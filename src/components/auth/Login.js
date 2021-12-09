@@ -21,34 +21,6 @@ function Login() {
   const [status, setStatus] = useState(false);
   const [success, setSuccess] = useState(false);
 
-  const googleSignIn = (e) => {
-    e.preventDefault();
-    setStatus(true);
-    loadingBar.current.continuousStart();
-    auth
-      .signInWithPopup(provider)
-      .then((result) => {
-        setTimeout(() => {
-          if (!query.get("next")) {
-            history.replace("/");
-          } else {
-            history.replace(`/${query.get("next")}`);
-          }
-        }, 1000);
-
-        console.log(result);
-        setSuccess(true);
-        setFormError("Success! Redirecting...");
-        setStatus(false);
-        loadingBar.current.complete();
-      })
-      .catch((error) => {
-        setFormError(error.message);
-        setStatus(false);
-        loadingBar.current.complete();
-      });
-  };
-
   useEffect(() => {
     const code = query.get("oobCode");
     const verifyCode = async (actionCode) => {
@@ -159,7 +131,7 @@ function Login() {
             onChange={(e) => setEmail(e.target.value)}
             onFocus={() => setErrorEmail(false)}
           />
-          <label for="email">Email Address</label>
+          <label htmlFor="email">Email Address</label>
           {errorEmail && (
             <motion.p
               initial="initial"
@@ -183,7 +155,7 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
             onFocus={() => setErrorPassword(false)}
           />
-          <label for="password">Password</label>
+          <label htmlFor="password">Password</label>
           {errorPassword && (
             <motion.p
               initial="initial"
@@ -246,14 +218,6 @@ function Login() {
             className="button buttonSecondary signup"
           >
             Sign Up
-          </button>
-          <button
-            onClick={googleSignIn}
-            disabled={status}
-            className="button buttonSecondary outline"
-          >
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" />
-            <span>Sign in with Google</span>
           </button>
         </div>
       </form>

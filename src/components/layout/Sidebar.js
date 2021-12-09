@@ -15,7 +15,7 @@ import {useStateValue} from "../../StateProvider";
 const iconStyle = (fontsize) => {
   return {
     fill: "transparent",
-    stroke: "#1a1a2c",
+    stroke: "#57609c",
     strokeWidth: 1,
     fontSize: fontsize,
   };
